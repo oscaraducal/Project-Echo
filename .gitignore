@@ -1,5 +1,78 @@
+# =============================================================================
+# Project Echo — Git Ignore
+# Unreal Engine 5.8 / Blueprint-first
+# =============================================================================
+
+# -----------------------------------------------------------------------------
+# Unreal Engine generated / local build data
+# -----------------------------------------------------------------------------
 Binaries/
 DerivedDataCache/
 Intermediate/
 Saved/
+Build/
+
+# Local File Open Order / cooked intermediates sometimes emitted at root
+FileOpenOrder/
+ScriptModules/
+
+# -----------------------------------------------------------------------------
+# IDE / editor local state
+# -----------------------------------------------------------------------------
 .vs/
+.idea/
+*.sln.docstates
+*.suo
+*.user
+*.userosscache
+*.VC.db
+*.VC.opendb
+*.opensdf
+*.sdf
+*.code-workspace
+
+# Generated Visual Studio / Rider project files (regenerated from .uproject)
+# Keep .uproject tracked; do not ignore Config/ or Content/
+*.sln
+*.vcxproj
+*.vcxproj.filters
+*.vcxproj.user
+*.xcodeproj/
+*.xcworkspace/
+
+# -----------------------------------------------------------------------------
+# OS junk
+# -----------------------------------------------------------------------------
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+.DS_Store
+$RECYCLE.BIN/
+
+# -----------------------------------------------------------------------------
+# Crash / dump artifacts (if emitted outside Saved/)
+# -----------------------------------------------------------------------------
+*.dmp
+crashinfo/
+
+# -----------------------------------------------------------------------------
+# Unreal local developer sandboxes (per-user Content)
+# Project content lives under Content/ProjectEcho/ and remains tracked.
+# -----------------------------------------------------------------------------
+Content/Developers/
+Content/Collections/
+
+# -----------------------------------------------------------------------------
+# Python / tooling caches (if scripts are added later)
+# -----------------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# -----------------------------------------------------------------------------
+# Optional local env / secrets (never commit)
+# -----------------------------------------------------------------------------
+.env
+.env.*
+*.pem
+*.key

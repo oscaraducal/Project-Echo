@@ -1,0 +1,32 @@
+# =============================================================================
+# Project Echo - Git Attributes / Git LFS
+# Unreal Engine 5.8 binary asset policy
+# =============================================================================
+# Requires: git lfs install (once per machine)
+# After clone: git lfs pull
+#
+# Note: Files already committed as normal Git blobs stay as blobs until an
+# explicit LFS migration is approved by the Technical Director.
+# New commits of matching types will use LFS once tracking is active.
+# =============================================================================
+
+# --- Unreal binary assets ---
+*.uasset filter=lfs diff=lfs merge=lfs -text
+*.umap   filter=lfs diff=lfs merge=lfs -text
+
+# --- Common art / audio / DCC sources ---
+*.png  filter=lfs diff=lfs merge=lfs -text
+*.jpg  filter=lfs diff=lfs merge=lfs -text
+*.jpeg filter=lfs diff=lfs merge=lfs -text
+*.wav  filter=lfs diff=lfs merge=lfs -text
+*.fbx  filter=lfs diff=lfs merge=lfs -text
+*.blend filter=lfs diff=lfs merge=lfs -text
+*.psd  filter=lfs diff=lfs merge=lfs -text
+
+# --- Text / config: ensure LF for cross-platform consistency ---
+*.md   text eol=lf
+*.ini  text eol=lf
+*.json text eol=lf
+*.uproject text eol=lf
+*.gitignore text eol=lf
+*.gitattributes text eol=lf
