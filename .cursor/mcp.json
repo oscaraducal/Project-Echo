@@ -4,6 +4,10 @@
 		"unreal-mcp":
 		{
 			"url": "http://127.0.0.1:8000/mcp"
+		},
+		"Roblox_Studio":
+		{
+			"command": "C:\\Users\\oscar\\AppData\\Local\\Roblox\\Versions\\version-14d8b191232f4ddd\\StudioMCP.exe"
 		}
 	}
 }
