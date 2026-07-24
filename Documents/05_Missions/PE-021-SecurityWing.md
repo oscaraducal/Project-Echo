@@ -1,6 +1,6 @@
 # PE-021 — Security Wing (Post-Research Access)
 
-**Status:** Validated — Technical (Gameplay **PENDING_USER**)  
+**Status:** Reviewed — Technical (Gameplay **PENDING_USER**)  
 **Branch:** `develop`  
 **Priority:** High  
 **Map:** `/Game/ProjectEcho/Maps/Production/LV_ARI_SecurityWing`  
@@ -8,8 +8,10 @@
 **Design plan:** [`PE-021-DesignPlan.md`](PE-021-DesignPlan.md) (APPROVED & IMPLEMENTED)  
 **Visual Design Package:** [`PE-021-VisualDesignPackage.md`](PE-021-VisualDesignPackage.md) (EP Implement after VDP = Ready to Implement YES)  
 **Playtest checklist:** [`PE-021-PlaytestChecklist.md`](PE-021-PlaytestChecklist.md)  
+**QA Review Package:** [`PE-021-QAReviewPackage.md`](PE-021-QAReviewPackage.md)  
+**Production Review:** [`PE-021-ProductionReview.md`](PE-021-ProductionReview.md) — Board **Approve with Conditions**  
 **Predecessor:** `LV_ARI_ResearchWing` (PE-020 — Soft Open LabExit → Security Wing)  
-**Ready For Review:** **NO** (Gameplay PENDING_USER)
+**Ready For Review:** **NO** (Gameplay PENDING_USER — board does not waive)
 
 ---
 
@@ -113,6 +115,7 @@ Clue: Note B Incomplete Clearance Board. Credential: Staff Keycard (Lobby gate +
 ## Validation
 
 **Validate pass:** 2026-07-25 (Mission Director — MCP technical re-check + playtest-generator)  
+**Review pass:** 2026-07-25 — QA Studio + Production Review Board → **Approve with Conditions** ([`PE-021-ProductionReview.md`](PE-021-ProductionReview.md))  
 **Gameplay:** **PENDING_USER** — walk [`PE-021-PlaytestChecklist.md`](PE-021-PlaytestChecklist.md)  
 **Ready for Review:** **NO** until Human Gameplay PASS (or EP written waiver)
 
@@ -182,18 +185,18 @@ Full steps: [`PE-021-PlaytestChecklist.md`](PE-021-PlaytestChecklist.md)
 | Field | Value |
 |-------|--------|
 | Mission | PE-021 Security Wing |
-| Status | **Validated — Technical** (Gameplay PENDING_USER) |
+| Status | **Reviewed — Technical** (Gameplay PENDING_USER); PRB Approve with Conditions |
 | Branch | `develop` |
-| Commit | Implement `24d51e5`; Validate `ef48fe1` (`docs: validate PE-021 and add human playtest checklist`) |
+| Commit | Implement `24d51e5`; Validate `ef48fe1`; Review docs (QA + PRB) |
 | Blueprints created | `BP_AccessClearancePuzzle`, `BP_ClearanceConsoleStation`, `BP_SecurityWingReset` |
 | Blueprints modified | Research `LabExit` Soft Open wiring (map instance → SoftOpenExit) |
 | Maps created | `LV_ARI_SecurityWing` |
 | Maps modified | `LV_ARI_ResearchWing` (LabExit Soft Open → Security) |
-| Documentation updated | Mission notes, Design Plan, VDP note, Changelog, Roadmap, Playtest checklist |
+| Documentation updated | Mission notes, Design Plan, VDP, Changelog, Roadmap, Playtest checklist, QA Review Package, Production Review |
 | Compile | **PASS** |
 | Runtime Test | **PASS** (Technical Simulate) |
 | Regression Test | **PASS** (Technical — Soft Open wiring only on Research; no fuse/generator ownership change) |
 | Git Commit | **PASS** (`24d51e5`) |
 | Git Push | **PASS** |
 | Ready For Review | **NO** |
-| Notes | Gameplay PENDING_USER; SliceReset / Soft Open / Access Clearance Technical PASS |
+| Notes | Gameplay PENDING_USER (honest — not closed by Review); SliceReset / Soft Open / Access Clearance Technical PASS; next = human PIE then Close Mission PE-021 |

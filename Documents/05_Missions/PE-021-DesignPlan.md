@@ -18,9 +18,10 @@
 
 > ### Gate
 >
-> **Validate complete — Technical PASS · Gameplay PENDING_USER**  
+> **Review complete — Technical PASS · Gameplay PENDING_USER**  
+> PRB: **Approve with Conditions** ([`PE-021-ProductionReview.md`](PE-021-ProductionReview.md)) · Ready For Review: **NO**  
 > Design Plan proceed: **YES** · Ready to Implement: **YES** (already implemented)  
-> Next: Human PIE ([`PE-021-PlaytestChecklist.md`](PE-021-PlaytestChecklist.md)) → `Review Mission PE-021` or `Close Mission PE-021`.
+> Next: Human PIE ([`PE-021-PlaytestChecklist.md`](PE-021-PlaytestChecklist.md)) → `Close Mission PE-021` (or return to Validate/Fix).
 
 ---
 
