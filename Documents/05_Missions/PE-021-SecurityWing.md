@@ -184,7 +184,7 @@ Full steps: [`PE-021-PlaytestChecklist.md`](PE-021-PlaytestChecklist.md)
 | Mission | PE-021 Security Wing |
 | Status | **Validated — Technical** (Gameplay PENDING_USER) |
 | Branch | `develop` |
-| Commit | Implement `24d51e5`; Validate (docs) pending this commit |
+| Commit | Implement `24d51e5`; Validate `ef48fe1` (`docs: validate PE-021 and add human playtest checklist`) |
 | Blueprints created | `BP_AccessClearancePuzzle`, `BP_ClearanceConsoleStation`, `BP_SecurityWingReset` |
 | Blueprints modified | Research `LabExit` Soft Open wiring (map instance → SoftOpenExit) |
 | Maps created | `LV_ARI_SecurityWing` |
