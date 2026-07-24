@@ -1,11 +1,12 @@
 # Project Echo — Production Playbook
 
 **Status:** Active (authoritative production process)  
-**Version:** 1.1  
+**Version:** 1.2  
 **Established:** 2026-07-25  
 **Validated:** FRAMEWORK-001 (`Documents/04_Production/AIStudio/ValidationReport-FRAMEWORK-001.md`)  
 **Authority:** Production process source of truth for AI Studio Phase 1+  
 **Consolidates lessons from:** PE-017, PE-017A, PE-018  
+**Creative Studio:** AI Studio Phase 2 — `Documents/04_Production/AIStudio/CreativeStudio/`
 
 ---
 
@@ -68,6 +69,7 @@ Detailed role boundaries: `.cursor/agents/` and `Documents/04_Production/AIStudi
 
 1. **Mission Specification / Design Plan** — scope, reused systems, cut list, risks  
 2. **Approval** — Ready to Implement (written)  
+2b. **Creative Studio pass** (when the mission needs environment / art assets) — Asset Creation Planner → AI Asset Coordinator → domain design skills → Mesh Designer only on create-path — see §12b  
 3. **Implementation** — minimal scope; reuse first  
 4. **Compile** — no Blueprint errors  
 5. **Technical Simulate / PIE** — boot, bind, state checks (Slate may assist)  
@@ -336,11 +338,39 @@ Mission notes: `Documents/05_Missions/PE-017-VerticalSlice01.md`
 |-------|----------|
 | This playbook | `Documents/04_Production/ProductionPlaybook.md` |
 | AI Studio overview | `Documents/04_Production/AIStudio/README.md` |
+| Creative Studio | `Documents/04_Production/AIStudio/CreativeStudio/` |
 | Rules | `.cursor/rules/*.mdc` |
-| Skills | `.cursor/skills/*/SKILL.md` |
+| Skills | `.cursor/skills/*/SKILL.md` (flat folders — see Creative Studio README) |
 | Agent role briefs | `.cursor/agents/*.md` |
 | Hooks policy | `Documents/04_Production/AIStudio/Hooks.md` |
 | Legacy role doc | `Documents/00_Governance/AIStudio.md` (still valid; playbook wins on process detail) |
+
+---
+
+# 12b. Creative Studio (AI Studio v1.2)
+
+Creative Studio improves environment / asset production quality while minimizing unnecessary work.
+
+### Principles (priority)
+
+1. Reuse existing Project Echo assets  
+2. Fab  
+3. Quixel  
+4. Meshy AI  
+5. Blender modify existing  
+6. Custom only when required  
+
+Full pipeline: `Documents/04_Production/AIStudio/CreativeStudio/AssetCreationPipeline.md`.
+
+### Skills
+
+Production skills (plan / implement / PRB / docs / playtest) plus Creative skills listed in `CreativeStudio/README.md` and `.cursor/skills/*`.
+
+Creative skills produce **plans and specifications**. They do **not** modify Story Canon, Blueprints, or maps unless a separate approved implementation mission includes that work.
+
+### Integration
+
+Creative outputs must remain consistent with Gameplay Design Bible, Story Bible (read-only), Facility Bible, and Room Bible.
 
 ---
 
@@ -349,6 +379,6 @@ Mission notes: `Documents/05_Missions/PE-017-VerticalSlice01.md`
 | | |
 |--|--|
 | Created | 2026-07-25 |
-| Version | 1.1 (FRAMEWORK-001) |
+| Version | 1.2 (Creative Studio Phase 2) |
 | Owners | EP + AI Studio |
-| Related | PE-017, PE-017A, PE-018, FRAMEWORK-001, ContributionGuide, GameplayDesignBible, TechnicalDebt |
+| Related | PE-017, PE-017A, PE-018, FRAMEWORK-001, Creative Studio, ContributionGuide, GameplayDesignBible, TechnicalDebt |

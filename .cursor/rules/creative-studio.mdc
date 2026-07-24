@@ -1,0 +1,20 @@
+---
+description: Creative Studio asset hierarchy — reuse → Fab → Quixel → Meshy → Blender → custom
+globs: Documents/04_Production/AIStudio/CreativeStudio/**/*
+alwaysApply: false
+---
+
+# Creative Studio
+
+When planning or requesting environment/art assets for Project Echo, follow the permanent Asset Creation Hierarchy before new authoring:
+
+1. Reuse existing Project Echo assets  
+2. Fab  
+3. Quixel  
+4. Meshy AI  
+5. Blender modify existing  
+6. Custom only if required  
+
+Authority: `Documents/04_Production/AIStudio/CreativeStudio/AssetCreationPipeline.md` and Production Playbook § Creative Studio.
+
+Do not modify Story Canon, Blueprints, or production maps from Creative-only work. Produce reusable plans and specs; integrate via approved `mission-implementer` missions.

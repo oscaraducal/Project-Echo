@@ -64,8 +64,8 @@ This document provides a high-level navigation map for all Project Echo document
 
 ## Production
 
-- **Production Playbook (authoritative process — PE-017 / 017A / 018; v1.1)**
-- AI Studio (README, Validation Report FRAMEWORK-001, Migration Plan, Hooks policy)
+- **Production Playbook (authoritative process — PE-017 / 017A / 018; v1.2 + Creative Studio)**
+- AI Studio (README v1.2, Creative Studio, Validation Report FRAMEWORK-001, Migration Plan, Hooks policy)
 - Roadmap
 - Milestones
 - Sprint History

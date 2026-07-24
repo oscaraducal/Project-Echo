@@ -1,0 +1,6 @@
+{
+  "mcpAllowlist": [
+    "unreal-mcp:*",
+    "project-0-ProjectEcho-unreal-mcp:*"
+  ]
+}

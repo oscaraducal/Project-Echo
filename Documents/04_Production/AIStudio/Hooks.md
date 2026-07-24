@@ -1,6 +1,6 @@
 # AI Studio — Hooks Policy
 
-**Status:** Phase 1 — documentation only (no enabled project hooks)  
+**Status:** Phase 1–2 — documentation only (no enabled project hooks)  
 **Date:** 2026-07-25  
 
 ---
@@ -9,10 +9,12 @@
 
 Hooks are high-leverage and high-noise. Phase 1 **does not enable** `.cursor/hooks.json` automation.
 
+**Phase 2 (Creative Studio) also does not enable hooks.** Creative workflows are skill-driven (Asset Creation Planner → Coordinator → domain designers).
+
 Prefer:
 
 1. Always-apply rules (`foundation`, `production-standard`)  
-2. Skills invoked for mission workflows  
+2. Skills invoked for mission / creative workflows  
 3. Explicit human PIE checklists  
 
 ---
@@ -21,7 +23,7 @@ Prefer:
 
 | Hook | Idea | Risk | Recommendation |
 |------|------|------|----------------|
-| `sessionStart` | Inject short reminder: read Production Playbook + authority order | Low if ≤3 lines | Optional Phase 2 |
+| `sessionStart` | Inject short reminder: read Production Playbook + authority order | Low if ≤3 lines | Optional Phase 2+ |
 | `beforeSubmitPrompt` | Warn if user says “implement” without approved brief path | Medium false positives | Defer |
 | `afterFileEdit` | Nudge Changelog on `Documents/**` edits | High noise | Avoid |
 | `beforeShell` / git | Block commit of `.uasset` when mission is docs-only | Medium | Consider later with allowlist |

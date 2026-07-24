@@ -3,7 +3,8 @@
 Status: Active
 
 > **Process authority (Phase 1+):** `Documents/04_Production/ProductionPlaybook.md`  
-> **Cursor OS map:** `Documents/04_Production/AIStudio/README.md`  
+> **Cursor OS map:** `Documents/04_Production/AIStudio/README.md` (**v1.2**)  
+> **Creative Studio:** `Documents/04_Production/AIStudio/CreativeStudio/`  
 > This file remains the concise **role overview**. On process detail conflict, the Production Playbook wins.
 
 ---

@@ -77,11 +77,13 @@ Roadmap, milestones, changelog, sprint history, health, asset tracking, and AI S
 
 | Document | Description |
 |----------|-------------|
-| [ProductionPlaybook.md](04_Production/ProductionPlaybook.md) | **Authoritative** production process (PE-017 / 017A / 018 lessons) |
-| [AIStudio/README.md](04_Production/AIStudio/README.md) | Cursor AI Studio architecture (rules / skills / agents) — **v1.1** |
+| [ProductionPlaybook.md](04_Production/ProductionPlaybook.md) | **Authoritative** production process (PE-017 / 017A / 018 lessons; Creative Studio §12b) |
+| [AIStudio/README.md](04_Production/AIStudio/README.md) | Cursor AI Studio architecture (rules / skills / agents) — **v1.2** |
+| [AIStudio/CreativeStudio/README.md](04_Production/AIStudio/CreativeStudio/README.md) | Creative Studio overview + skill domains |
+| [AIStudio/CreativeStudio/AssetCreationPipeline.md](04_Production/AIStudio/CreativeStudio/AssetCreationPipeline.md) | Permanent asset hierarchy (Reuse → Fab → Quixel → Meshy → Blender → Custom) |
 | [AIStudio/ValidationReport-FRAMEWORK-001.md](04_Production/AIStudio/ValidationReport-FRAMEWORK-001.md) | AI Studio v1.0 validation (FRAMEWORK-001) |
 | [AIStudio/MigrationPlan.md](04_Production/AIStudio/MigrationPlan.md) | Phase 1→N migration sequence |
-| [AIStudio/Hooks.md](04_Production/AIStudio/Hooks.md) | Hooks policy (Phase 1: docs only — not enabled) |
+| [AIStudio/Hooks.md](04_Production/AIStudio/Hooks.md) | Hooks policy (disabled through Phase 2 Creative) |
 | [Roadmap.md](04_Production/Roadmap.md) | Forward plan |
 | [Milestones.md](04_Production/Milestones.md) | Milestone definitions |
 | [Changelog.md](04_Production/Changelog.md) | Append-only change history |
@@ -111,7 +113,7 @@ Status: In Progress
 
 ## Latest Design / Architecture Pass
 
-**AI Studio v1.1** — FRAMEWORK-001 validation (docs only) · Phase 1 Playbook + modular Cursor rules/skills/agents
+**AI Studio v1.2** — Creative Studio (docs + Cursor skills) · Phase 1 Playbook + FRAMEWORK-001 (v1.1)
 
 Prior: PE-018 Generator Annex · PE-017A hardening · PE-016 Gameplay Design Bible · PE-015 Puzzle Framework · PE-014 Architecture Documentation
 

@@ -2,6 +2,31 @@
 
 ---
 
+## AI Studio Phase 2 — Creative Studio
+**Date:** 2026-07-25
+**Mission:** AI Studio Phase 2 (Creative Studio)
+**Branch:** `develop`
+
+### Added
+
+- `Documents/04_Production/AIStudio/CreativeStudio/` — README, AssetCreationPipeline, SkillRelationships, Phase2-CompletionReport
+- Creative Cursor skills (flat): asset-creation-planner, ai-asset-coordinator, mesh-designer, environment-designer, facility-designer, prop-designer, lighting-designer, audio-designer, environmental-storytelling-designer, cinematic-designer, performance-designer
+- `.cursor/rules/creative-studio.mdc` — scoped Asset Creation Hierarchy pointer
+
+### Changed
+
+- AI Studio → **v1.2**; README skills map + repository architecture (flat skills)
+- Production Playbook → **v1.2**: lifecycle step 2b + §12b Creative Studio; permanent asset hierarchy
+- MigrationPlan / Hooks — Phase 2 Creative delivered; hooks remain disabled
+- Documents README / MasterIndex / legacy AIStudio.md pointers
+
+### Notes
+
+- Docs + Cursor workflow only — no maps, Blueprints, gameplay systems, or Story Canon changes
+- Asset hierarchy permanent: Reuse → Fab → Quixel → Meshy → Blender → Custom
+
+---
+
 ## FRAMEWORK-001 — AI Studio v1.0 Validation
 **Date:** 2026-07-25
 **Mission:** FRAMEWORK-001
