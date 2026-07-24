@@ -2,6 +2,27 @@
 
 ---
 
+## Docs — MCP Auto-accept Policy (PE-020 Quick Win)
+**Date:** 2026-07-25
+**Mission:** PE-020 retrospective Quick Win (docs)
+
+### Added
+
+- `Documents/04_Production/AIStudio/MissionDirector/MCP-AutoAccept-Policy.md` — EP + agent contract: commanded Implement / sticky auto-accept authorizes Unreal MCP asset creation; does not waive VDP, Story Canon, or Human Gameplay PASS
+
+### Changed
+
+- `.cursor/skills/mission-director/SKILL.md` — Implement Mission MCP authorization + Task AUTHORIZATION block template
+- `.cursor/skills/mission-implementer/SKILL.md` — MCP create in-scope under EP Implement / auto accept
+- `AIStudio/README.md`, `MissionDirector/CommandReference.md`, `MissionDirector/README.md`, `Hooks.md`, `ProductionPlaybook.md` — pointers (hooks remain disabled)
+
+### Notes
+
+- Policy cannot force Cursor Auto-run / Auto-review product settings; EP still enables Auto-run / clicks Run on MCP cards
+- Does **not** enable Cursor hooks that auto-approve without EP intent
+
+---
+
 ## PE-020 — AI Studio Production Retrospective
 **Date:** 2026-07-25
 **Mission:** PE-020 Research Wing (process)

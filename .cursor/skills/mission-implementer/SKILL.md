@@ -31,7 +31,7 @@ Supporting (implementation truth, not higher than the list above):
 Before any Unreal work:
 
 1. Locate the Mission Brief / approved Design Plan under `Documents/05_Missions/`.
-2. Confirm **approved for implementation** (written approval / Ready to Implement). If blocked or design-only, stop — use `mission-planner` instead.
+2. Confirm **Ready to Implement** — for production slices with a spatial player loop this requires an **EP-approved Visual Design Package** (Playbook §12c). If only Design Plan–approved or VDP missing, stop — use Previs skills / `mission-planner`.
 3. Read Story Bible + Gameplay Design Bible for tone, loop, and system mapping.
 4. Check DecisionLog for ADRs that affect this mission.
 5. Inventory existing Blueprints/systems that already cover the brief. Reuse or extend; do not fork parallel frameworks.
@@ -51,6 +51,7 @@ Before any Unreal work:
 - Indoor emergency-dark; no outdoor Directional/Sky dominance on indoor slices.
 - Witness = exit-path presence after power; tension only; no chase unless ADR.
 - Use Unreal MCP (`project-0-ProjectEcho-unreal-mcp`) for Blueprint/editor work when available: discover toolsets first, then call tools. Prefer inspecting existing assets before creating new ones.
+- **MCP Auto-accept:** When EP commands `Implement Mission PE-###`, says `auto accept for PE-###`, or writes `APPROVED FOR IMPLEMENTATION`, Unreal MCP asset creation/duplication for that mission is **in-scope authorized production work** (not unapproved exploration). Still obey VDP / Ready-to-Implement gates and Story Canon. See `Documents/04_Production/AIStudio/MissionDirector/MCP-AutoAccept-Policy.md`. Include the policy AUTHORIZATION block in subagent Task prompts. Do not enable hooks to bypass EP intent; Cursor Auto-run / MCP card Run remain EP UI actions.
 
 ## Workflow
 

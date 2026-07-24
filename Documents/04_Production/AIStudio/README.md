@@ -1,9 +1,11 @@
 # Project Echo — AI Studio
 
-**Status:** Active — AI Studio **v1.2** (Phase 1 baseline + FRAMEWORK-001 + Creative Studio Phase 2)  
+**Status:** Active — AI Studio **v1.4** (Production + Creative + Previs + **Mission Director**)  
 **Date:** 2026-07-25  
 **Validation:** [ValidationReport-FRAMEWORK-001.md](ValidationReport-FRAMEWORK-001.md)  
+**Mission Director:** [MissionDirector/README.md](MissionDirector/README.md) · [CommandReference.md](MissionDirector/CommandReference.md) · [MCP Auto-accept Policy](MissionDirector/MCP-AutoAccept-Policy.md)  
 **Creative Studio:** [CreativeStudio/README.md](CreativeStudio/README.md)  
+**Previsualization Studio:** [PrevisualizationStudio/README.md](PrevisualizationStudio/README.md)  
 
 ---
 
@@ -12,7 +14,13 @@
 AI Studio is the development-workflow layer that helps Oscar, ChatGPT, and Cursor operate like a small professional game studio — without redesigning Project Echo’s game vision.
 
 - **Phase 1 / v1.1:** Production Playbook + rules + production skills + PRB agents + hooks policy  
-- **Phase 2 / v1.2:** Creative Studio — environment/asset production skills + pipeline docs (still **no** Unreal gameplay asset changes in the framework mission itself)
+- **Phase 2 / v1.2:** Creative Studio — environment/asset production skills + pipeline docs  
+- **Phase 3 / v1.3:** Previsualization Studio — Visual Design Package + mental-play EP gate  
+- **Phase 4 / v1.4:** **Mission Director** — single EP command entry; automatic skill orchestration  
+
+**Default:** Every production conversation assumes Mission Director is active. EP issues high-level commands only.
+
+Framework architecture missions remain **docs + Cursor OS only** unless a gameplay mission is explicitly commanded through Director → Implement.
 
 ---
 
@@ -21,16 +29,16 @@ AI Studio is the development-workflow layer that helps Oscar, ChatGPT, and Curso
 ```text
 Documents (authority)
   ProductionPlaybook.md     ← process source of truth
-  00_Governance/*           ← bibles adjacent, ADRs, contribution
-  01–05_*                   ← design / tech / world / production / missions
-  AIStudio/CreativeStudio/  ← Creative Studio overview + pipeline
+  AIStudio/MissionDirector/ ← EP commands + orchestration contract
+  AIStudio/CreativeStudio/
+  AIStudio/PrevisualizationStudio/
 
 .cursor/ (agent operating system)
-  rules/*.mdc               ← always-on + scoped enforcement
-  skills/*/SKILL.md         ← flat skill folders (Production + Creative)
-  agents/*.md               ← Task-tool role briefs (non-overlapping)
-  hooks/                    ← optional; remain DISABLED (see Hooks.md)
-  mcp.json                  ← Unreal MCP (leave alone unless required)
+  rules/*.mdc               ← includes always-on mission-director.mdc
+  skills/mission-director/  ← single production entry skill
+  skills/*/SKILL.md         ← Production + Creative + Previs (invoked by Director)
+  agents/*.md               ← PRB + mission-director brief
+  hooks/                    ← DISABLED (see Hooks.md)
 ```
 
 ### Authority order (unchanged vision)
@@ -50,14 +58,17 @@ Documents (authority)
   mcp.json
   rules/
     foundation.mdc
+    mission-director.mdc           # always — EP commands; auto skill orchestration
     production-standard.mdc
     blueprint-standards.mdc
     gameplay-standards.mdc
     story-canon.mdc
     documentation-standard.mdc
     folder-structure.mdc
-    creative-studio.mdc            # Asset Creation Hierarchy (scoped)
-  skills/                          # FLAT — reliable Cursor discovery
+    creative-studio.mdc
+    previs-studio.mdc
+  skills/
+    mission-director/              # ENTRY — orchestration
     # Production Studio
     mission-planner/
     mission-implementer/
@@ -76,6 +87,13 @@ Documents (authority)
     environmental-storytelling-designer/
     cinematic-designer/
     performance-designer/
+    # Previsualization Studio
+    experience-designer/
+    blockout-visualizer/
+    storyboard-designer/
+    concept-artist/
+    lighting-visualizer/
+    asset-placement-designer/
   agents/
     executive-producer.md
     creative-director.md
@@ -87,28 +105,51 @@ Documents (authority)
     narrative-director.md
     audio-director.md
     qa-lead.md
+    mission-director.md            # orchestration Task brief
   hooks/                           # deferred — see Hooks.md
 ```
 
-**Do not nest** skills under `skills/creative/` or `skills/production/` unless Cursor documents stable multi-level discovery. Domain grouping lives in [CreativeStudio/README.md](CreativeStudio/README.md).
+**Do not nest** skills under domain package folders unless Cursor documents stable multi-level discovery. Domains: [MissionDirector](MissionDirector/README.md), [CreativeStudio](CreativeStudio/README.md), [PrevisualizationStudio](PrevisualizationStudio/README.md).
+
+---
+
+## EP Commands (default)
+
+See [MissionDirector/CommandReference.md](MissionDirector/CommandReference.md).
+
+```text
+Start Mission PE-###
+Continue Mission PE-###
+Generate Visual Package PE-###
+Implement Mission PE-###
+Validate Mission PE-###
+Review Mission PE-###
+Close Mission PE-###
+```
 
 ---
 
 ## Skills Map
 
-### Production Studio
+### Orchestration
 
 | Skill | Use when |
 |-------|----------|
-| `mission-planner` | Design plan first; wait for approval |
-| `mission-implementer` | Approved brief → UE5 implement + report |
-| `production-review-board` | Cross-role review before approve/merge |
-| `documentation-sync` | Align docs / Changelog / indexes |
-| `playtest-generator` | Manual PIE checklist for EP |
+| `mission-director` | **Default** — any production command; selects other skills |
+
+### Production Studio
+
+| Skill | Use when (via Director) |
+|-------|----------|
+| `mission-planner` | Start Mission / plan phase |
+| `mission-implementer` | Implement Mission after VDP APPROVE |
+| `production-review-board` | Review Mission |
+| `documentation-sync` | Close Mission / docs align |
+| `playtest-generator` | Validate Mission (human PIE checklist) |
 
 ### Creative Studio
 
-| Skill | Use when |
+| Skill | Use when (via Director / Continue) |
 |-------|----------|
 | `asset-creation-planner` | Mission → full asset list / priority / roadmap |
 | `ai-asset-coordinator` | Hierarchy, tracker, queue, source recommendations |
@@ -125,11 +166,25 @@ Documents (authority)
 Relationships: [CreativeStudio/SkillRelationships.md](CreativeStudio/SkillRelationships.md)  
 Pipeline: [CreativeStudio/AssetCreationPipeline.md](CreativeStudio/AssetCreationPipeline.md)
 
+### Previsualization Studio
+
+| Skill | Use when (via Generate Visual Package) |
+|-------|----------|
+| `experience-designer` | Player journey, rhythm, emotional curve for VDP |
+| `blockout-visualizer` | Top-down floor plan / flow / landmarks for EP |
+| `storyboard-designer` | Playable scene sequence + timeline |
+| `concept-artist` | Concept **prompts** + mood/color/material palettes |
+| `lighting-visualizer` | Lighting mood board + power/Witness sequence |
+| `asset-placement-designer` | Placement preview + readability review |
+
+Spec: [PrevisualizationStudio/VisualDesignPackage.md](PrevisualizationStudio/VisualDesignPackage.md)  
+Relationships: [PrevisualizationStudio/SkillRelationships.md](PrevisualizationStudio/SkillRelationships.md)
+
 ---
 
 ## Subagents
 
-Role briefs in `.cursor/agents/` are prompt specs for Cursor’s Task tool. They are **not** a native Cursor “agents runtime.” Skills/rules reference them for Production Review Board and specialist reviews.
+Role briefs in `.cursor/agents/` are prompt specs for Cursor’s Task tool. They are **not** a native Cursor “agents runtime.” Skills/rules reference them for Production Review Board and specialist reviews. Includes `mission-director.md` orchestration brief.
 
 Duties are intentionally non-overlapping — see each brief’s Boundaries section.
 
@@ -139,23 +194,31 @@ Duties are intentionally non-overlapping — see each brief’s Boundaries secti
 
 | Decision | Rule |
 |----------|------|
+| Default production entry | **Mission Director** (EP high-level commands) |
 | Default production map recipe | **PE-018** (`LV_ARI_GeneratorAnnex` pattern) |
 | Fuse path ownership | **PE-017A** (`LV_ARI_MaintenanceWing`) |
 | Gameplay PASS | Human PIE (Enhanced Input) — Technical ≠ Gameplay |
 | Asset acquisition | Reuse → Fab → Quixel → Meshy → Blender → Custom |
 | Skill folder layout | **Flat** under `.cursor/skills/` |
+| Ready to Implement | Requires **EP-approved Visual Design Package** for production slices |
+| MCP Auto-accept | EP `Implement Mission` / sticky `auto accept` authorizes MCP creates — not a VDP waiver; see [MCP-AutoAccept-Policy.md](MissionDirector/MCP-AutoAccept-Policy.md) |
 
 ---
 
 ## Related Docs
 
 - [Production Playbook](../ProductionPlaybook.md)  
+- [Mission Director](MissionDirector/README.md)  
+- [MCP Auto-accept Policy](MissionDirector/MCP-AutoAccept-Policy.md)  
 - [Creative Studio](CreativeStudio/README.md)  
+- [Previsualization Studio](PrevisualizationStudio/README.md)  
 - [Validation Report (FRAMEWORK-001)](ValidationReport-FRAMEWORK-001.md)  
 - [Migration Plan](MigrationPlan.md)  
 - [Hooks Policy](Hooks.md)  
 - [Phase 1 Completion Report](Phase1-CompletionReport.md)  
 - [Phase 2 Completion Report](CreativeStudio/Phase2-CompletionReport.md)  
+- [Phase 3 Completion Report](PrevisualizationStudio/Phase3-CompletionReport.md)  
+- [Mission Director Integration Report](MissionDirector/Integration-CompletionReport.md)  
 - Legacy [AIStudio.md](../../00_Governance/AIStudio.md)  
 
 ---
@@ -166,6 +229,8 @@ Duties are intentionally non-overlapping — see each brief’s Boundaries secti
 |-------|-------|--------|
 | 1 | Playbook + Rules + Skills + Agents + Hooks policy | **Complete** (v1.0 baseline) |
 | 1.1 | FRAMEWORK-001 validation + minor lifecycle clarifications | **Complete** (v1.1) |
-| 2 | Creative Studio skills + asset pipeline docs | **Complete** (v1.2 — this delivery) |
-| 2+ | Optional light hooks; Light vs Full PRB; live-mission examples | Planned (hooks still off) |
-| 3 | Deeper automation only if high-value and low noise | Deferred |
+| 2 | Creative Studio skills + asset pipeline docs | **Complete** (v1.2) |
+| 3 | Previsualization Studio + Visual Design Package gate | **Complete** (v1.3) |
+| 4 | Mission Director orchestration entry | **Complete** (v1.4 — this delivery) |
+| 4+ | Live command examples; optional light hooks; Light vs Full PRB | Planned (hooks still off) |
+| 5 | Deeper automation only if high-value and low noise | Deferred |

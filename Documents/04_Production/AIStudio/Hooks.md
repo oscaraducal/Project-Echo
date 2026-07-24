@@ -1,6 +1,6 @@
 # AI Studio — Hooks Policy
 
-**Status:** Phase 1–2 — documentation only (no enabled project hooks)  
+**Status:** Phase 1–4 — documentation only (no enabled project hooks)  
 **Date:** 2026-07-25  
 
 ---
@@ -9,13 +9,15 @@
 
 Hooks are high-leverage and high-noise. Phase 1 **does not enable** `.cursor/hooks.json` automation.
 
-**Phase 2 (Creative Studio) also does not enable hooks.** Creative workflows are skill-driven (Asset Creation Planner → Coordinator → domain designers).
+**Phases 2–4 (Creative, Previs, Mission Director) also do not enable hooks.** Production orchestration is skill-driven via Mission Director.
 
 Prefer:
 
-1. Always-apply rules (`foundation`, `production-standard`)  
-2. Skills invoked for mission / creative workflows  
+1. Always-apply rules (`foundation`, `mission-director`, `production-standard`)  
+2. Mission Director + studio skills for production workflows  
 3. Explicit human PIE checklists  
+
+**MCP Auto-accept is not a hook.** Commanded Implement / EP sticky `auto accept` is a docs + prompt-authorization policy ([MissionDirector/MCP-AutoAccept-Policy.md](MissionDirector/MCP-AutoAccept-Policy.md)). Do **not** enable hooks that auto-approve MCP without EP intent; Cursor Auto-run / MCP card Run stay EP UI actions.
 
 ---
 
@@ -23,11 +25,11 @@ Prefer:
 
 | Hook | Idea | Risk | Recommendation |
 |------|------|------|----------------|
-| `sessionStart` | Inject short reminder: read Production Playbook + authority order | Low if ≤3 lines | Optional Phase 2+ |
-| `beforeSubmitPrompt` | Warn if user says “implement” without approved brief path | Medium false positives | Defer |
+| `sessionStart` | Remind Mission Director command vocabulary | Low if ≤3 lines | Optional Phase 4+ |
+| `beforeSubmitPrompt` | Warn if “implement” without VDP | Medium false positives | Defer |
 | `afterFileEdit` | Nudge Changelog on `Documents/**` edits | High noise | Avoid |
 | `beforeShell` / git | Block commit of `.uasset` when mission is docs-only | Medium | Consider later with allowlist |
-| Stop / completion | Auto-paste Mission Completion Report template | Medium | Prefer `mission-implementer` skill |
+| Stop / completion | Auto-paste Mission Completion Report template | Medium | Prefer `mission-implementer` / Director Close |
 
 ---
 

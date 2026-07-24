@@ -1,12 +1,14 @@
 # Project Echo — Production Playbook
 
 **Status:** Active (authoritative production process)  
-**Version:** 1.2  
+**Version:** 1.4  
 **Established:** 2026-07-25  
 **Validated:** FRAMEWORK-001 (`Documents/04_Production/AIStudio/ValidationReport-FRAMEWORK-001.md`)  
 **Authority:** Production process source of truth for AI Studio Phase 1+  
 **Consolidates lessons from:** PE-017, PE-017A, PE-018  
-**Creative Studio:** AI Studio Phase 2 — `Documents/04_Production/AIStudio/CreativeStudio/`
+**Creative Studio:** AI Studio Phase 2 — `Documents/04_Production/AIStudio/CreativeStudio/`  
+**Previsualization Studio:** AI Studio Phase 3 — `Documents/04_Production/AIStudio/PrevisualizationStudio/`  
+**Mission Director:** AI Studio Phase 4 — `Documents/04_Production/AIStudio/MissionDirector/`
 
 ---
 
@@ -48,18 +50,26 @@ Every completed mission should leave the project better in gameplay, atmosphere,
 # 2. Production Lifecycle
 
 ```text
-Design Plan → Approval → Implementation → Compile → Technical Simulate
-    → Human PIE (Gameplay) → Replay (if claimed) → Docs → Commit/Push
-    → Production Review Board → EP Decision → Merge
+EP Command → Mission Director (orchestrates skills)
+  → Design Plan → EP proceed
+  → Creative (as needed) → Previs / Visual Design Package → EP VDP APPROVE
+  → Implementation → Compile → Technical Simulate
+  → Human PIE (Gameplay) → Replay (if claimed) → Docs → Commit/Push
+  → Production Review Board → EP Decision → Merge → Close
 ```
 
 ### Roles (summary)
 
 | Role | Owner | Core duty |
 |------|-------|-----------|
-| Executive Producer | Oscar | Vision, final decisions, human Gameplay validation, merge |
+| Executive Producer | Oscar | Vision, high-level commands, VDP mental play, human Gameplay, merge |
+| Mission Director | Cursor (orchestration) | Select skills, order, gates, deliverables from EP commands |
 | Design / Tech guidance | ChatGPT (or designated) | Architecture, mission design review, bible compliance |
-| Implementation | Cursor AI | UE5 Blueprints/maps/docs per approved brief; honest gates |
+| Implementation | Cursor AI (via Director → skills) | UE5 Blueprints/maps/docs per approved brief; honest gates |
+
+EP issues: `Start|Continue|Generate Visual Package|Implement|Validate|Review|Close Mission PE-###`.  
+EP does **not** manually coordinate individual Skills — see §12d.  
+Commanded `Implement Mission` (or sticky `auto accept`) authorizes Unreal MCP asset creation for that mission — see `AIStudio/MissionDirector/MCP-AutoAccept-Policy.md` (does not waive VDP / Gameplay PASS).
 
 Detailed role boundaries: `.cursor/agents/` and `Documents/04_Production/AIStudio/`.
 
@@ -68,9 +78,11 @@ Detailed role boundaries: `.cursor/agents/` and `Documents/04_Production/AIStudi
 # 3. Mission Lifecycle
 
 1. **Mission Specification / Design Plan** — scope, reused systems, cut list, risks  
-2. **Approval** — Ready to Implement (written)  
-2b. **Creative Studio pass** (when the mission needs environment / art assets) — Asset Creation Planner → AI Asset Coordinator → domain design skills → Mesh Designer only on create-path — see §12b  
-3. **Implementation** — minimal scope; reuse first  
+2. **Design Plan approval** — plan accepted to proceed into Creative / Previs (not yet implement)  
+2b. **Creative Studio pass** (when the mission needs environment / art assets) — Environment (+ parallel Creative skills); Asset Creation Planner → Coordinator as needed — see §12b  
+2c. **Previsualization Studio** — Experience → Blockout Visualizer → Storyboard → Concept / Lighting Visualizer / Asset Placement → **Visual Design Package** — see §12c  
+2d. **EP Visual Design Package Approval** — permanent rule: **no production mission enters implementation until VDP is EP-approved** (mental play gate). This sets **Ready to Implement**  
+3. **Implementation** — minimal scope; reuse first (`mission-implementer` only after 2d)  
 4. **Compile** — no Blueprint errors  
 5. **Technical Simulate / PIE** — boot, bind, state checks (Slate may assist)  
 6. **Human PIE Gameplay PASS** — Oscar (Enhanced Input cannot be fully automated)  
@@ -81,7 +93,8 @@ Detailed role boundaries: `.cursor/agents/` and `Documents/04_Production/AIStudi
 11. **Merge** — EP approval  
 12. **Lessons → Playbook** — distill durable lessons into §11 / recipes; leave raw detail in the mission doc  
 
-Do **not** implement unapproved or design-only briefs.
+Do **not** implement unapproved or design-only briefs.  
+Do **not** treat Design Plan approval as Ready to Implement when a spatial player loop exists — VDP + EP mental-play approval is required (§12c).
 
 ### PRB vs Human PIE (order clarity)
 
@@ -338,9 +351,11 @@ Mission notes: `Documents/05_Missions/PE-017-VerticalSlice01.md`
 |-------|----------|
 | This playbook | `Documents/04_Production/ProductionPlaybook.md` |
 | AI Studio overview | `Documents/04_Production/AIStudio/README.md` |
+| Mission Director | `Documents/04_Production/AIStudio/MissionDirector/` |
 | Creative Studio | `Documents/04_Production/AIStudio/CreativeStudio/` |
+| Previsualization Studio | `Documents/04_Production/AIStudio/PrevisualizationStudio/` |
 | Rules | `.cursor/rules/*.mdc` |
-| Skills | `.cursor/skills/*/SKILL.md` (flat folders — see Creative Studio README) |
+| Skills | `.cursor/skills/*/SKILL.md` (flat folders) |
 | Agent role briefs | `.cursor/agents/*.md` |
 | Hooks policy | `Documents/04_Production/AIStudio/Hooks.md` |
 | Legacy role doc | `Documents/00_Governance/AIStudio.md` (still valid; playbook wins on process detail) |
@@ -374,11 +389,56 @@ Creative outputs must remain consistent with Gameplay Design Bible, Story Bible 
 
 ---
 
+# 12c. Previsualization Studio (AI Studio v1.3)
+
+Previs Studio translates design into visual communication so the mission is **mentally playable** before Unreal.
+
+### Permanent rule
+
+**No production mission may enter implementation until a complete Visual Design Package is EP-approved.**
+
+Spec: `Documents/04_Production/AIStudio/PrevisualizationStudio/VisualDesignPackage.md`.
+
+### Pipeline
+
+Mission Planner → Environment Designer → Experience Designer → Blockout Visualizer → Storyboard Designer → Concept Artist → (+ Lighting Visualizer, Asset Placement Designer) → VDP → **EP Approval** → Mission Implementer → Human PIE → PRB.
+
+### Skills
+
+`experience-designer`, `blockout-visualizer`, `storyboard-designer`, `concept-artist`, `lighting-visualizer`, `asset-placement-designer`.
+
+Previs **visualizes** gameplay; it does not invent mechanics or implement UE5. Concept outputs are **prompts** unless a later art mission generates images.
+
+### EP mental-play gate
+
+EP must answer Yes to understanding, mental walkthrough, objectives, puzzles, pacing, horror imagination, confusion spotting, and would-enjoy — any No returns to Design.
+
+---
+
+# 12d. Mission Director (AI Studio v1.4)
+
+Mission Director is the **permanent single entry point** for production missions. It is an orchestration layer, not a creative skill.
+
+### EP commands (permanent)
+
+`Start Mission` · `Continue Mission` · `Generate Visual Package` · `Implement Mission` · `Validate Mission` · `Review Mission` · `Close Mission` — each with `PE-###`.
+
+### Behavior
+
+- Selects Skills, order, dependencies, gates, and deliverables automatically  
+- Stops at mandatory approval gates  
+- EP does **not** manually coordinate Skills  
+- Enforces no skipped phases, Story Canon, Playbook, VDP-before-implement  
+
+Authority: `Documents/04_Production/AIStudio/MissionDirector/` · `.cursor/skills/mission-director/SKILL.md` · `.cursor/rules/mission-director.mdc`
+
+---
+
 ## Document Control
 
 | | |
 |--|--|
 | Created | 2026-07-25 |
-| Version | 1.2 (Creative Studio Phase 2) |
+| Version | 1.4 (Mission Director) |
 | Owners | EP + AI Studio |
-| Related | PE-017, PE-017A, PE-018, FRAMEWORK-001, Creative Studio, ContributionGuide, GameplayDesignBible, TechnicalDebt |
+| Related | PE-017, PE-017A, PE-018, FRAMEWORK-001, Creative Studio, Previsualization Studio, Mission Director, ContributionGuide, GameplayDesignBible, TechnicalDebt |
