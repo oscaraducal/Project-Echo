@@ -80,3 +80,25 @@ This milestone establishes the project's documentation foundation. Future gamepl
 - Standardized mission completion reporting.
 - Reinforced append-only changelog policy.
 - Reinforced canon-first documentation philosophy.
+
+---
+
+## World Response System
+**Date:** 2026-07-24
+**Mission:** PE-012
+
+### Added
+
+- `BP_VentilationUnit` under `Gameplay/Power/` — BPI_PowerReceiver ventilation start feedback (placeholder PrintString / once-only)
+- `BP_PASpeaker` under `Gameplay/Power/` — brief PA / electrical static burst (once-only)
+- `BP_DistantActivityHint` under `Gameplay/Power/` — distant facility activity hint (once-only, delayed)
+- `LV_Prototype_PE012` — generator + fuel flow, emergency lights (including broken), powered door, ambient feedback, and new world-response receivers with `PE012_*` actor labels
+
+### Changed
+
+- Extended `BP_PowerManager` HandlePowerRestored to notify ventilation, PA, and distant-activity receivers after lights, door, and ambient feedback
+- Preserved `LV_Prototype_PE011` for regression
+
+### Notes
+
+First post-power living-facility sequence. Grounded uncertainty only — no combat, chase, jump scares, or Witness reveal. Sequence remains once-only via PowerManager `HasHandledPower`.

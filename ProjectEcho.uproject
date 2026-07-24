@@ -1,23 +1,43 @@
-{
-	"FileVersion": 3,
-	"EngineAssociation": "{4D608D46-4D74-1589-66E5-61821B112275}",
-	"Category": "",
-	"Description": "",
-	"Plugins": [
-		{
-			"Name": "ModelingToolsEditorMode",
-			"Enabled": true,
-			"TargetAllowList": [
-				"Editor"
-			]
-		},
-		{
-			"Name": "GameplayStateTree",
-			"Enabled": true
-		},
-		{
-			"Name": "NiagaraFluids",
-			"Enabled": true
-		}
-	]
+﻿{
+    "FileVersion":  3,
+    "EngineAssociation":  "5.8",
+    "Category":  "",
+    "Description":  "",
+    "Plugins":  [
+                    {
+                        "Name":  "ModelingToolsEditorMode",
+                        "Enabled":  true,
+                        "TargetAllowList":  [
+                                                "Editor"
+                                            ]
+                    },
+                    {
+                        "Name":  "GameplayStateTree",
+                        "Enabled":  true
+                    },
+                    {
+                        "Name":  "NiagaraFluids",
+                        "Enabled":  true
+                    },
+                    {
+                        "Name":  "MCPClientToolset",
+                        "Enabled":  true
+                    },
+                    {
+                        "Name":  "ModelContextProtocol",
+                        "Enabled":  true
+                    },
+                    {
+                        "Name":  "EditorToolset",
+                        "Enabled":  true
+                    },
+                    {
+                        "Name":  "ToolsetRegistry",
+                        "Enabled":  true
+                    },
+                    {
+                        "Name":  "AllToolsets",
+                        "Enabled":  true
+                    }
+                ]
 }
