@@ -60,6 +60,7 @@ Changing these can alter feel, order, or save/puzzle contracts.
 | TD-018 | Unmapped `IA_Crouch` / Inventory / Journal / Pause | Wiring changes input UX |
 | TD-019 | FirstPerson template Character/Controller still dirty in tree | Do not confuse with ProjectEcho pawns |
 | TD-020 | Sprint Gameplay Validation | PENDING_USER (BUG-003) |
+| TD-028 | PE-020 Research Wing Human Gameplay PASS | Mission Closed — Technical; EI PIE still PENDING_USER — reopen Validate after checklist |
 
 ---
 

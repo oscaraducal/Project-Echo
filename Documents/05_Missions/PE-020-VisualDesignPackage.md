@@ -1,12 +1,13 @@
 # PE-020 — Visual Design Package: Research Wing
 
-**Status:** VDP complete — awaiting EP mental-play gate  
+**Status:** Archived with Close — VDP complete (post-hoc); EP mental-play never formal APPROVE  
 **Mission:** PE-020 Research Wing (Post-Coolant Laboratory)  
 **Map:** `/Game/ProjectEcho/Maps/Production/LV_ARI_ResearchWing`  
 **Branch:** `develop`  
 **Date:** 2026-07-25  
+**Close date:** 2026-07-25  
 **Design Plan:** [`PE-020-DesignPlan.md`](PE-020-DesignPlan.md)  
-**Mission notes:** [`PE-020-ResearchWing.md`](PE-020-ResearchWing.md)  
+**Mission notes:** [`PE-020-ResearchWing.md`](PE-020-ResearchWing.md) (Closed — Technical; Gameplay PENDING_USER)  
 **Authority:** Gameplay Design Bible (PE-016) §5.4 Research Equipment · Production Playbook §12c · Visual Design Package standard  
 
 ---
@@ -382,10 +383,10 @@ EP answers **Yes / No** to each:
 | Field | Value |
 |-------|--------|
 | VDP complete | YES |
-| Mentally playable | (EP) |
-| EP decision | APPROVE / RETURN TO DESIGN |
+| Mentally playable | (EP — not recorded at Close) |
+| EP decision | **Not formal APPROVE** — package archived as post-hoc documentation debt |
 | Ready to Implement | N/A — already implemented; gate = documentation/quality |
-| Notes | Implementation at `LV_ARI_ResearchWing` (commit `41c8e3c`). Manual Gameplay PASS still PENDING_USER. |
+| Notes | Implementation at `LV_ARI_ResearchWing` (commit `41c8e3c`). Mission Closed — Technical; Manual Gameplay PASS still PENDING_USER. |
 
 ---
 
@@ -394,7 +395,8 @@ EP answers **Yes / No** to each:
 | | |
 |--|--|
 | Created | 2026-07-25 |
+| Closed | 2026-07-25 (with mission) |
 | Mission | PE-020 Visual Design Package |
 | Skills applied | experience-designer · blockout-visualizer · storyboard-designer · concept-artist · lighting-visualizer · asset-placement-designer |
-| Related | `PE-020-DesignPlan.md`, `PE-020-ResearchWing.md`, `GameplayDesignBible.md`, `VisualDesignPackage.md` |
+| Related | `PE-020-DesignPlan.md`, `PE-020-ResearchWing.md`, `GameplayDesignBible.md`, `VisualDesignPackage.md`, `Retrospective-PE-020.md` |
 | Unreal changes | None (docs-only) |

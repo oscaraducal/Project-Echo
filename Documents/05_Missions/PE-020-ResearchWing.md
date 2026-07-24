@@ -1,14 +1,18 @@
 # PE-020 — Research Wing (Post-Coolant Laboratory)
 
-**Status:** Validated (Technical) — Human Gameplay PASS still required  
+**Status:** Closed — Technical (Gameplay **PENDING_USER**)  
 **Branch:** `develop`  
 **Priority:** High  
 **Map:** `/Game/ProjectEcho/Maps/Production/LV_ARI_ResearchWing`  
 **Design authority:** `Documents/01_Game_Design/GameplayDesignBible.md` (PE-016)  
-**Design plan:** `Documents/05_Missions/PE-020-DesignPlan.md` (APPROVED & IMPLEMENTED)  
-**Visual Design Package:** [`PE-020-VisualDesignPackage.md`](PE-020-VisualDesignPackage.md) (complete — awaiting EP mental-play APPROVE / RETURN)  
-**Playtest checklist:** [`PE-020-PlaytestChecklist.md`](PE-020-PlaytestChecklist.md)  
-**Predecessor:** `LV_ARI_CoolantBay` (PE-019 — Soft Open Level → Research Wing)
+**Design plan:** [`PE-020-DesignPlan.md`](PE-020-DesignPlan.md) (APPROVED & IMPLEMENTED — archived with Close)  
+**Visual Design Package:** [`PE-020-VisualDesignPackage.md`](PE-020-VisualDesignPackage.md) (complete post-hoc — archived; EP mental-play never formal APPROVE)  
+**Playtest checklist:** [`PE-020-PlaytestChecklist.md`](PE-020-PlaytestChecklist.md) (archived — human PIE still open)  
+**Retrospective:** [`Retrospective-PE-020.md`](../04_Production/AIStudio/Retrospective-PE-020.md)  
+**MCP Auto-accept:** [`MCP-AutoAccept-Policy.md`](../04_Production/AIStudio/MissionDirector/MCP-AutoAccept-Policy.md) (Quick Win from retro)  
+**Predecessor:** `LV_ARI_CoolantBay` (PE-019 — Soft Open Level → Research Wing)  
+**Close date:** 2026-07-25  
+**Ready For Review:** **NO** (Gameplay PENDING_USER — EP may reopen `Validate Mission PE-020`)
 
 ---
 
@@ -110,13 +114,14 @@ Clue: Note B calibration checklist. Incomplete set → lab exit stays locked.
 ## Validation
 
 **Validate pass:** 2026-07-25 (Mission Director — MCP technical re-check + playtest-generator)  
-**Ready for Review:** NO until Human Gameplay PASS (or EP written waiver)
+**Close:** 2026-07-25 — Closed with open debt (no human Gameplay PASS declared at Close)  
+**Ready for Review:** **NO** until Human Gameplay PASS (or EP written waiver) — Close does not waive this
 
 | Gate | Status | Evidence |
 |------|--------|----------|
 | Compile | **PASS** | CoolantLoop / CoolantValve / SoftOpenExit / ContainmentCalibrationPuzzle / CalibrationStation / ResearchWingReset compiled + saved (implement + session compile logs) |
 | Technical | **PASS** | See Technical re-check below — Simulate ≠ Gameplay |
-| Gameplay | **PENDING_USER** | Enhanced Input cannot be fully driven by Slate/MCP — walk [`PE-020-PlaytestChecklist.md`](PE-020-PlaytestChecklist.md) |
+| Gameplay | **PENDING_USER** | No EP Enhanced Input walkthrough at Close — walk [`PE-020-PlaytestChecklist.md`](PE-020-PlaytestChecklist.md); reopen Validate when ready |
 | Replay | **PASS** (Technical) / **PENDING_USER** (manual) | `SliceResetButton` (`BP_CoolantBayReset`) present; graphs reverse mutated state — human must confirm full reverse |
 
 ### Technical re-check (2026-07-25)
@@ -154,13 +159,14 @@ Full steps: [`PE-020-PlaytestChecklist.md`](PE-020-PlaytestChecklist.md)
 
 ## Deferred Debt
 
+- **Human Gameplay PASS (EI)** — still open at Close; EP may reopen `Validate Mission PE-020`
 - BeginPlay objective text still CoolantBayReset string (“Investigate the coolant bay”) — swap to ResearchWingReset with Research strings when graph DSL write path is reliable  
 - PrintString `[PE019]` stand-ins on shared CoolantLoop/Valve BPs used in Research map  
 - Real audio / modular lab geo dressing  
 - Witness silhouette stand-in  
-- Manual Gameplay PASS (EI)  
 - Future Security Soft Open destination from Research LabExit  
 - Optional cutover: place `BP_ContainmentCalibrationPuzzle` + `BP_CalibrationStation` instead of Coolant twins  
+- Post-hoc VDP (Generate Visual Package after Implement) — process debt; see retrospective / Playbook §11 PE-020
 
 ---
 
@@ -169,3 +175,34 @@ Full steps: [`PE-020-PlaytestChecklist.md`](PE-020-PlaytestChecklist.md)
 - Teaches Research Equipment literacy after fuse / generator / coolant Mechanical.  
 - Feature count kept to one ops problem + World Response + Witness.  
 - Env storytelling densified via notes + observation/sample labels; Security deferred.  
+
+---
+
+## Lessons (Close)
+
+Durable one-liner → Playbook §11 **PE-020**:
+
+- **VDP before Implement** on spatial slices (post-hoc VDP is documentation debt, not gate compliance).  
+- **MCP Auto-accept policy** now exists for commanded Implement — does not waive VDP / Story Canon / Human Gameplay PASS.
+
+Full process detail: [`Retrospective-PE-020.md`](../04_Production/AIStudio/Retrospective-PE-020.md).
+
+---
+
+## Mission Completion Report
+
+| Field | Value |
+|-------|--------|
+| Mission | PE-020 Research Wing |
+| Status | **Closed — Technical** (Gameplay PENDING_USER) |
+| Branch | `develop` |
+| Blueprints created | `BP_ContainmentCalibrationPuzzle`, `BP_CalibrationStation`, `BP_ResearchWingReset` (twins; map still uses CoolantLoop/Valve instances) |
+| Maps created | `LV_ARI_ResearchWing` |
+| Maps modified | `LV_ARI_CoolantBay` (SoftOpenExit_Research → Research Wing) |
+| Documentation | Mission notes, Design Plan, VDP, Playtest checklist, Changelog Close, Playbook §11, ProjectHealth / Roadmap / SprintHistory |
+| Compile | **PASS** |
+| Runtime / Technical | **PASS** (Simulate / MCP re-check) |
+| Gameplay | **PENDING_USER** — do not claim PASS |
+| Replay | Technical PASS / manual PENDING_USER |
+| Ready For Review | **NO** |
+| Notes | Close archives production docs with honest open Gameplay debt. EP may reopen Validate after human PIE. |

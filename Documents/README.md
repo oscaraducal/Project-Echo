@@ -119,7 +119,7 @@ Status: In Progress
 
 **AI Studio v1.4** — Mission Director (EP commands) · Previs VDP gate · Creative Studio · Phase 1 Playbook
 
-Prior: PE-020 Research Wing · PE-019 Coolant Bay · PE-018 Generator Annex · PE-017A hardening · PE-016 Gameplay Design Bible
+Prior: PE-020 Research Wing (Closed — Technical; Gameplay PENDING_USER) · PE-019 Coolant Bay · PE-018 Generator Annex · PE-017A hardening · PE-016 Gameplay Design Bible
 
 Validation sandbox: `/Game/ProjectEcho/Maps/Development/LV_TestingGround`
 

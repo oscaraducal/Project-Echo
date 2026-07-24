@@ -2,6 +2,27 @@
 
 ---
 
+## PE-020 — Close Mission (Research Wing)
+**Date:** 2026-07-25
+**Mission:** PE-020 Research Wing
+**Branch:** `develop`
+
+### Changed
+
+- `PE-020-ResearchWing.md` — Status **Closed — Technical** (Gameplay **PENDING_USER**); Completion Report; lessons pointer
+- Design Plan / VDP / Playtest checklist — archived with Close; status fields consistent
+- `ProductionPlaybook.md` §11 — PE-020 durable lessons (VDP before Implement; MCP Auto-accept policy)
+- `ProjectHealth.md` / `Roadmap.md` / `SprintHistory.md` — PE-020 Closed with open Gameplay debt
+- `Retrospective-PE-020.md` — mission Closed status mirrored
+
+### Notes
+
+- Do **not** claim Human Gameplay PASS — none declared at Close; EP may reopen `Validate Mission PE-020`
+- Post-hoc VDP remains process debt (not pre-implement gate compliance)
+- Docs-only Close — no Blueprint/map changes
+
+---
+
 ## Docs — MCP Auto-accept Policy (PE-020 Quick Win)
 **Date:** 2026-07-25
 **Mission:** PE-020 retrospective Quick Win (docs)

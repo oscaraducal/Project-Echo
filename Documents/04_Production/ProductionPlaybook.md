@@ -343,6 +343,13 @@ Mission notes: `Documents/05_Missions/PE-017-VerticalSlice01.md`
 - Soft travel / Pipe Gallery / Coolant / Security deferred without shame when cut list says so.  
 - Building on unvalidated foundation requires EP waiver or prior human PIE.
 
+### PE-020
+
+- **VDP before Implement** on spatial production slices — post-hoc VDP is documentation debt, not gate compliance.  
+- **MCP Auto-accept** for commanded Implement is authorized tooling relief only — never waives VDP, Story Canon, or Human Gameplay PASS ([MCP-AutoAccept-Policy.md](AIStudio/MissionDirector/MCP-AutoAccept-Policy.md)).  
+- Close may archive Technical PASS with Gameplay **PENDING_USER** honestly; reopen Validate after human PIE.  
+- Full process retro: [Retrospective-PE-020.md](AIStudio/Retrospective-PE-020.md).
+
 ---
 
 # 12. Cursor AI Studio Map

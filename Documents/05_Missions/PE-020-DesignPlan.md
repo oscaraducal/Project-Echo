@@ -1,6 +1,6 @@
 # PE-020 — Design Plan: Research Wing (Post-Coolant Laboratory)
 
-**Status:** Design Plan — **APPROVED & IMPLEMENTED** (EP Implement Mission PE-020)  
+**Status:** Archived with Close — **APPROVED & IMPLEMENTED** (mission Closed — Technical; Gameplay PENDING_USER)  
 **Branch:** `develop`  
 **Priority:** High (campaign beat after PE-019 Coolant Bay)  
 **Map:** `/Game/ProjectEcho/Maps/Production/LV_ARI_ResearchWing`  
@@ -11,8 +11,9 @@
 **Fuse path:** Owned by **PE-017A** — do not duplicate  
 **Predecessor:** `LV_ARI_CoolantBay` (PE-019 — pressure/coolant stable)  
 **Soft Open Level:** Coolant Bay exit → Open Level → Research Wing  
-**Mission notes:** `Documents/05_Missions/PE-020-ResearchWing.md`  
-**VDP:** [`PE-020-VisualDesignPackage.md`](PE-020-VisualDesignPackage.md) — permanent package produced post-implement for EP mental-play / retrofit gate (Implement had waived formal VDP; package now required as documentation).
+**Mission notes:** [`PE-020-ResearchWing.md`](PE-020-ResearchWing.md) (Closed — Technical)  
+**VDP:** [`PE-020-VisualDesignPackage.md`](PE-020-VisualDesignPackage.md) — post-hoc package archived with Close (not a pre-implement APPROVE)  
+**Close date:** 2026-07-25
 
 ---
 
@@ -406,7 +407,7 @@ Design Plan before implement (this doc); PE-018 recipe; human PIE for Gameplay; 
 | Soft Open Level | Coolant Bay SoftOpenExit_Research → Research Wing |
 | Deferred | Security, fuse, generator, coolant redo, inventory sample gate, Witness AI, Save, ResearchWingReset cutover |
 
-**APPROVED & IMPLEMENTED** — see `PE-020-ResearchWing.md`
+**APPROVED & IMPLEMENTED** — mission **Closed — Technical** (Gameplay PENDING_USER). See `PE-020-ResearchWing.md`.
 
 ---
 
@@ -415,6 +416,7 @@ Design Plan before implement (this doc); PE-018 recipe; human PIE for Gameplay; 
 | | |
 |--|--|
 | Created | 2026-07-25 |
+| Closed | 2026-07-25 (with mission) |
 | Mission | PE-020 Design Plan |
 | Owners | Design (EP / LD / GD / Horror / Tech) |
 | Related | `PE-019-DesignPlan.md`, `PE-019-CoolantBay.md`, `GameplayDesignBible.md`, `FacilityBible.md`, `ProductionPlaybook.md` |

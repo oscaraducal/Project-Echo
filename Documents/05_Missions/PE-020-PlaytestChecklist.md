@@ -1,8 +1,10 @@
 # Manual PIE Checklist — PE-020 Research Wing
 
+**Status:** Archived with Close — Gameplay **PENDING_USER** (checklist remains the reopen Validate path)  
 **Map:** `/Game/ProjectEcho/Maps/Production/LV_ARI_ResearchWing`  
 **Estimated time:** 15–20 minutes (first pass) + 3–5 minutes replay  
 **Gameplay PASS owner:** Executive Producer (Oscar)  
+**Mission notes:** [`PE-020-ResearchWing.md`](PE-020-ResearchWing.md) (Closed — Technical)  
 **Automation note:** Enhanced Input cannot be fully driven by Slate/MCP — human required. Technical ≠ Gameplay.
 
 ---
@@ -98,10 +100,10 @@
 
 ## EP decision block
 
-After walking this checklist, record:
+**At Close (2026-07-25):** Human Gameplay was **not** declared PASS — mission Closed with open debt. After walking this checklist later, record:
 
 - **Human Gameplay:** PASS / FAIL  
 - **Replay (manual):** PASS / FAIL / N/A  
-- Notes for Review / Close Mission  
+- Notes  
 
-Then run: `Review Mission PE-020` or `Close Mission PE-020` (Mission Director).
+Then run: `Validate Mission PE-020` (reopen) or `Review Mission PE-020` (Mission Director).

@@ -260,6 +260,8 @@ Overlap **on paper** is healthy; overlap **failure mode** was skipping both Crea
 | Field | Value |
 |-------|--------|
 | Recommendations only | **YES** |
-| Implementation authorized | **NO** |
+| Implementation authorized | **NO** (Quick Win MCP policy landed separately as docs) |
 | Ready For Review (this doc) | **YES** |
-| PE-020 Ready For Review | **NO** (Gameplay PENDING_USER) |
+| PE-020 mission status | **Closed — Technical** (Gameplay PENDING_USER) |
+| PE-020 Ready For Review | **NO** (Gameplay PENDING_USER — EP may reopen Validate) |
+| Lessons → Playbook | **YES** — §11 PE-020 (Close 2026-07-25) |
