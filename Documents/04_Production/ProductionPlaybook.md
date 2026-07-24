@@ -1,8 +1,9 @@
 # Project Echo — Production Playbook
 
 **Status:** Active (authoritative production process)  
-**Version:** 1.0  
+**Version:** 1.1  
 **Established:** 2026-07-25  
+**Validated:** FRAMEWORK-001 (`Documents/04_Production/AIStudio/ValidationReport-FRAMEWORK-001.md`)  
 **Authority:** Production process source of truth for AI Studio Phase 1+  
 **Consolidates lessons from:** PE-017, PE-017A, PE-018  
 
@@ -76,8 +77,15 @@ Detailed role boundaries: `.cursor/agents/` and `Documents/04_Production/AIStudi
 9. **Git Commit / Push** — when requested; never failing code  
 10. **Production Review Board** — multi-role review  
 11. **Merge** — EP approval  
+12. **Lessons → Playbook** — distill durable lessons into §11 / recipes; leave raw detail in the mission doc  
 
 Do **not** implement unapproved or design-only briefs.
+
+### PRB vs Human PIE (order clarity)
+
+- **Merge-ready** requires Human PIE Gameplay PASS (or EP written waiver) when the mission claims a player loop.  
+- **PRB may run earlier** with Gameplay still `PENDING_USER` — verdict should be **Approve with conditions**, not merge authorization.  
+- Technical / Slate / MCP evidence never substitutes for Human PIE.
 
 ---
 
@@ -341,5 +349,6 @@ Mission notes: `Documents/05_Missions/PE-017-VerticalSlice01.md`
 | | |
 |--|--|
 | Created | 2026-07-25 |
-| Owners | EP + AI Studio Phase 1 |
-| Related | PE-017, PE-017A, PE-018, ContributionGuide, GameplayDesignBible, TechnicalDebt |
+| Version | 1.1 (FRAMEWORK-001) |
+| Owners | EP + AI Studio |
+| Related | PE-017, PE-017A, PE-018, FRAMEWORK-001, ContributionGuide, GameplayDesignBible, TechnicalDebt |

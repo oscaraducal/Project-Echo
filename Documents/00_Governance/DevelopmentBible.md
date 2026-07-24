@@ -30,6 +30,8 @@ Every feature should follow these principles.
 
 ## Development Workflow
 
+Summary only — **authoritative lifecycle:** `Documents/04_Production/ProductionPlaybook.md`.
+
 1. Design
 2. Implementation
 3. Compile

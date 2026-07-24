@@ -78,9 +78,10 @@ Roadmap, milestones, changelog, sprint history, health, asset tracking, and AI S
 | Document | Description |
 |----------|-------------|
 | [ProductionPlaybook.md](04_Production/ProductionPlaybook.md) | **Authoritative** production process (PE-017 / 017A / 018 lessons) |
-| [AIStudio/README.md](04_Production/AIStudio/README.md) | Cursor AI Studio architecture (rules / skills / agents) |
+| [AIStudio/README.md](04_Production/AIStudio/README.md) | Cursor AI Studio architecture (rules / skills / agents) — **v1.1** |
+| [AIStudio/ValidationReport-FRAMEWORK-001.md](04_Production/AIStudio/ValidationReport-FRAMEWORK-001.md) | AI Studio v1.0 validation (FRAMEWORK-001) |
 | [AIStudio/MigrationPlan.md](04_Production/AIStudio/MigrationPlan.md) | Phase 1→N migration sequence |
-| [AIStudio/Hooks.md](04_Production/AIStudio/Hooks.md) | Hooks policy (Phase 1: docs only) |
+| [AIStudio/Hooks.md](04_Production/AIStudio/Hooks.md) | Hooks policy (Phase 1: docs only — not enabled) |
 | [Roadmap.md](04_Production/Roadmap.md) | Forward plan |
 | [Milestones.md](04_Production/Milestones.md) | Milestone definitions |
 | [Changelog.md](04_Production/Changelog.md) | Append-only change history |
@@ -110,7 +111,7 @@ Status: In Progress
 
 ## Latest Design / Architecture Pass
 
-**AI Studio Phase 1** — Production Playbook + modular Cursor rules/skills/agents (docs only)
+**AI Studio v1.1** — FRAMEWORK-001 validation (docs only) · Phase 1 Playbook + modular Cursor rules/skills/agents
 
 Prior: PE-018 Generator Annex · PE-017A hardening · PE-016 Gameplay Design Bible · PE-015 Puzzle Framework · PE-014 Architecture Documentation
 

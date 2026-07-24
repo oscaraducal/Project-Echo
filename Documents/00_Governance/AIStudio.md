@@ -35,7 +35,7 @@ Responsible for:
 
 ## ChatGPT
 
-### Technical Director
+### Technical Director (Design / Tech guidance)
 
 Responsible for:
 
@@ -48,6 +48,8 @@ Responsible for:
 - Code quality standards
 
 ChatGPT does not directly modify the Unreal project. Instead, it provides implementation guidance, reviews completed work, and maintains project consistency.
+
+> **Naming map (v1.1):** “Technical Director” here is the human/ChatGPT **Design / Tech guidance** lane in the Production Playbook — not a second architecture owner. Cursor PRB roles (e.g. `lead-developer`, `gameplay-designer`) are specialist review briefs under `.cursor/agents/`; EP still owns final Ready / merge.
 
 ---
 

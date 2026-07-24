@@ -1,7 +1,8 @@
 # Project Echo — AI Studio
 
-**Status:** Active — Phase 1 (documentation + Cursor workflow)  
+**Status:** Active — AI Studio **v1.1** (Phase 1 baseline + FRAMEWORK-001 validation)  
 **Date:** 2026-07-25  
+**Validation:** [ValidationReport-FRAMEWORK-001.md](ValidationReport-FRAMEWORK-001.md)  
 
 ---
 
@@ -107,8 +108,10 @@ Duties are intentionally non-overlapping — see each brief’s Boundaries secti
 ## Related Docs
 
 - [Production Playbook](../ProductionPlaybook.md)  
+- [Validation Report (FRAMEWORK-001)](ValidationReport-FRAMEWORK-001.md)  
 - [Migration Plan](MigrationPlan.md)  
 - [Hooks Policy](Hooks.md)  
+- [Phase 1 Completion Report](Phase1-CompletionReport.md)  
 - Legacy [AIStudio.md](../../00_Governance/AIStudio.md)  
 
 ---
@@ -117,6 +120,7 @@ Duties are intentionally non-overlapping — see each brief’s Boundaries secti
 
 | Phase | Focus | Status |
 |-------|-------|--------|
-| 1 | Playbook + Rules + Skills + Agents + Hooks policy | **This delivery** |
-| 2 | Refine rules from live missions; optional light hooks | Planned |
+| 1 | Playbook + Rules + Skills + Agents + Hooks policy | **Complete** (v1.0 baseline) |
+| 1.1 | FRAMEWORK-001 validation + minor lifecycle clarifications | **Complete** (this doc set) |
+| 2 | Refine rules from live missions; optional light hooks; Light vs Full PRB | Planned |
 | 3 | Deeper automation only if high-value and low noise | Deferred |
