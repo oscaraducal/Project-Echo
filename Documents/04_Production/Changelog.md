@@ -2,6 +2,26 @@
 
 ---
 
+## PE-020 — Validate (Technical + Human PIE Checklist)
+**Date:** 2026-07-25
+**Mission:** PE-020 Research Wing
+**Branch:** `develop`
+
+### Added
+
+- Human PIE checklist: `Documents/05_Missions/PE-020-PlaytestChecklist.md`
+
+### Changed
+
+- `PE-020-ResearchWing.md` Validation: MCP technical re-check evidence; gates Compile/Technical PASS; Gameplay **PENDING_USER**; Ready for Review NO until human PIE
+
+### Notes
+
+- Technical re-check PASS (map, GameMode, Soft Open Coolant→Research, ST-* stations, LabExit locked pre-solve, Witness hidden-until-power print, SliceReset present, MapCheck 0/0)
+- Do **not** claim Gameplay PASS without EP Enhanced Input walkthrough
+
+---
+
 ## PE-020 — Research Wing (Post-Coolant Laboratory)
 **Date:** 2026-07-25
 **Mission:** PE-020 Research Wing

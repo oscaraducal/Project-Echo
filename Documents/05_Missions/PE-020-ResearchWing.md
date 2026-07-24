@@ -1,12 +1,13 @@
 # PE-020 — Research Wing (Post-Coolant Laboratory)
 
-**Status:** Implemented — Technical PASS; Manual Gameplay PASS still required  
+**Status:** Validated (Technical) — Human Gameplay PASS still required  
 **Branch:** `develop`  
 **Priority:** High  
 **Map:** `/Game/ProjectEcho/Maps/Production/LV_ARI_ResearchWing`  
 **Design authority:** `Documents/01_Game_Design/GameplayDesignBible.md` (PE-016)  
 **Design plan:** `Documents/05_Missions/PE-020-DesignPlan.md` (APPROVED & IMPLEMENTED)  
 **Visual Design Package:** [`PE-020-VisualDesignPackage.md`](PE-020-VisualDesignPackage.md) (complete — awaiting EP mental-play APPROVE / RETURN)  
+**Playtest checklist:** [`PE-020-PlaytestChecklist.md`](PE-020-PlaytestChecklist.md)  
 **Predecessor:** `LV_ARI_CoolantBay` (PE-019 — Soft Open Level → Research Wing)
 
 ---
@@ -108,22 +109,46 @@ Clue: Note B calibration checklist. Incomplete set → lab exit stays locked.
 
 ## Validation
 
-| Gate | Status |
-|------|--------|
-| Compile | CoolantLoop / CoolantValve / SoftOpenExit / ContainmentCalibrationPuzzle / CalibrationStation / ResearchWingReset compiled + saved |
-| Technical | Simulate PIE: station/valve ready prints; MapCheck 0 errors; Soft Open Coolant→Research configured |
-| Gameplay | **PENDING_USER** — Enhanced Input cannot be fully driven by Slate |
-| Replay | **PASS** (Technical) — SliceReset graphs reverse mutated state; manual confirm still needed |
+**Validate pass:** 2026-07-25 (Mission Director — MCP technical re-check + playtest-generator)  
+**Ready for Review:** NO until Human Gameplay PASS (or EP written waiver)
 
-### Manual PIE checklist
+| Gate | Status | Evidence |
+|------|--------|----------|
+| Compile | **PASS** | CoolantLoop / CoolantValve / SoftOpenExit / ContainmentCalibrationPuzzle / CalibrationStation / ResearchWingReset compiled + saved (implement + session compile logs) |
+| Technical | **PASS** | See Technical re-check below — Simulate ≠ Gameplay |
+| Gameplay | **PENDING_USER** | Enhanced Input cannot be fully driven by Slate/MCP — walk [`PE-020-PlaytestChecklist.md`](PE-020-PlaytestChecklist.md) |
+| Replay | **PASS** (Technical) / **PENDING_USER** (manual) | `SliceResetButton` (`BP_CoolantBayReset`) present; graphs reverse mutated state — human must confirm full reverse |
 
-1. Soft Open from Coolant exit → Research spawn; flashlight available; indoor lighting  
-2. Read Note A (symptoms); Observation Note B → Calibrate the containment chamber  
-3. Engage ST-TEMP + ST-SEAL; set ST-LINK to HOLD → LabExit unlock  
+### Technical re-check (2026-07-25)
+
+| Check | Result | Evidence |
+|-------|--------|----------|
+| Map loads | PASS | MCP `load_level` → `/Game/ProjectEcho/Maps/Production/LV_ARI_ResearchWing` |
+| GameMode | PASS | WorldSettings `DefaultGameMode` = `/Game/ProjectEcho/Gameplay/Systems/BP_GameMode` |
+| Soft Open Coolant→Research | PASS | Coolant `SoftOpenExit_Research`: `softOpenLevelName=LV_ARI_ResearchWing`, `bTravelOnOpen=true` |
+| ST-TEMP | PASS | Label `Station_ST_TEMP`; `valveId=ST-TEMP`; start closed / target open |
+| ST-SEAL | PASS | Label `Station_ST_SEAL`; `valveId=ST-SEAL`; start closed / target open |
+| ST-LINK | PASS | Label `Station_ST_LINK`; `valveId=ST-LINK`; start open / target closed |
+| Containment puzzle | PASS | Label `ContainmentCalibrationPuzzle`; `PuzzleID=ContainmentCalibration`; `bNotifyPowerOnSolve=false`; WR targets include LabExit + WitnessPresence + lights/vent/PA/ambient |
+| LabExit | PASS | Label `LabExit` (`BP_PoweredDoor`); Simulate boot `bIsLocked=true` |
+| Witness hidden until solve | PASS | BeginPlay PrintString `[PE017A] WitnessPresence hidden until power` |
+| SliceReset present | PASS | Label `SliceResetButton` (`BP_CoolantBayReset_C_0`) |
+| MapCheck | PASS | Session log: `0 Error(s), 0 Warning(s)` |
+| Simulate boot | PASS | Valves ready ×3; PuzzleBase ready |
+
+**Technical caveats (not Gameplay FAIL):** Simulate-without-pawn can print `[PE019] ObjectiveComponent missing at BeginPlay` on SliceReset — full PIE with player still owns objective UI. Shared Coolant twin PrintStrings / BeginPlay Coolant objective text remain tagged debt.
+
+### Manual PIE checklist (summary)
+
+Full steps: [`PE-020-PlaytestChecklist.md`](PE-020-PlaytestChecklist.md)
+
+1. Soft Open Coolant→Research (or direct PIE); flashlight; indoor lighting  
+2. Explore → Note A symptoms; Note B → Calibrate the containment chamber  
+3. ST-TEMP + ST-SEAL ENGAGE; ST-LINK HOLD → WR + LabExit unlock  
 4. Exit approach — Witness delayed silhouette (not during stations)  
 5. Interact LabExit → open (stub)  
 6. SliceResetButton → full reverse; replay without UE restart  
-7. Confirm Coolant / Annex / Maintenance paths still independent  
+7. Confirm Coolant / Annex / Maintenance independence  
 
 ---
 
