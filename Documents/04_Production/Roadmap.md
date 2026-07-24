@@ -57,11 +57,21 @@ Status
 
 ### In Progress
 
-- Environmental Power Response (PE-011)
+- Vertical Slice 01 Maintenance Wing playable validation (PE-017 manual Gameplay PASS)
+
+### Completed (recent)
+
+- Environmental Power Response (PE-011 / PE-012)
+- Testing Ground sandbox (PE-013)
+- Framework consolidation (PE-014)
+- Modular Puzzle Framework (PE-015)
+- Gameplay Design Bible (PE-016)
+- Maintenance Wing production map + Witness presence beat (PE-017 implementation)
 
 ### Remaining
 
-To be determined.
+- Confirm PE-017 full manual PIE Gameplay PASS
+- Save system / Witness AI expansion (later milestones)
 
 ---
 

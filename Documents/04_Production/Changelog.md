@@ -2,6 +2,31 @@
 
 ---
 
+## Vertical Slice 01 — Maintenance Wing
+**Date:** 2026-07-24
+**Mission:** PE-017
+
+### Added
+
+- `/Game/ProjectEcho/Maps/Production/LV_ARI_MaintenanceWing` — first production playable slice (L-corridor; Breaker N, Storage E, Electrical S, Exit W/S)
+- `BP_WitnessSilhouetteHint` — first Witness presence beat (power-receiver; tension, not chase)
+- `BP_MaintenanceWingReset` — slice replay reset (PE-015 reset pattern)
+- `Documents/05_Missions/PE-017-VerticalSlice01.md` + design sheet / level blueprint images
+- `BP_NotePickup.ObjectiveOnRead` — per-instance objective text on first read (default preserves Facility Key)
+
+### Changed
+
+- Docs: `GameplayFlow.md`, `GameplaySystems.md`, `ProjectHealth.md`, `Roadmap.md`, `SprintHistory.md`
+- Composed existing Interaction / Inventory / Objectives / Fuse puzzle / Power frameworks (no PE-015 architecture fork)
+
+### Notes
+
+- Manual PIE Gameplay PASS still required (Enhanced Input)
+- ThirdParty mass / unrelated dirties excluded from commit
+- Deferred: full door/light/Witness reverse on slice reset without PIE
+
+---
+
 ## Gameplay & Puzzle Design Bible
 **Date:** 2026-07-24
 **Mission:** PE-016

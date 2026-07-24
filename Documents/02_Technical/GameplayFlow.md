@@ -223,7 +223,9 @@ Lifecycle: Idle → Available → Activated → InProgress → Solved → World 
 
 ## AI / Horror
 
-Future AI Arena reserved on sandbox. No Witness AI Blueprints in ProjectEcho Gameplay yet. Movement helpers `OnMovementStateChanged` / `GenerateMovementNoise` exist on Character as expansion stubs for future AI hearing.
+`BP_WitnessSilhouetteHint` (PE-017) — first presence beat via `BPI_PowerReceiver` after fuse solve on `LV_ARI_MaintenanceWing`. Tension / silhouette / print feedback only — not chase AI.
+
+Future AI Arena reserved on sandbox. Movement helpers `OnMovementStateChanged` / `GenerateMovementNoise` exist on Character as expansion stubs for future AI hearing.
 
 ---
 
@@ -237,11 +239,14 @@ Stations (labels): Movement, Interaction, Inventory, Generator, Power, Objective
 
 **Prototype regression maps:** `LV_Prototype_PE011`, `LV_Prototype_PE012`
 
+**Production vertical slice (PE-017):** `/Game/ProjectEcho/Maps/Production/LV_ARI_MaintenanceWing` — see `Documents/05_Missions/PE-017-VerticalSlice01.md`.
+
 ---
 
 # Related Documents
 
 - `01_Game_Design/GameplayDesignBible.md` — **canonical** gameplay design (PE-016); required for PE-017+
+- `05_Missions/PE-017-VerticalSlice01.md` — Maintenance Wing slice
 - `GameplaySystems.md` — per-system API status
 - `PuzzleFramework.md` — PE-015 puzzle architecture
 - `Architecture/BlueprintDependencyMap.md` — ownership tree

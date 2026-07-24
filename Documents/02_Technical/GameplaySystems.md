@@ -465,12 +465,12 @@ Display readable maintenance / story notes without inventory storage.
 ## Dependencies
 
 - `BPI_Interactable` / `BP_InteractableBase`
-- `BPC_Objective` (first read sets “Locate the Facility Key”)
+- `BPC_Objective` (first read sets `ObjectiveOnRead`; default “Locate the Facility Key”)
 - UMG
 
 ## Inputs
 
-- Interact; variables `NoteTitle`, `NoteBody`, `bCollected`
+- Interact; variables `NoteTitle`, `NoteBody`, `ObjectiveOnRead`, `bCollected`
 
 ## Outputs
 
@@ -571,13 +571,15 @@ Modular puzzle lifecycle + hooks for objectives and power world response. Future
 
 ## Current Status
 
-**Complete** for framework + Fuse example on `LV_TestingGround` Puzzle Station (PE-015). See `PuzzleFramework.md`.
+**Complete** for framework + Fuse example on `LV_TestingGround` Puzzle Station (PE-015).  
+**PE-017:** same Fuse pattern on `LV_ARI_MaintenanceWing` (`AuxPower_MaintenanceWing`) + `BP_WitnessSilhouetteHint` / `BP_MaintenanceWingReset`. See `Documents/05_Missions/PE-017-VerticalSlice01.md`.
 
 ---
 
 # Related Documents
 
 - `01_Game_Design/GameplayDesignBible.md` — **canonical** gameplay & puzzle design (PE-016); PE-017+ missions must reference it (or ADR)
+- `05_Missions/PE-017-VerticalSlice01.md` — Maintenance Wing vertical slice
 - `GameplayFlow.md`
 - `PuzzleFramework.md`
 - `Architecture/BlueprintDependencyMap.md`
