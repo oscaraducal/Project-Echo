@@ -59,13 +59,15 @@ This document provides a high-level navigation map for all Project Echo document
 - Room Bible
 - Characters
 - Organizations
+- Glossary
+- **Expansions / WORLD-001** — Medical Wing Occupational Health & Clinical Observation (docs package; awaiting EP APPROVE) — `Documents/05_Missions/WORLD-001/` · mirror `Documents/03_World/Expansions/WORLD-001/`
 
 ---
 
 ## Production
 
-- **Production Playbook (authoritative process — v1.5 + QA + Mission Director + Creative + Previs)**
-- AI Studio (README v1.5, QA Studio, Mission Director, Creative Studio, Previsualization Studio, Validation Report FRAMEWORK-001, Migration Plan, Hooks policy)
+- **Production Playbook (authoritative process — v1.6 + Content + QA + Mission Director + Creative + Previs)**
+- AI Studio (README v1.6, Content Studio, QA Studio, Mission Director, Creative Studio, Previsualization Studio, Validation Report FRAMEWORK-001, Migration Plan, Hooks policy)
 - Roadmap
 - Milestones
 - Sprint History
@@ -88,5 +90,7 @@ Each mission includes:
 - Review
 - Commit Hash
 - Lessons Learned
+
+Latest world-building package: **WORLD-001** Medical Wing expansion (`Documents/05_Missions/WORLD-001/`) — docs only; awaiting EP APPROVE / RETURN; Design Plan `WORLD-001-DesignPlan.md`.
 
 Latest closed production slice: **PE-021 Security Wing** (`Documents/05_Missions/PE-021-SecurityWing.md`) — Closed Technical 2026-07-25; Gameplay PENDING_USER; PRB Approve with Conditions. Prior: PE-020 Research Wing (`Documents/05_Missions/PE-020-ResearchWing.md`); process retro: `Documents/04_Production/AIStudio/Retrospective-PE-020.md`.

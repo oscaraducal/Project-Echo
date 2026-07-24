@@ -70,6 +70,7 @@ Story, lore, facility layouts, timeline, characters, and organizations.
 | [Characters.md](03_World/Characters.md) | Characters |
 | [Organizations.md](03_World/Organizations.md) | Factions / orgs |
 | [Glossary.md](03_World/Glossary.md) | Terms |
+| [Expansions/WORLD-001](03_World/Expansions/WORLD-001/README.md) | Medical Wing world expansion mirror (WORLD-001) |
 
 ### 04_Production
 
@@ -77,10 +78,12 @@ Roadmap, milestones, changelog, sprint history, health, asset tracking, and AI S
 
 | Document | Description |
 |----------|-------------|
-| [ProductionPlaybook.md](04_Production/ProductionPlaybook.md) | **Authoritative** production process (v1.5 — QA §12e + Mission Director §12d + Creative + Previs) |
-| [AIStudio/README.md](04_Production/AIStudio/README.md) | Cursor AI Studio architecture — **v1.5** |
+| [ProductionPlaybook.md](04_Production/ProductionPlaybook.md) | **Authoritative** production process (v1.6 — Content §12f + QA §12e + Mission Director §12d) |
+| [AIStudio/README.md](04_Production/AIStudio/README.md) | Cursor AI Studio architecture — **v1.6** |
 | [AIStudio/MissionDirector/README.md](04_Production/AIStudio/MissionDirector/README.md) | Mission Director — single EP command entry |
-| [AIStudio/MissionDirector/CommandReference.md](04_Production/AIStudio/MissionDirector/CommandReference.md) | Permanent Start/Continue/…/Close command vocabulary |
+| [AIStudio/MissionDirector/CommandReference.md](04_Production/AIStudio/MissionDirector/CommandReference.md) | Permanent Start/Continue/Generate Content|Visual/…/Close commands |
+| [AIStudio/ContentStudio/README.md](04_Production/AIStudio/ContentStudio/README.md) | Content Studio — player-facing content + UI specs |
+| [AIStudio/ContentStudio/ContentPackage.md](04_Production/AIStudio/ContentStudio/ContentPackage.md) | Mandatory Content Package |
 | [AIStudio/QAStudio/README.md](04_Production/AIStudio/QAStudio/README.md) | QA Studio — evaluate only; QA Review Package |
 | [AIStudio/QAStudio/QAReviewPackage.md](04_Production/AIStudio/QAStudio/QAReviewPackage.md) | Mandatory QA package before PRB |
 | [AIStudio/CreativeStudio/README.md](04_Production/AIStudio/CreativeStudio/README.md) | Creative Studio overview + skill domains |
@@ -101,6 +104,11 @@ Roadmap, milestones, changelog, sprint history, health, asset tracking, and AI S
 
 Historical archive of completed development missions (when present).
 
+| Document | Description |
+|----------|-------------|
+| [WORLD-001-DesignPlan.md](05_Missions/WORLD-001-DesignPlan.md) | World expansion Design Plan — Medical Wing (docs only) |
+| [WORLD-001/](05_Missions/WORLD-001/README.md) | Full WORLD-001 package (Creative / Content / Previs / Canon / Executive) |
+
 ---
 
 ## Current Milestone
@@ -119,7 +127,9 @@ Status: In Progress
 
 ## Latest Design / Architecture Pass
 
-**AI Studio v1.5** — QA Studio (Review before PRB) · Mission Director · Previs VDP · Creative Studio
+**WORLD-001** — Asterion Medical Wing world expansion package (docs only; awaiting EP APPROVE / RETURN)
+
+**AI Studio v1.6** — Content Studio · QA Studio · Mission Director · Previs VDP · Creative Studio
 
 Prior: PE-021 Security Wing (Closed — Technical; Gameplay PENDING_USER) · PE-020 Research Wing (Closed — Technical; Gameplay PENDING_USER) · PE-019 Coolant Bay · PE-018 Generator Annex · PE-017A hardening · PE-016 Gameplay Design Bible
 
@@ -131,6 +141,8 @@ Default production map recipe: **PE-018**. Fuse path ownership: **PE-017A**.
 
 ## Development Workflow
 
-Design Plan → Approval → Cursor Implementation → Compile → Technical Simulate → Human PIE → Docs → Git → Production Review Board → Merge
+EP Command → Mission Director → Design → Creative → Content → Previs → Implement → Validate → QA → PRB → Close
+
+(See Production Playbook for full gates.)
 
 See [ProductionPlaybook.md](04_Production/ProductionPlaybook.md).

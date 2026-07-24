@@ -2,6 +2,74 @@
 
 ---
 
+## WORLD-001 — Asterion Medical Wing world expansion package
+**Date:** 2026-07-25
+**Mission:** WORLD-001 Expand the World – Asterion Research Institute
+**Branch:** `develop`
+
+### Added
+
+- `Documents/05_Missions/WORLD-001-DesignPlan.md` — World Update Design Plan (Medical Wing — Occupational Health & Clinical Observation)
+- `Documents/05_Missions/WORLD-001/` — Environment Design, Narrative / World Building / UX Content Packages, Visual Design Package (world-building previs), Canon Validation Report, Executive Summary, README index
+- `Documents/03_World/Expansions/WORLD-001/README.md` — World library mirror pointer
+
+### Changed
+
+- `Documents/00_Governance/MasterIndex.md` — WORLD-001 expansion + mission archive pointer
+- `Documents/README.md` — WORLD-001 links; latest pass note
+
+### Notes
+
+- Docs only — no Unreal, Blueprints, maps, puzzles, combat, or gameplay validation
+- Canon Validation: PASS WITH RECOMMENDATIONS (R1–R6); Story / Facility / Room bibles not silently edited
+- Gate: awaiting EP APPROVE / RETURN · Ready to Implement: N/A
+
+---
+
+## AI Studio — Git commit on Close Mission
+**Date:** 2026-07-25
+**Mission:** AI Studio process update
+**Branch:** `develop`
+
+### Changed
+
+- Production Playbook — Git Commit/Push moved to **Close Mission** (step 12); QA/PRB before Close
+- Mission Director / CommandReference — Close Mission includes git commit (push if EP requests)
+- `documentation-sync`, `mission-implementer`, `production-standard`, `mission-director` rule — default no mid-Implement commit
+
+### Notes
+
+- Intermediate commits still allowed when EP explicitly requests them
+- Never commit failing code
+
+---
+
+## AI Studio Phase 6 — Content Studio
+**Date:** 2026-07-25
+**Mission:** AI Studio Phase 5 — Content Studio (brief) / Phase 6 · v1.6
+**Branch:** `develop`
+
+### Added
+
+- `Documents/04_Production/AIStudio/ContentStudio/` — README, ContentPackage, SkillRelationships, Phase6-CompletionReport
+- Content Cursor skills: content-director + Narrative/World/UX divisions (16)
+- `.cursor/rules/content-studio.mdc`, `.cursor/agents/content-director.md`
+
+### Changed
+
+- AI Studio → **v1.6**; README Content skills map
+- Production Playbook → **v1.6**: Content before Previs; §12f
+- Mission Director — `Generate Content Package PE-###`
+- MigrationPlan / Hooks / indexes / EP agent / legacy AIStudio.md
+
+### Notes
+
+- Docs + Cursor OS only — no Unreal, widgets, Story Canon edits, or Hooks
+- Content creates; Implementation places; QA validates
+- Brief titled Phase 5; sequenced after QA as Phase 6 / v1.6
+
+---
+
 ## PE-021 — Close Mission (Security Wing)
 **Date:** 2026-07-25
 **Mission:** PE-021 Security Wing
