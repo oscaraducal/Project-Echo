@@ -2,6 +2,33 @@
 
 ---
 
+## AI Studio Phase 5 — QA Studio
+**Date:** 2026-07-25
+**Mission:** AI Studio Phase 4 — QA Studio (brief) / Phase 5 · v1.5
+**Branch:** `develop`
+
+### Added
+
+- `Documents/04_Production/AIStudio/QAStudio/` — README, QAReviewPackage, SkillRelationships, Phase5-CompletionReport
+- QA Cursor skills (flat): gameplay-qa-tester, navigation-qa-tester, horror-experience-tester, puzzle-qa-tester, environmental-storytelling-qa, accessibility-readability-qa, performance-risk-analyzer, regression-qa-tester
+- `.cursor/rules/qa-studio.mdc`
+
+### Changed
+
+- AI Studio → **v1.5**; README QA skills map
+- Production Playbook → **v1.5**: lifecycle QA before PRB; §12e
+- Mission Director `Review Mission` — QA Review Package then PRB
+- `production-review-board` / `qa-lead` — consume QA package
+- MigrationPlan / Hooks / indexes / legacy AIStudio.md
+
+### Notes
+
+- Docs + Cursor OS only — no Unreal, Blueprints, Story Canon, Hooks, or fix implementation
+- QA evaluates and reports; designers/EP decide
+- Brief titled Phase 4; sequenced after Mission Director as Phase 5 / v1.5
+
+---
+
 ## PE-020 — Close Mission (Research Wing)
 **Date:** 2026-07-25
 **Mission:** PE-020 Research Wing

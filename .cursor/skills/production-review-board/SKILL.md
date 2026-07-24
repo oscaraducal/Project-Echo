@@ -16,17 +16,19 @@ Multi-role review against the Production Playbook and design bibles. Each role h
 ## Inputs
 
 - Mission brief / design plan / completion report  
+- **QA Review Package** (required on Review Mission before final PRB verdict)  
 - Changelog entry and affected docs  
-- Playbook §4–§10  
+- Playbook §4–§10 / §12e  
 - Relevant bible sections  
 
 ## Process
 
 1. Confirm what is under review (plan vs implementation).  
-2. For each role below, answer **only** that role’s questions (use agent briefs).  
-3. Collect blockers vs suggestions.  
-4. Verdict: **Approve** / **Approve with conditions** / **Reject** — with required fixes.  
-5. EP owns final Ready / merge decision.
+2. If implementation review: confirm **QA Review Package** exists; if missing, stop and run QA Studio first (Mission Director `Review Mission` order).  
+3. For each role below, answer **only** that role’s questions (use agent briefs).  
+4. Collect blockers vs suggestions — weigh Critical/Major QA findings as likely blockers.  
+5. Verdict: **Approve** / **Approve with conditions** / **Reject** — with required fixes.  
+6. EP owns final Ready / merge decision. QA informs; does not decide.
 
 ## Role checklist (no overlap)
 

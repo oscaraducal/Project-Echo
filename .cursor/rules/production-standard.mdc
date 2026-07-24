@@ -11,6 +11,7 @@ Authoritative detail: `Documents/04_Production/ProductionPlaybook.md`.
 
 A mission is done only when applicable gates pass:
 
+- **Visual Design Package EP-approved** before implementation on production slices with a spatial player loop (Playbook §12c)
 - Blueprint compile PASS
 - Technical Simulate / runtime checks PASS
 - **Human** PIE Gameplay PASS (or EP written waiver) — Technical ≠ Gameplay
@@ -21,6 +22,7 @@ A mission is done only when applicable gates pass:
 - Git commit / push when requested; never push failing code
 
 Do not mark Ready For Review YES if compile, required runtime, or docs are incomplete.
+Do not set Ready to Implement on production spatial slices without VDP EP APPROVE.
 
 ## Honest Gates
 

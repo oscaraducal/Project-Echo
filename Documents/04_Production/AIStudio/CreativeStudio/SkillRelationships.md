@@ -33,6 +33,8 @@ asset-creation-planner ──────────────► ai-asset-co
    │ performance-designer                │
    └────────────────┬────────────────────┘
                     ▼
+           Visual Design Package + EP Approval (Previs — Playbook §12c)
+                    ▼
            mission-implementer (UE5)
                     ▼
         documentation-sync / PRB / playtest-generator

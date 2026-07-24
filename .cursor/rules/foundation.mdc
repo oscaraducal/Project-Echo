@@ -50,3 +50,5 @@ Every completed mission should leave the project in a better state than before â
 ## AI Studio
 
 Cursor workflow lives under `.cursor/` (rules, skills, agents). Process detail: Production Playbook. Overview: `Documents/04_Production/AIStudio/README.md`.
+
+**Mission Director** is the default production entry point â€” EP high-level commands only (`Documents/04_Production/AIStudio/MissionDirector/`). Do not ask the EP to manually pick Skills.

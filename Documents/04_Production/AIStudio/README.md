@@ -1,9 +1,10 @@
 # Project Echo — AI Studio
 
-**Status:** Active — AI Studio **v1.4** (Production + Creative + Previs + **Mission Director**)  
+**Status:** Active — AI Studio **v1.5** (Production + Creative + Previs + Mission Director + **QA Studio**)  
 **Date:** 2026-07-25  
 **Validation:** [ValidationReport-FRAMEWORK-001.md](ValidationReport-FRAMEWORK-001.md)  
 **Mission Director:** [MissionDirector/README.md](MissionDirector/README.md) · [CommandReference.md](MissionDirector/CommandReference.md) · [MCP Auto-accept Policy](MissionDirector/MCP-AutoAccept-Policy.md)  
+**QA Studio:** [QAStudio/README.md](QAStudio/README.md)  
 **Creative Studio:** [CreativeStudio/README.md](CreativeStudio/README.md)  
 **Previsualization Studio:** [PrevisualizationStudio/README.md](PrevisualizationStudio/README.md)  
 
@@ -16,9 +17,10 @@ AI Studio is the development-workflow layer that helps Oscar, ChatGPT, and Curso
 - **Phase 1 / v1.1:** Production Playbook + rules + production skills + PRB agents + hooks policy  
 - **Phase 2 / v1.2:** Creative Studio — environment/asset production skills + pipeline docs  
 - **Phase 3 / v1.3:** Previsualization Studio — Visual Design Package + mental-play EP gate  
-- **Phase 4 / v1.4:** **Mission Director** — single EP command entry; automatic skill orchestration  
+- **Phase 4 / v1.4:** Mission Director — single EP command entry; automatic skill orchestration  
+- **Phase 5 / v1.5:** **QA Studio** — structured quality evaluation before PRB (report only; never implements)  
 
-**Default:** Every production conversation assumes Mission Director is active. EP issues high-level commands only.
+**Default:** Every production conversation assumes Mission Director is active. EP issues high-level commands only. `Review Mission` runs **QA Studio then PRB**.
 
 Framework architecture missions remain **docs + Cursor OS only** unless a gameplay mission is explicitly commanded through Director → Implement.
 
@@ -30,6 +32,7 @@ Framework architecture missions remain **docs + Cursor OS only** unless a gamepl
 Documents (authority)
   ProductionPlaybook.md     ← process source of truth
   AIStudio/MissionDirector/ ← EP commands + orchestration contract
+  AIStudio/QAStudio/        ← QA Review Package (evaluate only)
   AIStudio/CreativeStudio/
   AIStudio/PrevisualizationStudio/
 
@@ -67,6 +70,7 @@ Documents (authority)
     folder-structure.mdc
     creative-studio.mdc
     previs-studio.mdc
+    qa-studio.mdc                  # QA evaluate-only; package before PRB
   skills/
     mission-director/              # ENTRY — orchestration
     # Production Studio
@@ -94,6 +98,15 @@ Documents (authority)
     concept-artist/
     lighting-visualizer/
     asset-placement-designer/
+    # QA Studio
+    gameplay-qa-tester/
+    navigation-qa-tester/
+    horror-experience-tester/
+    puzzle-qa-tester/
+    environmental-storytelling-qa/
+    accessibility-readability-qa/
+    performance-risk-analyzer/
+    regression-qa-tester/
   agents/
     executive-producer.md
     creative-director.md
@@ -109,7 +122,7 @@ Documents (authority)
   hooks/                           # deferred — see Hooks.md
 ```
 
-**Do not nest** skills under domain package folders unless Cursor documents stable multi-level discovery. Domains: [MissionDirector](MissionDirector/README.md), [CreativeStudio](CreativeStudio/README.md), [PrevisualizationStudio](PrevisualizationStudio/README.md).
+**Do not nest** skills under domain package folders unless Cursor documents stable multi-level discovery. Domains: [MissionDirector](MissionDirector/README.md), [QAStudio](QAStudio/README.md), [CreativeStudio](CreativeStudio/README.md), [PrevisualizationStudio](PrevisualizationStudio/README.md).
 
 ---
 
@@ -180,6 +193,22 @@ Pipeline: [CreativeStudio/AssetCreationPipeline.md](CreativeStudio/AssetCreation
 Spec: [PrevisualizationStudio/VisualDesignPackage.md](PrevisualizationStudio/VisualDesignPackage.md)  
 Relationships: [PrevisualizationStudio/SkillRelationships.md](PrevisualizationStudio/SkillRelationships.md)
 
+### QA Studio
+
+| Skill | Use when (via Review Mission) |
+|-------|----------|
+| `gameplay-qa-tester` | Progression, soft locks, confusion |
+| `navigation-qa-tester` | Routes, landmarks, orientation |
+| `horror-experience-tester` | Tension, Witness, atmosphere |
+| `puzzle-qa-tester` | Clarity, difficulty, guidance |
+| `environmental-storytelling-qa` | Notes, immersion, lore consistency |
+| `accessibility-readability-qa` | Prompts, visibility, a11y |
+| `performance-risk-analyzer` | Density / streaming / effect risks (no benchmarks) |
+| `regression-qa-tester` | Predecessor breakage, doc drift |
+
+Spec: [QAStudio/QAReviewPackage.md](QAStudio/QAReviewPackage.md)  
+Relationships: [QAStudio/SkillRelationships.md](QAStudio/SkillRelationships.md)
+
 ---
 
 ## Subagents
@@ -202,6 +231,7 @@ Duties are intentionally non-overlapping — see each brief’s Boundaries secti
 | Skill folder layout | **Flat** under `.cursor/skills/` |
 | Ready to Implement | Requires **EP-approved Visual Design Package** for production slices |
 | MCP Auto-accept | EP `Implement Mission` / sticky `auto accept` authorizes MCP creates — not a VDP waiver; see [MCP-AutoAccept-Policy.md](MissionDirector/MCP-AutoAccept-Policy.md) |
+| Review Mission | **QA Review Package** before PRB final recommendation |
 
 ---
 
@@ -210,6 +240,7 @@ Duties are intentionally non-overlapping — see each brief’s Boundaries secti
 - [Production Playbook](../ProductionPlaybook.md)  
 - [Mission Director](MissionDirector/README.md)  
 - [MCP Auto-accept Policy](MissionDirector/MCP-AutoAccept-Policy.md)  
+- [QA Studio](QAStudio/README.md)  
 - [Creative Studio](CreativeStudio/README.md)  
 - [Previsualization Studio](PrevisualizationStudio/README.md)  
 - [Validation Report (FRAMEWORK-001)](ValidationReport-FRAMEWORK-001.md)  
@@ -219,6 +250,7 @@ Duties are intentionally non-overlapping — see each brief’s Boundaries secti
 - [Phase 2 Completion Report](CreativeStudio/Phase2-CompletionReport.md)  
 - [Phase 3 Completion Report](PrevisualizationStudio/Phase3-CompletionReport.md)  
 - [Mission Director Integration Report](MissionDirector/Integration-CompletionReport.md)  
+- [QA Studio Completion Report](QAStudio/Phase5-CompletionReport.md)  
 - Legacy [AIStudio.md](../../00_Governance/AIStudio.md)  
 
 ---
@@ -231,6 +263,7 @@ Duties are intentionally non-overlapping — see each brief’s Boundaries secti
 | 1.1 | FRAMEWORK-001 validation + minor lifecycle clarifications | **Complete** (v1.1) |
 | 2 | Creative Studio skills + asset pipeline docs | **Complete** (v1.2) |
 | 3 | Previsualization Studio + Visual Design Package gate | **Complete** (v1.3) |
-| 4 | Mission Director orchestration entry | **Complete** (v1.4 — this delivery) |
-| 4+ | Live command examples; optional light hooks; Light vs Full PRB | Planned (hooks still off) |
-| 5 | Deeper automation only if high-value and low noise | Deferred |
+| 4 | Mission Director orchestration entry | **Complete** (v1.4) |
+| 5 | QA Studio + QA Review Package before PRB | **Complete** (v1.5 — this delivery) |
+| 5+ | Live QA packages on PE-###; optional light hooks | Planned (hooks still off) |
+| 6 | Deeper automation only if high-value and low noise | Deferred |

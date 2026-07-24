@@ -3,7 +3,7 @@
 **Status:** Active — permanent AI Studio operating contract  
 **Date:** 2026-07-25  
 **Skill:** `.cursor/skills/mission-director/SKILL.md`  
-**Version:** AI Studio **v1.4**  
+**Version:** AI Studio **v1.5**  
 
 ---
 
@@ -49,7 +49,8 @@ Validate Mission
   → STOP (Human Gameplay Validation)
 
 Review Mission
-  → production-review-board (+ agents)
+  → QA Studio (8 skills → QA Review Package)
+  → production-review-board (+ agents; consumes QA package)
   → STOP (EP merge)
 
 Close Mission
@@ -70,7 +71,8 @@ Close Mission
 | Previs / VDP | `experience-designer` → `blockout-visualizer` → `storyboard-designer` → `concept-artist` → `lighting-visualizer` → `asset-placement-designer` | EP VDP APPROVE |
 | Implement | `mission-implementer` | Technical complete |
 | Validate | `playtest-generator` (+ technical notes) | Human PIE |
-| Review | `production-review-board` | EP merge |
+| QA | 8 QA Studio skills → QA Review Package | Feeds PRB |
+| Review | `production-review-board` (after QA) | EP merge |
 | Close | `documentation-sync` | Archived |
 
 ---

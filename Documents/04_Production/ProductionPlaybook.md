@@ -1,14 +1,15 @@
 # Project Echo — Production Playbook
 
 **Status:** Active (authoritative production process)  
-**Version:** 1.4  
+**Version:** 1.5  
 **Established:** 2026-07-25  
 **Validated:** FRAMEWORK-001 (`Documents/04_Production/AIStudio/ValidationReport-FRAMEWORK-001.md`)  
 **Authority:** Production process source of truth for AI Studio Phase 1+  
 **Consolidates lessons from:** PE-017, PE-017A, PE-018  
 **Creative Studio:** AI Studio Phase 2 — `Documents/04_Production/AIStudio/CreativeStudio/`  
 **Previsualization Studio:** AI Studio Phase 3 — `Documents/04_Production/AIStudio/PrevisualizationStudio/`  
-**Mission Director:** AI Studio Phase 4 — `Documents/04_Production/AIStudio/MissionDirector/`
+**Mission Director:** AI Studio Phase 4 — `Documents/04_Production/AIStudio/MissionDirector/`  
+**QA Studio:** AI Studio Phase 5 — `Documents/04_Production/AIStudio/QAStudio/`
 
 ---
 
@@ -55,7 +56,7 @@ EP Command → Mission Director (orchestrates skills)
   → Creative (as needed) → Previs / Visual Design Package → EP VDP APPROVE
   → Implementation → Compile → Technical Simulate
   → Human PIE (Gameplay) → Replay (if claimed) → Docs → Commit/Push
-  → Production Review Board → EP Decision → Merge → Close
+  → QA Studio (QA Review Package) → Production Review Board → EP Decision → Merge → Close
 ```
 
 ### Roles (summary)
@@ -64,6 +65,7 @@ EP Command → Mission Director (orchestrates skills)
 |------|-------|-----------|
 | Executive Producer | Oscar | Vision, high-level commands, VDP mental play, human Gameplay, merge |
 | Mission Director | Cursor (orchestration) | Select skills, order, gates, deliverables from EP commands |
+| QA Studio | Cursor (evaluate only) | Structured quality reports; never implements |
 | Design / Tech guidance | ChatGPT (or designated) | Architecture, mission design review, bible compliance |
 | Implementation | Cursor AI (via Director → skills) | UE5 Blueprints/maps/docs per approved brief; honest gates |
 
@@ -89,9 +91,10 @@ Detailed role boundaries: `.cursor/agents/` and `Documents/04_Production/AIStudi
 7. **Replay PASS** — only if SliceReset / replay is claimed  
 8. **Documentation** — mission doc, Changelog append, systems/health as needed  
 9. **Git Commit / Push** — when requested; never failing code  
-10. **Production Review Board** — multi-role review  
-11. **Merge** — EP approval  
-12. **Lessons → Playbook** — distill durable lessons into §11 / recipes; leave raw detail in the mission doc  
+10. **QA Studio** — QA Review Package via `Review Mission` (evaluate only; before PRB) — see §12e  
+11. **Production Review Board** — multi-role review (consumes QA package)  
+12. **Merge** — EP approval  
+13. **Lessons → Playbook** — distill durable lessons into §11 / recipes; leave raw detail in the mission doc  
 
 Do **not** implement unapproved or design-only briefs.  
 Do **not** treat Design Plan approval as Ready to Implement when a spatial player loop exists — VDP + EP mental-play approval is required (§12c).
@@ -359,6 +362,7 @@ Mission notes: `Documents/05_Missions/PE-017-VerticalSlice01.md`
 | This playbook | `Documents/04_Production/ProductionPlaybook.md` |
 | AI Studio overview | `Documents/04_Production/AIStudio/README.md` |
 | Mission Director | `Documents/04_Production/AIStudio/MissionDirector/` |
+| QA Studio | `Documents/04_Production/AIStudio/QAStudio/` |
 | Creative Studio | `Documents/04_Production/AIStudio/CreativeStudio/` |
 | Previsualization Studio | `Documents/04_Production/AIStudio/PrevisualizationStudio/` |
 | Rules | `.cursor/rules/*.mdc` |
@@ -441,11 +445,35 @@ Authority: `Documents/04_Production/AIStudio/MissionDirector/` · `.cursor/skill
 
 ---
 
+# 12e. QA Studio (AI Studio v1.5)
+
+QA Studio is an independent evaluation department. It does **not** create, modify, or implement gameplay.
+
+### Permanent rule
+
+On `Review Mission PE-###`, Mission Director runs the full **QA Review Package** **before** Production Review Board final recommendation.
+
+Spec: `Documents/04_Production/AIStudio/QAStudio/QAReviewPackage.md`.
+
+### Skills
+
+`gameplay-qa-tester`, `navigation-qa-tester`, `horror-experience-tester`, `puzzle-qa-tester`, `environmental-storytelling-qa`, `accessibility-readability-qa`, `performance-risk-analyzer`, `regression-qa-tester`.
+
+### Severity
+
+Critical · Major · Minor · Observation — see QA Review Package.
+
+### Behavior
+
+QA reports evidence and recommendations. QA never redesigns, never implements fixes, never edits Story Canon or Unreal.
+
+---
+
 ## Document Control
 
 | | |
 |--|--|
 | Created | 2026-07-25 |
-| Version | 1.4 (Mission Director) |
+| Version | 1.5 (QA Studio) |
 | Owners | EP + AI Studio |
-| Related | PE-017, PE-017A, PE-018, FRAMEWORK-001, Creative Studio, Previsualization Studio, Mission Director, ContributionGuide, GameplayDesignBible, TechnicalDebt |
+| Related | PE-017–019, FRAMEWORK-001, Creative, Previs, Mission Director, QA Studio, ContributionGuide, GameplayDesignBible, TechnicalDebt |

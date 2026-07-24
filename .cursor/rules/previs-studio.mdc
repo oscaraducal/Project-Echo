@@ -1,0 +1,15 @@
+---
+description: Previsualization Studio — Visual Design Package required before production implementation
+globs: Documents/05_Missions/**/*
+alwaysApply: false
+---
+
+# Previsualization Studio
+
+Production missions with a player spatial loop need a complete **Visual Design Package** before `mission-implementer`.
+
+EP approves the player experience (mental play), not text alone.
+
+Authority: `Documents/04_Production/AIStudio/PrevisualizationStudio/VisualDesignPackage.md` and Production Playbook §12c.
+
+Previs skills communicate design (experience, blockout visuals, storyboard, concept prompts, lighting preview, placement preview). They do not implement Unreal, edit Blueprints, or change Story Canon. Concept work = prompts unless a separate art mission generates images.

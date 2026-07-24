@@ -1,0 +1,13 @@
+---
+description: QA Studio — evaluate only; never implement; QA Review Package before PRB on Review Mission
+globs: Documents/05_Missions/**/*
+alwaysApply: false
+---
+
+# QA Studio
+
+On `Review Mission` or QA of a completed PE-### package: run QA Studio skills and produce a **QA Review Package** before Production Review Board final recommendation.
+
+QA evaluates and reports. QA does not modify gameplay, Blueprints, maps, Story Canon, or implement fixes.
+
+Authority: `Documents/04_Production/AIStudio/QAStudio/QAReviewPackage.md` · Playbook §12e.

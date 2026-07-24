@@ -137,17 +137,21 @@ AUTHORIZATION (Project Echo MCP Auto-accept Policy):
 
 ### Review Mission
 
-**Skills:** `production-review-board` (invoke role briefs under `.cursor/agents/` as needed).  
+**Prerequisites:** Prefer Human Gameplay Validation complete or explicitly `PENDING_USER` documented — QA may still run on document evidence; mark basis honestly.
+
+**Skills (order):**
+
+1. QA Studio (all required — produce **QA Review Package** before PRB):  
+   `gameplay-qa-tester` → `navigation-qa-tester` → `horror-experience-tester` → `puzzle-qa-tester` → `environmental-storytelling-qa` → `accessibility-readability-qa` → `performance-risk-analyzer` → `regression-qa-tester`  
+2. `production-review-board` (consume QA Review Package as input; invoke `.cursor/agents/` as needed)
 
 **Produce:**
 
-- Technical Review  
-- Gameplay Review  
-- Creative Review  
-- Documentation Review  
+- QA Review Package (see `QAStudio/QAReviewPackage.md`)  
+- Technical / Gameplay / Creative / Documentation Review (via PRB)  
 - Executive Summary  
 
-**Stop gate:** EP merge decision.
+**Stop gate:** EP merge decision. QA informs; EP/designers decide. QA must complete before PRB final recommendation.
 
 ---
 

@@ -5,7 +5,12 @@ description: Design Project Echo mission plans for approval before any Unreal im
 
 # Mission Planner
 
-Produce an **approval-ready Design Plan**. Do **not** implement Blueprints, maps, or gameplay until the plan is explicitly approved (Ready to Implement).
+Produce an **approval-ready Design Plan**. Do **not** implement Blueprints, maps, or gameplay until:
+
+1. Design Plan is accepted to proceed into Creative / Previs, and  
+2. For production slices with a spatial player loop: **Visual Design Package is EP-approved** (Ready to Implement).
+
+See Playbook §12c / `PrevisualizationStudio/VisualDesignPackage.md`.
 
 ## Authority
 
@@ -32,7 +37,8 @@ Produce an **approval-ready Design Plan**. Do **not** implement Blueprints, maps
 7. Technical plan: new map/actors only as needed; prefer config + SliceReset twin.  
 8. Risks + mitigations; human PIE / EP waiver note if foundation unvalidated.  
 9. Compliance checklist vs bible + Production Playbook.  
-10. **Stop** with Approval Block — wait for Ready to Implement.
+10. **Stop** with Approval Block — Design Plan proceed ≠ Ready to Implement.  
+11. Hand off to Creative `environment-designer` then Previs Studio skills to assemble the **Visual Design Package** before EP sets Ready to Implement.
 
 ## Default recipes
 
@@ -42,12 +48,14 @@ Produce an **approval-ready Design Plan**. Do **not** implement Blueprints, maps
 ## Outputs
 
 - Design Plan markdown under `Documents/05_Missions/PE-###-DesignPlan.md` (or update existing)  
-- Explicit Ready for Approval / Ready to Implement fields  
+- Explicit Ready for Approval / Ready to Implement fields (Ready to Implement only after VDP EP APPROVE)  
+- Pointer to upcoming / linked VDP doc  
 - No `.uasset` changes in this skill
 
 ## Anti-patterns
 
 - Implementing while “just planning”  
+- Setting Ready to Implement without VDP on production slices  
 - Scope creep (valve + fuse + keycard in one mission)  
 - Walkthrough notes  
 - Combat / chase without ADR  
