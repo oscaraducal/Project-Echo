@@ -2,7 +2,7 @@
 
 Status: Active  
 Version: 1.1  
-Mission: PE-014 (baseline) · PE-016 (design canon pointer)  
+Mission: PE-014 (baseline) · PE-016 (design canon) · PE-017A (slice hardening)  
 
 ---
 
