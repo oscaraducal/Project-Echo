@@ -196,6 +196,7 @@ Full process detail: [`Retrospective-PE-020.md`](../04_Production/AIStudio/Retro
 | Mission | PE-020 Research Wing |
 | Status | **Closed — Technical** (Gameplay PENDING_USER) |
 | Branch | `develop` |
+| Commit | `46f8957` (`docs: close PE-020 Research Wing`) |
 | Blueprints created | `BP_ContainmentCalibrationPuzzle`, `BP_CalibrationStation`, `BP_ResearchWingReset` (twins; map still uses CoolantLoop/Valve instances) |
 | Maps created | `LV_ARI_ResearchWing` |
 | Maps modified | `LV_ARI_CoolantBay` (SoftOpenExit_Research → Research Wing) |
