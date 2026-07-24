@@ -2,6 +2,21 @@
 
 ---
 
+## PE-020 — AI Studio Production Retrospective
+**Date:** 2026-07-25
+**Mission:** PE-020 Research Wing (process)
+
+### Added
+
+- `Documents/04_Production/AIStudio/Retrospective-PE-020.md` — recommendations only for AI Studio v1.5 (no rules/skills/Unreal changes)
+
+### Notes
+
+- Gate failures recorded: VDP after Implement; MCP Auto-review friction; Gameplay PENDING_USER
+- Do **not** implement from this retrospective until a separate framework/docs mission is commanded
+
+---
+
 ## PE-020 — Validate (Technical + Human PIE Checklist)
 **Date:** 2026-07-25
 **Mission:** PE-020 Research Wing
