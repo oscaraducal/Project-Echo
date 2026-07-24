@@ -28,7 +28,7 @@ Spawn (BP_GameMode → BP_PlayerCharacter + BP_PlayerController)
   → Proceed (powered door / further exploration)
 ```
 
-Design vision for explore → observe → interact → collect → solve → progress remains in `Documents/01_Game_Design/GameplayLoop.md`. This file tracks **code reality**.
+Design vision (Explore→Discover→Understand→Solve→Restore Progress→Reveal Story→Survive) is canonical in `Documents/01_Game_Design/GameplayDesignBible.md` (PE-016). Primer: `GameplayLoop.md`. This file tracks **code reality**.
 
 ---
 
@@ -241,7 +241,9 @@ Stations (labels): Movement, Interaction, Inventory, Generator, Power, Objective
 
 # Related Documents
 
+- `01_Game_Design/GameplayDesignBible.md` — **canonical** gameplay design (PE-016); required for PE-017+
 - `GameplaySystems.md` — per-system API status
+- `PuzzleFramework.md` — PE-015 puzzle architecture
 - `Architecture/BlueprintDependencyMap.md` — ownership tree
 - `Architecture/EventFlow.md` — event chains
 - `Architecture/TechnicalDebt.md` — debt review

@@ -548,6 +548,8 @@ Keyboard/Mouse
 
 Modular puzzle lifecycle + hooks for objectives and power world response. Future puzzles via BP config / children.
 
+**Design authority:** Puzzle families, progression, Witness rules, and anti-patterns are defined in `Documents/01_Game_Design/GameplayDesignBible.md` (PE-016). This section remains implementation inventory only.
+
 ## Owner Blueprint(s)
 
 - `/Game/ProjectEcho/Gameplay/Puzzle/BPI_Puzzle`
@@ -575,6 +577,7 @@ Modular puzzle lifecycle + hooks for objectives and power world response. Future
 
 # Related Documents
 
+- `01_Game_Design/GameplayDesignBible.md` — **canonical** gameplay & puzzle design (PE-016); PE-017+ missions must reference it (or ADR)
 - `GameplayFlow.md`
 - `PuzzleFramework.md`
 - `Architecture/BlueprintDependencyMap.md`

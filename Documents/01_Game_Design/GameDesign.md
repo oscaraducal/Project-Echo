@@ -1,5 +1,7 @@
 # Game Design Document
 
+**Canonical expansion:** Full gameplay & puzzle specification is `GameplayDesignBible.md` (PE-016). Beginning PE-017, gameplay missions must reference that bible (or an ADR). This document remains a short vision primer.
+
 ## Vision
 
 Project Echo is a first-person psychological horror game focused on atmosphere, exploration, environmental storytelling, and mystery.

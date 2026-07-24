@@ -2,6 +2,26 @@
 
 ---
 
+## Gameplay & Puzzle Design Bible
+**Date:** 2026-07-24
+**Mission:** PE-016
+
+### Added
+
+- `Documents/01_Game_Design/GameplayDesignBible.md` — canonical gameplay & puzzle specification (vision, pillars, loop, families, Witness rules, Blueprint mapping, expansion guide, design rules)
+- `Documents/01_Game_Design/Concept Art/Puzzle Design Overview.png` — Figure 1 gameplay philosophy reference (copied design reference; not UI/layout/environment concept)
+
+### Changed
+
+- Docs: `README.md`, `MasterIndex.md`, `GameplaySystems.md`, `GameplayFlow.md`, `ProjectHealth.md`, `PuzzleFramework.md` (cross-refs)
+- Authority: beginning PE-017, gameplay missions must reference the bible (or ADR for conflicts)
+
+### Notes
+
+- Documentation + image only; no Blueprints, uassets, or PE-015 puzzle asset changes
+
+---
+
 ## Modular Puzzle Framework
 **Date:** 2026-07-24
 **Mission:** PE-015

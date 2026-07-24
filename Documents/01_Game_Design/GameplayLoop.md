@@ -4,6 +4,8 @@ Status: Active
 
 Version: 0.1
 
+**Canonical expansion:** Full loop (Explore→Discover→Understand→Solve→Restore Progress→Reveal Story→Survive), pillars, and mission gates are in `GameplayDesignBible.md` (PE-016). This primer remains valid; on conflict, the Gameplay Design Bible wins (or an ADR).
+
 ---
 
 # Purpose

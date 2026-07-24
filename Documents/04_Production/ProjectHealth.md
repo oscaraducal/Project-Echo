@@ -1,8 +1,8 @@
 # Project Health
 
 Status: Active  
-Version: 1.0  
-Mission: PE-014  
+Version: 1.1  
+Mission: PE-014 (baseline) · PE-016 (design canon pointer)  
 
 ---
 
@@ -14,7 +14,7 @@ High-level health grades for Project Echo before major system expansion. Grades:
 
 # Overall
 
-**Good** — Core M1 loop (move → interact → inventory → generator → power → objectives → notes) is implemented and technically validated in `LV_TestingGround`. Architecture is modular with clear `BPC_*` / `BPI_*` boundaries. Primary risks are unconfirmed real-input gameplay (PE-013C), PowerManager coupling, and empty save/GameInstance stubs — not a broken foundation.
+**Good** — Core M1 loop (move → interact → inventory → generator → power → objectives → notes) is implemented and technically validated in `LV_TestingGround`. Architecture is modular with clear `BPC_*` / `BPI_*` boundaries. Gameplay design is now canonized in `GameplayDesignBible.md` (PE-016) for PE-017+. Primary risks are unconfirmed real-input gameplay (PE-013C), PowerManager coupling, and empty save/GameInstance stubs — not a broken foundation.
 
 ---
 
@@ -81,12 +81,13 @@ High-level health grades for Project Echo before major system expansion. Grades:
 
 ## Documentation
 
-**Grade: Excellent** (after PE-014)
+**Grade: Excellent** (after PE-014 / PE-016)
 
 - Flow, systems, dependency map, event flow, standards, debt, health, README index updated.
 - BugHistory captures PE-013B/C root causes.
+- **GameplayDesignBible.md (PE-016)** is the canonical gameplay specification for PE-017+.
 
-**Recommendations:** Keep Changelog append-only; refresh ContributionGuide folder examples to match ASSET-001 paths.
+**Recommendations:** Keep Changelog append-only; refresh ContributionGuide folder examples to match ASSET-001 paths; cite the Gameplay Design Bible (or ADR) on all new gameplay missions.
 
 ---
 
@@ -130,12 +131,13 @@ Core encounter loop systems exist. Save, journal, crouch, inventory UI, AI, and 
 2. **PowerManager cleanup + interface discovery** (hygiene + scalability).  
 3. **Implement Save via GameInstance + BP_SaveGame** using documented hook points.  
 4. **Ignore ThirdParty** until art integration mission.  
-5. **Use Architecture docs** as gate for new system PRs (must update EventFlow / DependencyMap).
+5. **Use Architecture docs + Gameplay Design Bible** as gate for new system/puzzle PRs (must update EventFlow / DependencyMap; PE-017+ must cite PE-016 or ADR).
 
 ---
 
 # Related
 
+- `01_Game_Design/GameplayDesignBible.md` (PE-016 canonical gameplay)  
 - `02_Technical/Architecture/TechnicalDebt.md`  
 - `02_Technical/GameplaySystems.md`  
 - `02_Technical/BugHistory.md`  

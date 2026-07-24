@@ -4,6 +4,8 @@ Status: Active
 
 Version: 0.1
 
+**Supersession note:** Detailed puzzle families, progression, Witness rules, Blueprint mapping, and permanent design standards live in `GameplayDesignBible.md` (PE-016). That document is **canonical** for PE-017+. This file remains a short primer; on conflict, the Gameplay Design Bible wins (or an ADR).
+
 ---
 
 # Purpose

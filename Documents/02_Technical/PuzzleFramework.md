@@ -158,8 +158,9 @@ Does **not** set `HasHandledPower` — generator World Response remains independ
 
 # Related
 
+- `01_Game_Design/GameplayDesignBible.md` — **canonical** puzzle/gameplay design (PE-016); PE-017+ must reference
+- `01_Game_Design/PuzzleBible.md` — early design philosophy primer
 - `GameplayFlow.md` — player loop + puzzle integration  
 - `GameplaySystems.md` — system catalog  
 - `Architecture/EventFlow.md` — puzzle event chain  
 - `Architecture/BlueprintDependencyMap.md` — deps  
-- `01_Game_Design/PuzzleBible.md` — design philosophy  

@@ -21,13 +21,15 @@ This document provides a high-level navigation map for all Project Echo document
 
 ## Game Design
 
-- Game Design Document
-- Gameplay Loop
+- **Gameplay & Puzzle Design Bible (PE-016) — CANONICAL for PE-017+ gameplay missions**
+- Game Design Document (primer)
+- Gameplay Loop (primer)
 - Narrative Design
-- Puzzle Bible
+- Puzzle Bible (early rules; bible supersedes on conflict)
 - Art Bible
 - Audio Bible
 - AI Bible
+- Concept Art / Puzzle Design Overview (Figure 1 — gameplay philosophy reference)
 
 ---
 

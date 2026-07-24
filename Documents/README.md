@@ -26,13 +26,15 @@ Gameplay vision, mechanics, narrative, art, and audio direction.
 
 | Document | Description |
 |----------|-------------|
-| [GameDesign.md](01_Game_Design/GameDesign.md) | Pillars and high-level design |
-| [GameplayLoop.md](01_Game_Design/GameplayLoop.md) | Explore → interact → progress design loop |
+| [GameplayDesignBible.md](01_Game_Design/GameplayDesignBible.md) | **Canonical** gameplay & puzzle specification (PE-016) — required reference for PE-017+ |
+| [GameDesign.md](01_Game_Design/GameDesign.md) | Pillars and high-level design (primer; bible wins on conflict) |
+| [GameplayLoop.md](01_Game_Design/GameplayLoop.md) | Explore → interact → progress design loop (primer) |
 | [NarrativeDesign.md](01_Game_Design/NarrativeDesign.md) | Story delivery approach |
-| [PuzzleBible.md](01_Game_Design/PuzzleBible.md) | Puzzle design rules |
+| [PuzzleBible.md](01_Game_Design/PuzzleBible.md) | Early puzzle design rules (superseded in detail by Gameplay Design Bible) |
 | [ArtBible.md](01_Game_Design/ArtBible.md) | Visual direction |
 | [AudioBible.md](01_Game_Design/AudioBible.md) | Audio direction |
 | [AIBible.md](01_Game_Design/AIBible.md) | Threat / AI design |
+| [Concept Art/Puzzle Design Overview.png](01_Game_Design/Concept%20Art/Puzzle%20Design%20Overview.png) | Figure 1 — gameplay philosophy reference (not UI/layout) |
 
 ### 02_Technical
 
@@ -102,9 +104,11 @@ Status: In Progress
 
 ---
 
-## Latest Architecture Pass
+## Latest Design / Architecture Pass
 
-**PE-014 — Gameplay Framework Consolidation & Architecture Documentation**
+**PE-016 — Gameplay & Puzzle Design Bible** (canonical gameplay specification for PE-017+)
+
+Prior: PE-015 Puzzle Framework · PE-014 Architecture Documentation
 
 Validation sandbox: `/Game/ProjectEcho/Maps/Development/LV_TestingGround`
 
