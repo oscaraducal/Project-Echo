@@ -12,7 +12,7 @@
 **Predecessor:** `LV_ARI_CoolantBay` (PE-019 — pressure/coolant stable)  
 **Soft Open Level:** Coolant Bay exit → Open Level → Research Wing  
 **Mission notes:** `Documents/05_Missions/PE-020-ResearchWing.md`  
-**VDP:** EP Implement directive treats Ready to Implement as YES for this spatial slice (VDP formally deferred / waived by Implement command).
+**VDP:** [`PE-020-VisualDesignPackage.md`](PE-020-VisualDesignPackage.md) — permanent package produced post-implement for EP mental-play / retrofit gate (Implement had waived formal VDP; package now required as documentation).
 
 ---
 

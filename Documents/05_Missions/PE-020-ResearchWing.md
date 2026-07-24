@@ -6,6 +6,7 @@
 **Map:** `/Game/ProjectEcho/Maps/Production/LV_ARI_ResearchWing`  
 **Design authority:** `Documents/01_Game_Design/GameplayDesignBible.md` (PE-016)  
 **Design plan:** `Documents/05_Missions/PE-020-DesignPlan.md` (APPROVED & IMPLEMENTED)  
+**Visual Design Package:** [`PE-020-VisualDesignPackage.md`](PE-020-VisualDesignPackage.md) (complete — awaiting EP mental-play APPROVE / RETURN)  
 **Predecessor:** `LV_ARI_CoolantBay` (PE-019 — Soft Open Level → Research Wing)
 
 ---
