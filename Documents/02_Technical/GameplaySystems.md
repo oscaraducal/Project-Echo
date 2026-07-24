@@ -185,3 +185,36 @@ Dependencies
 
 - Power Manager
 - BPI_PowerReceiver
+
+---
+
+## Asterion Development Testing Facility
+
+Status
+
+Complete (PE-013)
+
+Map
+
+`/Game/ProjectEcho/Maps/Development/LV_TestingGround`
+
+Purpose
+
+Permanent development sandbox (not campaign content) for validating and demonstrating gameplay systems in a believable Asterion Research Institute industrial/research layout.
+
+Zones
+
+1. Developer Spawn — safe start (`PlayerStart_DeveloperSpawn`), hub paths to all zones
+2. Interaction Lab — doors, locked door, flashlight pickup, lab props
+3. Generator Room — PE-011/012 power chain (`Generator`, `FuelCan`, `PowerManager`, `PoweredDoor`, emergency lights, `VentilationUnit`, `PASpeaker`, `DistantActivityHint`, ambient feedback)
+4. Inventory & Objectives — notes, key item pickup, objective progression hooks
+5. Puzzle Sandbox — reserved empty labeled area
+6. Horror Corridor — dim lighting / ambience test (pipes + sparse red lights)
+7. Future AI Arena — open space, no AI placed
+8. Developer Control Room — reserved for future debug UI
+
+Notes
+
+- Actor labels are descriptive (DOC-002); no `PE013_*` mission prefixes
+- Environment meshes referenced from ThirdParty packs (AbandonedPowerPlant, Laboratory, IndustryPropsPack6, IndustrialPipesM); vendor assets are not modified
+- Prototype maps `LV_Prototype_PE011` / `LV_Prototype_PE012` remain for regression

@@ -150,3 +150,25 @@ Reusable assets describe function, not mission number. Mission IDs remain valid 
 ### Notes
 
 Organizational only — no Blueprint graph / gameplay logic changes. ThirdParty vendor packs were not moved or modified.
+
+---
+
+## Asterion Development Testing Facility
+**Date:** 2026-07-24
+**Mission:** PE-013
+
+### Added
+
+- `LV_TestingGround` under `Maps/Development/` — permanent Asterion Research Institute development sandbox
+- Eight labeled zones: Developer Spawn, Interaction Lab, Generator Room, Inventory & Objectives, Puzzle Sandbox, Horror Corridor, Future AI Arena, Developer Control Room
+- Integrated PE-011/012 power chain actors into Generator Room with descriptive World Outliner labels
+- Interaction Lab and Inventory & Objectives placed with existing gameplay Blueprints (doors, pickups, notes, key item)
+- Basic zone lighting, ceiling/floor/wall shells from ThirdParty industrial/lab packs (reference only)
+
+### Changed
+
+- Updated `GameplaySystems.md` with Asterion Development Testing Facility section
+
+### Notes
+
+No Blueprint logic changes. Sandbox is not campaign content. ThirdParty vendor packs were referenced only and not edited.
