@@ -1,6 +1,6 @@
 # Manual PIE Checklist — PE-021 Security Wing
 
-**Status:** Active — Gameplay **PENDING_USER**  
+**Status:** Active — Gameplay **PENDING_USER** (Validate 2026-07-25)  
 **Map:** `/Game/ProjectEcho/Maps/Production/LV_ARI_SecurityWing`  
 **Estimated time:** 15–20 minutes (first pass) + 3–5 minutes replay  
 **Gameplay PASS owner:** Executive Producer (Oscar)  
@@ -21,15 +21,15 @@
 
 ## What Technical already proved (do not re-claim as Gameplay)
 
-| Check | Evidence (Implement 2026-07-25) |
+| Check | Evidence (Validate 2026-07-25) |
 |-------|--------------------------------|
 | Map loads | MCP `load_level` → `LV_ARI_SecurityWing` |
 | GameMode | WorldSettings `DefaultGameMode` = `BP_GameMode` |
 | Soft Open Research→Security | Research `LabExit` SoftOpenExit → `softOpenLevelName=LV_ARI_SecurityWing`, `bTravelOnOpen=true` |
-| Consoles CS-BADGE / CS-ZONE / CS-EXIT | Labels + ValveID / start+target states match Design Plan |
-| Access Clearance puzzle | Label `AccessClearancePuzzle`; `PuzzleID=AccessClearance`; WR includes SoftOpenExit + Witness |
+| Consoles CS-BADGE / CS-ZONE / CS-EXIT | Labels + `valveId` / start+target states match Design Plan |
+| Access Clearance puzzle | Label `AccessClearancePuzzle`; `puzzleId=AccessClearance`; `requiredItemId=StaffKeycard`; WR includes SoftOpenExit + Witness |
 | SoftOpenExit_Stub locked pre-solve | Simulate: `bIsLocked=true`; print SoftOpenExit locked |
-| Staff Keycard + Lobby gate | `StaffKeycardPickup` + `LobbyClearanceGate` RequiredItemID=StaffKeycard |
+| Staff Keycard + Lobby gate | `StaffKeycardPickup` + `LobbyClearanceGate` requiredItemId=StaffKeycard |
 | Witness until solve | PrintString `[PE017A] WitnessPresence hidden until power` |
 | SliceReset present | Label `SliceResetButton` (`BP_SecurityWingReset`) |
 | MapCheck | `0 Error(s), 0 Warning(s)` (session logs) |
@@ -62,12 +62,12 @@
     - **CS-BADGE** — start HOLD → set **ENGAGE**
     - **CS-ZONE** — start HOLD → set **ENGAGE**
     - **CS-EXIT** — start ENGAGE → set **HOLD**
-11. Confirm incomplete set does **not** unlock SoftOpenExit_Stub.
-12. Complete correct triad (+ credential path) → World Response + Soft Open unlock + objective toward next area.
+11. Confirm incomplete set does **not** unlock SoftOpenExit_Stub (try interact while incomplete if unsure).
+12. Complete correct triad (+ credential path) → World Response (lights / ambient / PA / vent prints OK as debt) + Soft Open unlock + objective toward next area.
 
 ### World Response → Witness → Exit
 
-13. Walk Exit Approach — **Witness delayed silhouette only after solve** (not during keycard / console).
+13. Walk Exit Approach — **Witness delayed silhouette only after solve** (not during keycard / console work).
 14. Confirm Witness is tension-only (does not brick clearance / lock player permanently).
 15. Interact **SoftOpenExit_Stub** → opens (stub next zone; no Signal map required).
 
@@ -76,17 +76,40 @@
 16. Press **SliceResetButton** without quitting UE.
 17. Confirm reverse: Soft Open locked again, consoles to start states, Witness hidden again, keycard/inventory as designed, notes/objectives reset, WR receivers off.
 18. Replay clearance path once without editor restart.
-19. Optional regression: Research Soft Open still lands here; Coolant / Annex / Maintenance paths still independent.
+19. Optional regression: Research Soft Open still lands here; Coolant / Annex / Maintenance paths still independent (no generator `HasHandledPower` / fuse ownership bleed).
 
 ---
 
 ## Pass criteria
 
-- [ ] Soft Open Research→Security works (or direct PIE acceptable for first pass)
-- [ ] Staff Keycard + console triad readable without tutorial UI
+- [ ] Full loop playable with Enhanced Input in ~15–20 minutes
+- [ ] Soft Open Research→Security (or direct spawn) feels continuous
+- [ ] Staff Keycard + console triad readable without tutorial UI / walkthrough notes
 - [ ] Incomplete clearance keeps Soft Open locked (readable fail)
 - [ ] Witness only on exit path after solve
 - [ ] SliceReset full reverse + second run without UE restart
 - [ ] No combat / chase / Signal second puzzle / Armory / Restricted dump
+- [ ] Indoor lighting baseline holds (no outdoor sun dominance)
 
-**EP decision:** Gameplay PASS / FAIL / WAIVER — then `Validate Mission PE-021` or continue to Review when ready.
+## Fail / defer
+
+| Fail if… | Defer / known debt |
+|----------|-------------------|
+| Soft-lock mid-loop | PrintString `[PE019]` / `[PE017A]` stand-ins on shared parent BPs |
+| Witness visible / pressure during keycard or console solve | Stale AccessClearance `objectiveOnAvailable` fuse string (parent debt) |
+| Incomplete SliceReset (exit stays open, Witness stuck, consoles wrong) | Real audio / modular security geo dressing |
+| Outdoor sun dominates | Witness silhouette stand-in mesh |
+| SoftOpenExit opens before correct CS triad + credential | SoftOpenExit stub destination (Signal / deeper) TBD |
+| Combat / chase / Signal second puzzle / Armory / Restricted dump | Optional SecurityWingReset BeginPlay objective string cutover |
+
+---
+
+## EP decision block
+
+After walking this checklist, record:
+
+- **Human Gameplay:** PASS / FAIL / WAIVER  
+- **Replay (manual):** PASS / FAIL / N/A  
+- Notes  
+
+Then run: `Review Mission PE-021` (preferred after PASS) or `Close Mission PE-021` (Mission Director). Reopen `Validate Mission PE-021` if FAIL needs a re-check.

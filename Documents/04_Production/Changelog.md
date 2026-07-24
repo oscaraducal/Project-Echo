@@ -2,6 +2,25 @@
 
 ---
 
+## PE-021 — Validate (Technical + Human PIE Checklist)
+**Date:** 2026-07-25
+**Mission:** PE-021 Security Wing
+**Branch:** `develop`
+
+### Changed
+
+- `PE-021-SecurityWing.md` Validation: MCP technical re-check evidence; gates Compile/Technical PASS; Gameplay **PENDING_USER**; Ready for Review NO until human PIE
+- `PE-021-PlaytestChecklist.md` — full Human PIE checklist (Validate pass evidence + Fail/defer + EP decision block)
+- `PE-021-DesignPlan.md` gate → Validate complete; next = human PIE / Review or Close
+
+### Notes
+
+- Technical re-check PASS (map, GameMode, Soft Open Research→Security, CS-BADGE/ZONE/EXIT, Access Clearance + Staff Keycard, SoftOpenExit locked pre-solve, Witness hidden-until-power print, SliceReset present, MapCheck 0/0, Simulate boot)
+- Do **not** claim Gameplay PASS without EP Enhanced Input walkthrough
+- Docs-only Validate — no Blueprint/map changes
+
+---
+
 ## PE-021 — Implement Security Wing
 **Date:** 2026-07-25
 **Mission:** PE-021 Security Wing

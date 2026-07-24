@@ -18,9 +18,9 @@
 
 > ### Gate
 >
-> **Implement complete — Technical PASS · Gameplay PENDING_USER**  
-> Design Plan proceed: **YES** · Ready to Implement: **YES** (EP Implement after VDP)  
-> Next: `Validate Mission PE-021` / human PIE ([`PE-021-PlaytestChecklist.md`](PE-021-PlaytestChecklist.md)).
+> **Validate complete — Technical PASS · Gameplay PENDING_USER**  
+> Design Plan proceed: **YES** · Ready to Implement: **YES** (already implemented)  
+> Next: Human PIE ([`PE-021-PlaytestChecklist.md`](PE-021-PlaytestChecklist.md)) → `Review Mission PE-021` or `Close Mission PE-021`.
 
 ---
 

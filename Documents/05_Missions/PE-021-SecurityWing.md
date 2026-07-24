@@ -1,6 +1,6 @@
 # PE-021 — Security Wing (Post-Research Access)
 
-**Status:** Implemented — Technical (Gameplay **PENDING_USER**)  
+**Status:** Validated — Technical (Gameplay **PENDING_USER**)  
 **Branch:** `develop`  
 **Priority:** High  
 **Map:** `/Game/ProjectEcho/Maps/Production/LV_ARI_SecurityWing`  
@@ -112,41 +112,56 @@ Clue: Note B Incomplete Clearance Board. Credential: Staff Keycard (Lobby gate +
 
 ## Validation
 
-**Implement Technical:** 2026-07-25  
+**Validate pass:** 2026-07-25 (Mission Director — MCP technical re-check + playtest-generator)  
 **Gameplay:** **PENDING_USER** — walk [`PE-021-PlaytestChecklist.md`](PE-021-PlaytestChecklist.md)  
 **Ready for Review:** **NO** until Human Gameplay PASS (or EP written waiver)
 
 | Gate | Status | Evidence |
 |------|--------|----------|
-| Compile | **PASS** | AccessClearance / ClearanceConsole / SoftOpenExit / SecurityWingReset compiled + saved |
-| Technical | **PASS** | See Technical re-check — Simulate ≠ Gameplay |
-| Gameplay | **PENDING_USER** | No EP Enhanced Input walkthrough at Implement |
-| Replay | **PASS** (Technical) / **PENDING_USER** (manual) | `SliceResetButton` (`BP_SecurityWingReset`) present; parent graphs reverse mutated state |
+| Compile | **PASS** | AccessClearance / ClearanceConsole / SoftOpenExit / SecurityWingReset compiled + saved (Implement) |
+| Technical | **PASS** | See Technical re-check below — Simulate ≠ Gameplay |
+| Gameplay | **PENDING_USER** | No EP Enhanced Input walkthrough — human checklist required |
+| Replay | **PASS** (Technical) / **PENDING_USER** (manual) | `SliceResetButton` (`BP_SecurityWingReset`) present; parent graphs reverse mutated state — human must confirm full reverse |
 
-### Technical re-check (2026-07-25)
+### Technical re-check (Validate 2026-07-25)
 
 | Check | Result | Evidence |
 |-------|--------|----------|
 | Map loads | PASS | MCP `load_level` → `/Game/ProjectEcho/Maps/Production/LV_ARI_SecurityWing` |
-| GameMode | PASS | WorldSettings `DefaultGameMode` = `/Game/ProjectEcho/Gameplay/Systems/BP_GameMode` |
-| Soft Open Research→Security | PASS | Research `LabExit`: `softOpenLevelName=LV_ARI_SecurityWing`, `bTravelOnOpen=true` |
-| CS-BADGE / CS-ZONE / CS-EXIT | PASS | Labels + ValveID / start+target states match Design Plan |
-| Access Clearance puzzle | PASS | Label `AccessClearancePuzzle`; `PuzzleID=AccessClearance`; `bNotifyPowerOnSolve=false`; WR includes SoftOpenExit + Witness + lights/vent/PA/ambient |
-| SoftOpenExit_Stub locked | PASS | Simulate: `bIsLocked=true`; print `[PE019] SoftOpenExit locked` |
-| Staff Keycard + Lobby gate | PASS | `StaffKeycardPickup` itemId=StaffKeycard; `LobbyClearanceGate` RequiredItemID=StaffKeycard |
-| Witness hidden until solve | PASS | BeginPlay PrintString `[PE017A] WitnessPresence hidden until power` |
-| SliceReset present | PASS | Label `SliceResetButton` (`BP_SecurityWingReset`) |
+| GameMode | PASS | WorldSettings `DefaultGameMode` = `/Game/ProjectEcho/Gameplay/Systems/BP_GameMode.BP_GameMode_C` |
+| Soft Open Research→Security | PASS | Research `LabExit` (`BP_SoftOpenExit`): `softOpenLevelName=LV_ARI_SecurityWing`, `bTravelOnOpen=true` |
+| CS-BADGE | PASS | Label `Console_CS_BADGE`; `valveId=CS-BADGE`; `bStartOpen=false` / `bTargetOpen=true` (HOLD→ENGAGE) |
+| CS-ZONE | PASS | Label `Console_CS_ZONE`; `valveId=CS-ZONE`; `bStartOpen=false` / `bTargetOpen=true` (HOLD→ENGAGE) |
+| CS-EXIT | PASS | Label `Console_CS_EXIT`; `valveId=CS-EXIT`; `bStartOpen=true` / `bTargetOpen=false` (ENGAGE→HOLD) |
+| Access Clearance puzzle | PASS | Label `AccessClearancePuzzle`; `puzzleId=AccessClearance`; `requiredItemId=StaffKeycard`; `bNotifyPowerOnSolve=false`; WR includes SoftOpenExit + Witness + lights/vent/PA/ambient/DistantActivity |
+| SoftOpenExit_Stub locked | PASS | Simulate: `bIsLocked=true`; `SoftOpenLevelName=None`; `bTravelOnOpen=false`; print `[PE019] SoftOpenExit locked` |
+| Staff Keycard + Lobby gate | PASS | `StaffKeycardPickup` itemId=StaffKeycard; `LobbyClearanceGate` requiredItemId=StaffKeycard |
+| Witness hidden until solve | PASS | Simulate BeginPlay PrintString `[PE017A] WitnessPresence hidden until power` |
+| SliceReset present | PASS | Label `SliceResetButton` (`BP_SecurityWingReset_C_0`) |
 | MapCheck | PASS | Session log: `0 Error(s), 0 Warning(s)` |
-| Simulate boot | PASS | Consoles ready ×3; PuzzleBase ready / activated |
+| Simulate boot | PASS | Consoles ready ×3 (`[PE019] Coolant valve ready`); `[PE015] PuzzleBase ready`; SoftOpen locked; Witness hidden |
 
-**Technical caveats (not Gameplay FAIL):** Simulate-without-pawn can print `[PE015]/[PE019] ObjectiveComponent missing at BeginPlay` — full PIE with player still owns objective UI. Console PrintStrings still `[PE019] Coolant valve ready` (shared parent debt). Indoor DirectionalLight intensity reduced / actor hidden.
+**Technical caveats (not Gameplay FAIL):** Simulate-without-pawn prints `[PE019] ObjectiveComponent missing at BeginPlay` on SecurityWingReset — full PIE with player still owns objective UI. Console PrintStrings still `[PE019] Coolant valve ready` (shared parent debt). Stale parent `objectiveOnAvailable` string on AccessClearance (“Find the fuse…”) — debt; Note B / progress objectives still own player-facing chain. Indoor DirectionalLight intensity reduced / actor hidden.
+
+### Manual PIE checklist (summary)
+
+Full steps: [`PE-021-PlaytestChecklist.md`](PE-021-PlaytestChecklist.md)
+
+1. Soft Open Research→Security (or direct PIE); flashlight; indoor checkpoint lighting  
+2. Explore → Note A symptoms; Note B → Restore access clearance  
+3. Staff Keycard + Lobby gate → CS-BADGE/ZONE ENGAGE; CS-EXIT HOLD → WR + SoftOpen unlock  
+4. Exit approach — Witness delayed silhouette (not during keycard / consoles)  
+5. Interact SoftOpenExit_Stub → open (stub next zone)  
+6. SliceResetButton → full reverse; replay without UE restart  
+7. Confirm Coolant / Annex / Maintenance / Research independence  
 
 ---
 
 ## Deferred Debt
 
-- **Human Gameplay PASS (EI)** — open; EP Validate when ready  
+- **Human Gameplay PASS (EI)** — open; walk Validate checklist then Review / Close  
 - PrintString `[PE019]` / `[PE017A]` stand-ins on shared parent BPs  
+- Stale AccessClearance `objectiveOnAvailable` fuse string (parent default)  
 - Real audio / modular security geo dressing  
 - Witness silhouette stand-in  
 - SoftOpenExit stub destination (Signal / deeper) TBD  
@@ -167,9 +182,9 @@ Clue: Note B Incomplete Clearance Board. Credential: Staff Keycard (Lobby gate +
 | Field | Value |
 |-------|--------|
 | Mission | PE-021 Security Wing |
-| Status | **Complete — Technical** (Gameplay PENDING_USER) |
+| Status | **Validated — Technical** (Gameplay PENDING_USER) |
 | Branch | `develop` |
-| Commit | `24d51e5` (`feat: implement PE-021 Security Wing`) |
+| Commit | Implement `24d51e5`; Validate (docs) pending this commit |
 | Blueprints created | `BP_AccessClearancePuzzle`, `BP_ClearanceConsoleStation`, `BP_SecurityWingReset` |
 | Blueprints modified | Research `LabExit` Soft Open wiring (map instance → SoftOpenExit) |
 | Maps created | `LV_ARI_SecurityWing` |
