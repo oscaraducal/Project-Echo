@@ -4,7 +4,7 @@ Status: Active
 
 Version: 0.1
 
-Last Updated: 2026-07-24
+Last Updated: 2026-07-25
 
 ---
 
@@ -59,6 +59,7 @@ Status
 
 - Vertical Slice 01 Maintenance Wing playable validation (PE-017 manual Gameplay PASS)
 - Generator Annex playable validation (PE-018 manual Gameplay PASS)
+- Coolant Bay playable validation (PE-019 manual Gameplay PASS)
 
 ### Completed (recent)
 
@@ -69,11 +70,13 @@ Status
 - Gameplay Design Bible (PE-016)
 - Maintenance Wing production map + Witness presence beat (PE-017 implementation)
 - Generator Annex production map — fuel → generator World Response + Witness (PE-018 implementation)
+- Coolant Bay production map — Mechanical valves → pressure hatch + Witness (PE-019 implementation)
+- Soft Open Level chain: Maintenance → Annex → Coolant Bay
 
 ### Remaining
 
-- Confirm PE-017 / PE-018 full manual PIE Gameplay PASS
-- Soft travel Maintenance exit → Generator Annex (Open Level)
+- Confirm PE-017 / PE-018 / PE-019 full manual PIE Gameplay PASS
+- Coolant exit Soft Open to future Security (not built)
 - Save system / Witness AI expansion (later milestones)
 
 ---

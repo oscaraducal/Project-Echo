@@ -2,7 +2,7 @@
 
 Status: Active  
 Version: 1.1  
-Mission: PE-014 (baseline) · PE-016 (design canon) · PE-017A (slice hardening) · PE-018 (Generator Annex)  
+Mission: PE-014 (baseline) · PE-016 (design canon) · PE-017A (slice hardening) · PE-018 (Generator Annex) · PE-019 (Coolant Bay)  
 
 ---
 
@@ -14,7 +14,7 @@ High-level health grades for Project Echo before major system expansion. Grades:
 
 # Overall
 
-**Good** — Core M1 loop is implemented in `LV_TestingGround`. Production maps: `LV_ARI_MaintenanceWing` (PE-017/A fuse path) and `LV_ARI_GeneratorAnnex` (PE-018 generator fuel path + exit-path Witness). Architecture remains modular (`BPC_*` / `BPI_*` / PE-015). Primary risks: PE-017A / PE-018 manual Gameplay PASS still human-gated (EI), PE-013C real-input confirmation, PowerManager hygiene debt, empty save stubs.
+**Good** — Core M1 loop is implemented in `LV_TestingGround`. Production maps: `LV_ARI_MaintenanceWing` (PE-017/A fuse), `LV_ARI_GeneratorAnnex` (PE-018 generator), `LV_ARI_CoolantBay` (PE-019 Mechanical valves + Soft Open chain). Architecture remains modular (`BPC_*` / `BPI_*` / PE-015). Primary risks: PE-017A / PE-018 / PE-019 manual Gameplay PASS still human-gated (EI), PE-013C real-input confirmation, PowerManager hygiene debt, empty save stubs.
 
 ---
 
@@ -50,7 +50,7 @@ High-level health grades for Project Echo before major system expansion. Grades:
 | Objectives | Good |
 | Notes | Good |
 | Save | Needs Attention (stub) |
-| Puzzle / AI | Puzzle: Good (PE-015 framework + Fuse station); AI: Needs Attention (reserved) |
+| Puzzle / AI | Puzzle: Good (PE-015 + Fuse Electrical + CoolantLoop Mechanical); AI: Needs Attention (reserved) |
 
 ---
 

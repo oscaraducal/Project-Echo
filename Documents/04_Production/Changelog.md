@@ -2,6 +2,35 @@
 
 ---
 
+## PE-019 — Coolant Bay (Post-Power Mechanical)
+**Date:** 2026-07-25
+**Mission:** PE-019
+**Branch:** `develop`
+
+### Added
+
+- `LV_ARI_CoolantBay` — production map (PE-018 recipe; ≤5 rooms; Tool Spur cut)
+- `BP_CoolantLoopPuzzle` — thin Mechanical `BP_PuzzleBase` child (valve-state `MarkSolved` + World Response)
+- `BP_CoolantValve` — labeled valve interactables (V-12 / V-19 / V-27 target states)
+- `BP_CoolantBayReset` — full SliceReset twin (hatch / SoftOpen / lights / Witness / ambient / notes / objectives / valves / puzzle)
+- `BP_SoftOpenExit` — PoweredDoor child; Soft Open Level on successful open
+- Mission notes: `Documents/05_Missions/PE-019-CoolantBay.md`
+
+### Changed
+
+- `LV_ARI_GeneratorAnnex` Powered Exit → Soft Open to `LV_ARI_CoolantBay`
+- `LV_ARI_MaintenanceWing` Locked Exit → Soft Open to `LV_ARI_GeneratorAnnex` (PE-018 travel debt)
+- PE-019 Design Plan → APPROVED & IMPLEMENTED
+- ProjectHealth / Roadmap / SprintHistory / PuzzleFramework updated for Mechanical teaching beat
+
+### Notes
+
+- Technical PASS (PIE); Gameplay PASS **PENDING_USER** (Enhanced Input)
+- Audio / Witness mesh / stuck gauges tagged as PrintString / BasicShapes debt
+- No Security / fuse fork / generator redo; generator `HasHandledPower` path untouched
+
+---
+
 ## AI Studio Phase 2 — Creative Studio
 **Date:** 2026-07-25
 **Mission:** AI Studio Phase 2 (Creative Studio)

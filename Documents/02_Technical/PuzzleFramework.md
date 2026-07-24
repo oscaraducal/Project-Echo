@@ -18,7 +18,9 @@ Reusable modular puzzle foundation for Project Echo. Puzzles are composed via Bl
 BPI_Puzzle                    Contract (Activate / Deactivate / IsSolved / ResetPuzzle / GetPuzzleState / GetPuzzleID)
 E_PuzzleState                 Lifecycle enum asset (see State Mapping below)
 BP_PuzzleBase                 Actor base: state, events, objective + power hooks, save-ready fields
-  └── BP_FusePuzzle           Example: inventory fuse insert
+  ├── BP_FusePuzzle           Electrical example: inventory fuse insert
+  └── BP_CoolantLoopPuzzle    Mechanical example: valve-state equalize (PE-019)
+BP_CoolantValve               Mechanical valve interactable (reports to CoolantLoopPuzzle)
 BP_FusePickup                 Example pickup (ST_InventoryItem / FuelCan pattern)
 BP_PuzzleResetButton          Dev/test reset → ResetPuzzle + optional fuse respawn
 BP_PuzzleManager              Optional hub (OnAnyPuzzleSolved dispatcher stub)
@@ -153,6 +155,18 @@ Does **not** set `HasHandledPower` — generator World Response remains independ
 **Station:** `LV_TestingGround` hub-adjacent (`Sign_PUZZLE` / `Station_Puzzle`), outliner folder `Zones/PuzzleSandbox`.
 
 **Repeatable loop:** Pick fuse → Insert → Objective + light response → Reset → Fuse respawns → repeat (no PIE restart).
+
+---
+
+# Example: Coolant Loop Puzzle (Mechanical)
+
+| Asset | Role |
+|-------|------|
+| `BP_CoolantValve` | Toggle open/closed; compare to `bTargetOpen`; call `CheckValveSolve` |
+| `BP_CoolantLoopPuzzle` | All valves match → `MarkSolved` → `WorldResponseTargets` (no PowerManager once-flag) |
+| `BP_CoolantBayReset` | SliceReset: valves + puzzle + hatch + Witness + notes/objectives |
+
+**Station:** `LV_ARI_CoolantBay` Valve Manifold. Clue-backed IDs (V-12 / V-19 open; V-27 shut).
 
 ---
 

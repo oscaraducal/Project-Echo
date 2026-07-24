@@ -1,24 +1,24 @@
 # PE-019 — Design Plan: Coolant Bay (Post-Power Mechanical)
 
-**Status:** Design Plan — **AWAITING APPROVAL**  
+**Status:** Design Plan — **APPROVED & IMPLEMENTED**  
 **Branch:** `develop`  
 **Priority:** High (campaign beat after PE-018 Generator Annex)  
-**Map (proposed):** `/Game/ProjectEcho/Maps/Production/LV_ARI_CoolantBay`  
+**Map:** `/Game/ProjectEcho/Maps/Production/LV_ARI_CoolantBay`  
 **Wing name:** **Coolant Bay** (Engineering pressure / coolant loop)  
 **Design authority:** `Documents/01_Game_Design/GameplayDesignBible.md` (PE-016)  
 **Puzzle framework:** PE-015 (`BP_PuzzleBase` / families) — **compose existing systems; no framework fork**  
 **Map recipe:** **PE-018** (`LV_ARI_GeneratorAnnex` pattern) — Playbook §10  
 **Fuse path:** Owned by **PE-017A** — do not duplicate  
 **Predecessor:** `LV_ARI_GeneratorAnnex` (PE-018 — main plant power restored)  
-**Soft Open Level (plan only):** Generator Annex powered exit → Open Level → Coolant Bay  
+**Soft Open Level:** Generator Annex powered exit → Open Level → Coolant Bay (implemented)  
+**Mission notes:** `Documents/05_Missions/PE-019-CoolantBay.md`
 
 ---
 
 > ### Gate
 >
-> **WAIT FOR APPROVAL — DO NOT IMPLEMENT**  
-> No Blueprints, maps, or gameplay work until this plan is marked **Ready to Implement**.  
-> Ready for Approval: **YES**
+> **APPROVED FOR IMPLEMENTATION — IMPLEMENTED**  
+> Ready for Approval: **YES** · Ready to Implement: **YES** · Implemented: **YES**
 
 ---
 
@@ -508,14 +508,14 @@ Interaction, Notes, Objectives, PE-015 `BP_PuzzleBase`, Power receivers (`BPI_Po
 | Field | Value |
 |-------|-------|
 | Ready for Approval | **YES** |
-| Ready to Implement | **NO** — **WAIT FOR APPROVAL — DO NOT IMPLEMENT** |
+| Ready to Implement | **YES** — **APPROVED & IMPLEMENTED** |
 | Map | `LV_ARI_CoolantBay` |
 | Wing | Coolant Bay (Mechanical / pressure loop) |
 | Primary family | Mechanical (`BP_CoolantLoopPuzzle`) |
-| Soft Open Level | Generator Annex exit → Coolant Bay (plan wiring only) |
+| Soft Open Level | Generator Annex exit → Coolant Bay (implemented); Maintenance → Annex (PE-018 debt) |
 | Deferred | Security checkpoint, fuse fork, generator redo, Tool Spur inventory, Witness AI, Save, timed valves |
 
-**WAIT FOR APPROVAL — DO NOT IMPLEMENT**
+**APPROVED & IMPLEMENTED** — see `PE-019-CoolantBay.md`
 
 ---
 
@@ -524,6 +524,6 @@ Interaction, Notes, Objectives, PE-015 `BP_PuzzleBase`, Power receivers (`BPI_Po
 | | |
 |--|--|
 | Created | 2026-07-25 |
-| Mission | PE-019 Design Plan only |
+| Mission | PE-019 Design Plan → implemented |
 | Owners | Design (EP / LD / GD / Horror / Tech review) |
-| Related | `PE-018-DesignPlan.md`, `PE-018-GeneratorAnnex.md`, `PE-017-VerticalSlice01.md`, `GameplayDesignBible.md`, `FacilityBible.md`, `ProductionPlaybook.md` |
+| Related | `PE-019-CoolantBay.md`, `PE-018-DesignPlan.md`, `PE-018-GeneratorAnnex.md`, `PE-017-VerticalSlice01.md`, `GameplayDesignBible.md`, `FacilityBible.md`, `ProductionPlaybook.md` |
