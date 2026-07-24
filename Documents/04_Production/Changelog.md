@@ -2,6 +2,32 @@
 
 ---
 
+## AI Studio Phase 1 — Production Playbook + Cursor Workflow
+**Date:** 2026-07-25
+**Mission:** AI Studio Phase 1
+**Branch:** `develop`
+
+### Added
+
+- `Documents/04_Production/ProductionPlaybook.md` — authoritative production process (PE-017 / PE-017A / PE-018 lessons; DoD; human PIE; PRB; reference recipes)
+- `Documents/04_Production/AIStudio/` — README, MigrationPlan, Hooks policy, Phase 1 completion report
+- `.cursor/rules/` modular set: foundation, production-standard, blueprint-standards, gameplay-standards, story-canon, documentation-standard, folder-structure
+- `.cursor/skills/`: mission-planner, production-review-board, documentation-sync, playtest-generator (+ improved mission-implementer)
+- `.cursor/agents/` — 10 non-overlapping role briefs for Task / PRB
+
+### Changed
+
+- Docs: `Documents/README.md`, `MasterIndex.md`, `00_Governance/AIStudio.md` (pointers)
+- Reference decision documented: PE-018 = default production map recipe; PE-017A owns Maintenance fuse path
+
+### Notes
+
+- Documentation + `.cursor` workflow only — no Blueprints, maps, or Unreal assets in this change
+- Hooks not enabled (policy-only); optional sessionStart deferred to Phase 2
+- Unrelated dirty uassets / ThirdParty content excluded from commit
+
+---
+
 ## PE-018 — Generator Annex (Maintenance Wing Expansion)
 **Date:** 2026-07-25
 **Mission:** PE-018

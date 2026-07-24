@@ -1,0 +1,31 @@
+---
+description: Story/Facility/Room canon — environmental storytelling, symptoms not walkthroughs
+globs: Documents/03_World/**/*,Documents/01_Game_Design/NarrativeDesign.md,Documents/05_Missions/**/*
+alwaysApply: false
+---
+
+# Story Canon
+
+Canonical: `Documents/03_World/StoryBible.md`, `FacilityBible.md`, `RoomBible.md`, plus `Documents/01_Game_Design/NarrativeDesign.md`.
+
+## Delivery
+
+- Environmental storytelling over exposition dumps.
+- Notes and props = residue of work and failure — not quest markers in prose.
+- **Symptoms, not walkthroughs.** Forbidden: “go north then pick up the fuse/fuel.”
+- No audio-log monologues unless the approved brief requires them.
+
+## Facility realism
+
+- Rooms have function, what happened, and why the player is there (Room Bible).
+- Asterion is a real workplace that failed — tone stays isolated, scientific, grounded.
+- Power literacy is layered (aux vs main) when teaching Engineering beats.
+
+## Witness
+
+- Uncertainty and presence; do not over-explain The Witness in player-facing text.
+- Narrative pressure must not brick solvable gameplay.
+
+## Conflicts
+
+If a mission note or beat conflicts with Story / Facility / Room bibles, stop and resolve via ADR or EP clarification before shipping.

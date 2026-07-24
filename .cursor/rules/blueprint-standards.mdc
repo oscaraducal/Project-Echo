@@ -1,0 +1,41 @@
+---
+description: Blueprint naming DOC-002, BPC_/BPI_ rules, Outliner labels, authoring hygiene
+globs: Content/ProjectEcho/**/*
+alwaysApply: false
+---
+
+# Blueprint Standards
+
+Canonical: `Documents/00_Governance/ContributionGuide.md` (DOC-002) and `Documents/02_Technical/BlueprintStandards.md`.
+
+## Naming
+
+| Type | Format |
+|------|--------|
+| Actors | `BP_[Name]` |
+| Components | `BPC_[Name]` — never `BP_*Component` |
+| Interfaces | `BPI_[Name]` |
+| Widgets | `WBP_[Name]` |
+| Enums / Structs | `E_[Name]` / `ST_[Name]` |
+| Prototype maps | `LV_Prototype_PE###` |
+
+Mission IDs belong in docs, changelog, commits, reports, and prototype map names — **not** reusable asset names.
+
+## World Outliner
+
+- Descriptive labels (`Generator`, `EmergencyLight_01`).
+- No `PE###_` prefixes on actors.
+- Avoid generic labels (`Light_A`, `Cube`, `Test`).
+
+## Authoring
+
+- Components + interfaces + event dispatchers over tight coupling.
+- One responsibility per Blueprint; prefer config over new base classes.
+- No duplicate `_0` rename debris; no empty Tick / orphan custom events in shipping graphs.
+- PrintString may use short mission tags during validation; remove before polished Gameplay PASS claims.
+
+## Communication
+
+- World interaction: `BPI_Interactable`.
+- Power receivers: `BPI_PowerReceiver`.
+- Prefer Event Dispatchers for one-to-many (`OnPowerRestored`).

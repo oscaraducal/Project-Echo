@@ -1,0 +1,33 @@
+---
+description: Append-only changelog, mission reports, docs reflect implemented truth
+globs: Documents/**/*.md
+alwaysApply: false
+---
+
+# Documentation Standard
+
+## Living record
+
+- Never rewrite historical Changelog entries — **append only**.
+- Preserve chronological history.
+- Separate Canon from Recommendations.
+- Documentation reflects approved decisions and inspected/implemented truth — do not invent APIs.
+
+## Required touchpoints (gameplay missions)
+
+- Mission doc under `Documents/05_Missions/`
+- `Documents/04_Production/Changelog.md` (append)
+- Architecture / systems docs only if ownership, APIs, or dependencies changed
+- `ProjectHealth.md` / Roadmap when project status changes
+- Mission Completion Report (Contribution Guide format)
+
+## Process authority
+
+Production process: `Documents/04_Production/ProductionPlaybook.md`.  
+AI Studio map: `Documents/04_Production/AIStudio/README.md`.
+
+## Honesty
+
+- Record PENDING_USER / human-gated Gameplay PASS clearly.
+- Tag deferred debt in mission Notes and TechnicalDebt when new.
+- Do not claim Complete / Ready For Review when docs diverge from the build.

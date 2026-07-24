@@ -1,0 +1,42 @@
+---
+description: Definition of Done, honest gates, human PIE, SliceReset, technical debt
+alwaysApply: true
+---
+
+# Production Standard
+
+Authoritative detail: `Documents/04_Production/ProductionPlaybook.md`.
+
+## Definition of Done
+
+A mission is done only when applicable gates pass:
+
+- Blueprint compile PASS
+- Technical Simulate / runtime checks PASS
+- **Human** PIE Gameplay PASS (or EP written waiver) — Technical ≠ Gameplay
+- Replay PASS if replay is claimed (full world + player reverse)
+- Documentation updated (mission notes + Changelog append)
+- Naming / folders per DOC-002 / ASSET-001
+- Mission Completion Report submitted with honest PASS / FAIL / N/A
+- Git commit / push when requested; never push failing code
+
+Do not mark Ready For Review YES if compile, required runtime, or docs are incomplete.
+
+## Honest Gates
+
+- Enhanced Input cannot be fully driven by Slate/MCP automation — do not claim Gameplay PASS from Technical-only evidence.
+- Tag PrintString audio / mesh stand-ins as debt; do not claim Production Ready on placeholders alone.
+- Incomplete SliceReset → do not claim Replay PASS.
+
+## SliceReset
+
+If the mission claims replay without UE restart, reverse everything the loop mutates: doors, lights, Witness, PowerManager flags, ambient once-flags, notes, objectives, pickups/respawns, generator/puzzle state as applicable.
+
+## Technical Debt
+
+Triage in `Documents/02_Technical/Architecture/TechnicalDebt.md`. Prefer dedicated cleanup missions. Do not expand core frameworks outside brief scope.
+
+## Reference Recipes
+
+- **Default new production map:** PE-018 recipe (`LV_ARI_GeneratorAnnex` pattern).
+- **Maintenance fuse path:** owned by PE-017A (`LV_ARI_MaintenanceWing`).

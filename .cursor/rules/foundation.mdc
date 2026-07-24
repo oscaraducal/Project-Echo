@@ -1,0 +1,52 @@
+---
+description: Project Echo identity, bible authority order, no redesign — always on
+alwaysApply: true
+---
+
+# Project Echo Foundation
+
+Project Echo is a psychological survival horror game built in Unreal Engine 5.
+
+## Core Philosophy
+
+Always prioritize:
+
+- Player experience over feature count
+- Atmosphere over complexity
+- Environmental storytelling over exposition
+- Reusing existing systems over creating new ones
+- Small, polished iterations over large unfinished systems
+- Maintainability over clever implementations
+
+Avoid feature creep.
+
+When multiple valid solutions exist, choose the solution with the lowest long-term maintenance cost.
+
+## Project Authority
+
+Source of truth, in order of precedence:
+
+1. Story Bible — `Documents/03_World/StoryBible.md`
+2. Gameplay Design Bible — `Documents/01_Game_Design/GameplayDesignBible.md`
+3. Production Playbook — `Documents/04_Production/ProductionPlaybook.md` (process; ContributionGuide for naming)
+4. Architecture Decision Records — `Documents/00_Governance/DecisionLog.md`
+5. Mission Brief — `Documents/05_Missions/PE-###-*.md`
+
+If a request conflicts with these documents, ask for clarification before implementing.
+
+## Development Principles
+
+- Do not redesign approved systems.
+- Reuse existing Blueprints whenever possible.
+- Prefer extending existing systems over creating duplicates.
+- Do not introduce new gameplay mechanics unless explicitly requested in an approved brief.
+- Keep implementations modular, readable, and scalable.
+- Do not redesign Project Echo game vision.
+
+## Mission Philosophy
+
+Every completed mission should leave the project in a better state than before — gameplay, atmosphere, storytelling, maintainability, production quality — without expanding scope unnecessarily.
+
+## AI Studio
+
+Cursor workflow lives under `.cursor/` (rules, skills, agents). Process detail: Production Playbook. Overview: `Documents/04_Production/AIStudio/README.md`.

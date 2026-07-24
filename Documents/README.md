@@ -15,7 +15,7 @@ Project management, development workflow, AI collaboration, and design decisions
 | Document | Description |
 |----------|-------------|
 | [DevelopmentBible.md](00_Governance/DevelopmentBible.md) | Core development philosophy and process |
-| [AIStudio.md](00_Governance/AIStudio.md) | AI collaboration roles and rules |
+| [AIStudio.md](00_Governance/AIStudio.md) | AI collaboration roles (legacy overview; see Production AI Studio) |
 | [DecisionLog.md](00_Governance/DecisionLog.md) | Recorded design/technical decisions |
 | [ContributionGuide.md](00_Governance/ContributionGuide.md) | Naming, Git, PR, and asset standards (DOC-002 / ASSET-001) |
 | [MasterIndex.md](00_Governance/MasterIndex.md) | High-level documentation map |
@@ -73,10 +73,14 @@ Story, lore, facility layouts, timeline, characters, and organizations.
 
 ### 04_Production
 
-Roadmap, milestones, changelog, sprint history, health, and asset tracking.
+Roadmap, milestones, changelog, sprint history, health, asset tracking, and AI Studio workflow.
 
 | Document | Description |
 |----------|-------------|
+| [ProductionPlaybook.md](04_Production/ProductionPlaybook.md) | **Authoritative** production process (PE-017 / 017A / 018 lessons) |
+| [AIStudio/README.md](04_Production/AIStudio/README.md) | Cursor AI Studio architecture (rules / skills / agents) |
+| [AIStudio/MigrationPlan.md](04_Production/AIStudio/MigrationPlan.md) | Phase 1→N migration sequence |
+| [AIStudio/Hooks.md](04_Production/AIStudio/Hooks.md) | Hooks policy (Phase 1: docs only) |
 | [Roadmap.md](04_Production/Roadmap.md) | Forward plan |
 | [Milestones.md](04_Production/Milestones.md) | Milestone definitions |
 | [Changelog.md](04_Production/Changelog.md) | Append-only change history |
@@ -106,14 +110,18 @@ Status: In Progress
 
 ## Latest Design / Architecture Pass
 
-**PE-016 — Gameplay & Puzzle Design Bible** (canonical gameplay specification for PE-017+)
+**AI Studio Phase 1** — Production Playbook + modular Cursor rules/skills/agents (docs only)
 
-Prior: PE-015 Puzzle Framework · PE-014 Architecture Documentation
+Prior: PE-018 Generator Annex · PE-017A hardening · PE-016 Gameplay Design Bible · PE-015 Puzzle Framework · PE-014 Architecture Documentation
 
 Validation sandbox: `/Game/ProjectEcho/Maps/Development/LV_TestingGround`
+
+Default production map recipe: **PE-018**. Fuse path ownership: **PE-017A**.
 
 ---
 
 ## Development Workflow
 
-ChatGPT → Technical Design → Cursor → Implementation → Compile → PIE → Git → Technical Review → Merge
+Design Plan → Approval → Cursor Implementation → Compile → Technical Simulate → Human PIE → Docs → Git → Production Review Board → Merge
+
+See [ProductionPlaybook.md](04_Production/ProductionPlaybook.md).

@@ -1,0 +1,45 @@
+---
+description: Content/ProjectEcho hierarchy, Maps layout, ThirdParty vendor policy (ASSET-001)
+globs: Content/**/*
+alwaysApply: false
+---
+
+# Folder Structure
+
+Canonical: Contribution Guide — Official Content Folder Structure (ASSET-001).
+
+## Roots
+
+| Root | Role |
+|------|------|
+| `Content/ProjectEcho/` | All original Project Echo content |
+| `Content/ThirdParty/` | Vendor / marketplace packs |
+
+## `Content/ProjectEcho/` (key)
+
+```text
+Gameplay/   (Interaction, Inventory, Objectives, Power, Puzzle, Characters, Systems, …)
+Environment/
+Maps/Development|Prototype|Production|Cinematics/
+UI/  Data/  Input/  Sequences/
+```
+
+Prefer feature folders under `Gameplay/` — not a generic `Blueprints/` dump. Maps use `Maps/*`, not `Levels/`.
+
+## Maps
+
+- Development: `LV_TestingGround`
+- Prototype: `LV_Prototype_PE###`
+- Production: `LV_ARI_*` — must not depend on prototypes
+
+## ThirdParty policy
+
+- Packs live under `Content/ThirdParty/<PackName>/`.
+- Do **not** reorganize, rename, split, or move assets inside vendor packs.
+- Do **not** extract pack assets into ProjectEcho solely for tidy folders.
+- Reference packs from Project Echo Blueprints / levels as needed.
+- Catalog new packs in `Documents/02_Technical/AssetCatalog.md`.
+
+## Organization passes
+
+After moves: Fix Up Redirectors, recompile, verify maps. Do **not** change gameplay event graphs during pure organization passes.

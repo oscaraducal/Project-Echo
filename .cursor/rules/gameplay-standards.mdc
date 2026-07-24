@@ -1,0 +1,33 @@
+---
+description: Gameplay Design Bible loop, reuse systems, no combat/chase without ADR
+globs: Documents/01_Game_Design/**/*,Documents/05_Missions/**/*,Content/ProjectEcho/Gameplay/**/*
+alwaysApply: false
+---
+
+# Gameplay Standards
+
+Canonical: `Documents/01_Game_Design/GameplayDesignBible.md` (PE-016).
+
+## Identity
+
+Psychological survival horror — investigation, exploration, grounded facility puzzles. Not an action shooter, stealth combat arena, or RPG. Progression via knowledge, access, and systems literacy.
+
+## Loop
+
+Explore → Observe → Collect → Solve → World Response → Survive (presence) → Proceed.
+
+## Rules
+
+- Align missions with the Gameplay Design Bible; conflicts require an ADR before implement.
+- Reuse Interaction, Inventory, Objectives, Power, Puzzle (PE-015), Witness presence patterns.
+- Do not introduce combat, chase AI, or new core mechanics unless the approved brief **and** ADR allow it.
+- Witness pressures attention; never replaces solvable puzzle/ops logic.
+- Prefer one teaching beat per mission (e.g. fuse aux vs fuel/generator main).
+- Generator World Response stays independent of puzzle `NotifyPuzzlePowerResponse`.
+
+## Anti-patterns
+
+- Parallel frameworks (second inventory / power / objective system)
+- Glyph pads / arbitrary sequences without facility realism
+- Feature demos disguised as production slices
+- Silent divergence from the bible

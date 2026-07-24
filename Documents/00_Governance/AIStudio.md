@@ -2,6 +2,10 @@
 
 Status: Active
 
+> **Process authority (Phase 1+):** `Documents/04_Production/ProductionPlaybook.md`  
+> **Cursor OS map:** `Documents/04_Production/AIStudio/README.md`  
+> This file remains the concise **role overview**. On process detail conflict, the Production Playbook wins.
+
 ---
 
 # Purpose
@@ -125,16 +129,17 @@ Every mission follows the same process:
 
 # Definition of Done
 
-A mission is complete only if:
+See Production Playbook §4 for the full gate table. Summary:
 
 - Blueprint compile passes
 - No Blueprint errors
-- Runtime functionality verified
+- Technical runtime verified
+- **Human** PIE Gameplay PASS (or EP waiver) — Technical ≠ Gameplay
+- Replay PASS if replay claimed (full SliceReset)
 - Regression tests pass
-- Git commit completed
-- Git push completed
-- Mission report submitted
-- Technical Director approval received
+- Docs + Mission Completion Report
+- Git commit / push when requested
+- Production Review Board + EP approval for merge
 
 ---
 

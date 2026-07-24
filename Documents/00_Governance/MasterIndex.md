@@ -13,7 +13,7 @@ This document provides a high-level navigation map for all Project Echo document
 ## Governance
 
 - Project Standards
-- AI Studio
+- AI Studio (legacy role overview)
 - Decision Log
 - Contribution Guide
 
@@ -64,6 +64,8 @@ This document provides a high-level navigation map for all Project Echo document
 
 ## Production
 
+- **Production Playbook (authoritative process — PE-017 / 017A / 018)**
+- AI Studio (README, Migration Plan, Hooks policy)
 - Roadmap
 - Milestones
 - Sprint History
