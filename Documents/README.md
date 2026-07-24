@@ -127,7 +127,7 @@ Status: In Progress
 
 ## Latest Design / Architecture Pass
 
-**WORLD-001** — Asterion Medical Wing world expansion package (docs only; awaiting EP APPROVE / RETURN)
+**WORLD-001** — Asterion Medical Wing world expansion package (docs only; **EP APPROVED** 2026-07-25; Ready to Implement N/A)
 
 **AI Studio v1.6** — Content Studio · QA Studio · Mission Director · Previs VDP · Creative Studio
 

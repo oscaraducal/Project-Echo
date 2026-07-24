@@ -6,19 +6,19 @@
 **Date:** 2026-07-25  
 **Phase:** Full documentation package complete  
 **Ready to Implement:** **N/A**  
-**Gate:** **STOP — waiting for EP review APPROVE / RETURN**
+**Status:** Approved — awaiting Implementation Studio handoff (N/A until future PE mission builds Medical Wing)
 
 ---
 
-## Decision required
+## EP Gate
 
-**EP:** Review the package and mark **APPROVE** or **RETURN** on the Design Plan (and optionally world-building VDP checklist).
+| Field | Value |
+|-------|-------|
+| **EP decision** | **APPROVE** |
+| **Status** | Approved — awaiting Implementation Studio handoff (N/A until future PE mission builds Medical Wing) |
+| **Date** | 2026-07-25 |
 
-| On APPROVE | On RETURN |
-|------------|-----------|
-| WORLD-001 becomes world-building authority for Medical Wing | Mission Director revises flagged docs only |
-| Optionally promote Canon Recommendations R1–R6 via ADR/edits | No bible promotion |
-| Future PE-### Medical spatial slice may be planned separately | No Unreal work |
+WORLD-001 is world-building authority for Medical Wing. Canon Recommendations R1–R6 remain proposals until separate EP/ADR promotion. Future PE-### Medical spatial slice is **not** started by this approval.
 
 ---
 
@@ -72,7 +72,7 @@
 
 ## Handoff readiness
 
-Package is **handoff-ready for a future Implementation Studio PE-###** after separate Design Plan + gameplay VDP + EP approvals. WORLD-001 itself does **not** authorize Implement.
+Package is **approved and handoff-ready for a future Implementation Studio PE-###** after that mission’s separate Design Plan + gameplay VDP + EP approvals. WORLD-001 itself does **not** authorize Implement and does **not** auto-start Medical Wing.
 
 Universe effect: Asterion gains a believable clinical workplace layer — fitness as control, symptoms without answers, paperwork linking Research and Security.
 
@@ -80,8 +80,8 @@ Universe effect: Asterion gains a believable clinical workplace layer — fitnes
 
 ## EP signature block
 
-**Decision:** ☐ APPROVE ☐ RETURN  
+**Decision:** ☑ APPROVE ☐ RETURN  
 
 **Canon promotions requested (optional):** ☐ R1 Facility ☐ R2 Timeline ☐ R3 Glossary ☐ R4 Characters ☐ R5 Zone C ADR ☐ R6 Organizations  
 
-**Notes:** _______________________________________________
+**Notes:** EP APPROVE 2026-07-25 — world package only; R1–R6 remain recommendations; no Unreal / no Medical Wing PE mission auto-start.

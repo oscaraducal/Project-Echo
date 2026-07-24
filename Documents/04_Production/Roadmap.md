@@ -76,11 +76,13 @@ Status
 - Research Wing production map — containment calibration + Witness + Soft Open from Coolant (PE-020 implementation; Closed — Technical 2026-07-25)
 - Security Wing production map — Staff Keycard + Access Clearance + Witness + Soft Open from Research (PE-021 implementation; Closed — Technical 2026-07-25)
 - Soft Open Level chain: Maintenance → Annex → Coolant Bay → Research Wing → Security Wing
+- WORLD-001 Medical Wing world expansion package (docs only) — **EP APPROVED** 2026-07-25; Ready to Implement N/A until future PE mission
 
 ### Remaining
 
 - Confirm PE-017 / PE-018 / PE-019 / PE-020 / PE-021 full manual PIE Gameplay PASS
 - Security Soft Open stub → future Signal / deeper sector (not built)
+- Future PE-### Medical Wing spatial slice (optional; WORLD-001 is world docs authority only — not started)
 - Save system / Witness AI expansion (later milestones)
 
 ---

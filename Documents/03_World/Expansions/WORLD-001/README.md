@@ -17,6 +17,13 @@ This folder is a **World library pointer** for Asterion expansions. Canonical de
 | Visual Design Package | [`../../../05_Missions/WORLD-001/WORLD-001-VisualDesignPackage.md`](../../../05_Missions/WORLD-001/WORLD-001-VisualDesignPackage.md) |
 | Canon Validation | [`../../../05_Missions/WORLD-001/WORLD-001-CanonValidationReport.md`](../../../05_Missions/WORLD-001/WORLD-001-CanonValidationReport.md) |
 
-**Canon note:** Story / Facility / Room bibles are **not** automatically updated by this expansion. See Canon Validation Recommendations (R1–R6).
+**Canon note:** Story / Facility / Room bibles are **not** automatically updated by this expansion. See Canon Validation Recommendations (R1–R6) — still proposals after package APPROVE.
 
-**Status:** Awaiting EP APPROVE / RETURN · Ready to Implement: N/A
+### EP Gate
+
+| Field | Value |
+|-------|-------|
+| **EP decision** | **APPROVE** |
+| **Status** | Approved — awaiting Implementation Studio handoff (N/A until future PE mission builds Medical Wing) |
+| **Date** | 2026-07-25 |
+| **Ready to Implement** | **N/A** |

@@ -1,6 +1,6 @@
 # WORLD-001 — Design Plan: Expand the World – Asterion Research Institute
 
-**Status:** Ready for EP Review — **APPROVE / RETURN**  
+**Status:** Approved — awaiting Implementation Studio handoff (N/A until future PE mission builds Medical Wing)  
 **Mission ID:** WORLD-001  
 **Type:** World-building / AI Studio Content validation — **NOT** a PE gameplay slice  
 **Branch:** `develop`  
@@ -11,11 +11,15 @@
 
 ---
 
-> ### Gate
+> ### EP Gate
 >
-> **STOP — waiting for EP: APPROVE / RETURN** on the full world package.  
-> This Design Plan proceeds only as documentation authority for WORLD-001 deliverables.  
-> Does **not** set Ready to Implement on any map. Does **not** authorize Blueprint / map / asset changes.
+> **EP decision:** **APPROVE**  
+> **Status:** Approved — awaiting Implementation Studio handoff (N/A until future PE mission builds Medical Wing)  
+> **Date:** 2026-07-25  
+>
+> WORLD-001 is world-building authority for Medical Wing documentation.  
+> Does **not** set Ready to Implement on any map. Does **not** authorize Blueprint / map / asset changes.  
+> Does **not** auto-start a Medical Wing PE gameplay mission.
 
 ---
 
@@ -111,7 +115,7 @@ Future PE map may cut rooms; WORLD-001 documents the full coherent department.
 
 | Deliverable | Path | Status |
 |-------------|------|--------|
-| Design Plan (this doc) | `Documents/05_Missions/WORLD-001-DesignPlan.md` | Complete — awaiting EP |
+| Design Plan (this doc) | `Documents/05_Missions/WORLD-001-DesignPlan.md` | **APPROVED** (2026-07-25) |
 | Package README | `Documents/05_Missions/WORLD-001/README.md` | Complete |
 | Environment Design | `Documents/05_Missions/WORLD-001/EnvironmentDesign.md` | Complete |
 | Content — Narrative | `Documents/05_Missions/WORLD-001/ContentPackage-Narrative.md` | Complete |
@@ -139,12 +143,13 @@ Future PE map may cut rooms; WORLD-001 documents the full coherent department.
 
 | Field | Value |
 |-------|-------|
-| Ready for EP Review | **YES** |
+| Ready for EP Review | **YES** (complete) |
 | Ready to Implement | **N/A** |
-| Recommended EP action | **APPROVE** package as world-building authority **or** **RETURN** with notes |
-| On APPROVE | Optional follow-up: elevate selected Canon Proposals via ADR; schedule future PE-### Medical spatial slice separately |
-| On RETURN | Mission Director revises flagged packages only |
+| EP decision | **APPROVE** |
+| Status | Approved — awaiting Implementation Studio handoff (N/A until future PE mission builds Medical Wing) |
+| Date | 2026-07-25 |
+| Follow-up | Optional: elevate selected Canon Proposals (R1–R6) via ADR; schedule future PE-### Medical spatial slice only when EP starts that mission |
 
-**EP decision:** ☐ APPROVE ☐ RETURN  
+**EP decision:** ☑ APPROVE ☐ RETURN  
 
-**EP notes:** _________________________________
+**EP notes:** Package approved as Medical Wing world-building authority. No Unreal / no auto-start Medical Wing PE mission.

@@ -1,6 +1,6 @@
 # WORLD-001 — Canon Validation Report
 
-**Status:** Complete  
+**Status:** Complete — package **EP APPROVED** 2026-07-25 (R1–R6 remain Recommendations)  
 **Mission:** WORLD-001  
 **Reviewer posture:** Lore Consistency / Canon Librarian (report only)  
 **Date:** 2026-07-25  
@@ -12,7 +12,7 @@
 
 **Overall: PASS WITH RECOMMENDATIONS**
 
-WORLD-001 does not rewrite Story Canon in-place. Enrichment is packaged as proposals and in-world residue consistent with existing bibles. No blocking canon contradictions found for EP review of the **documentation package**. Items below separate **Pass**, **Fail (none)**, and **Recommendations vs Canon**.
+WORLD-001 documentation package is **EP APPROVED** (2026-07-25). Canon Validation verdict unchanged: enrichment remains proposals and in-world residue consistent with existing bibles. **R1–R6 are still Recommendations** — not promoted into Story / Facility / Room bibles by this APPROVE. Items below separate **Pass**, **Fail (none)**, and **Recommendations vs Canon**.
 
 ---
 
@@ -128,7 +128,7 @@ WORLD-001 does not rewrite Story Canon in-place. Enrichment is packaged as propo
 | R5 | Provisional Zone C definition aligned with future Security zone bible | ADR when Security zones formalize |
 | R6 | Optional mirror note in Organizations.md Medical one-liner | EP edit |
 
-Until promoted: treat as **Proposal only**. Implementation Studio must not assume bible text already changed.
+**Post-APPROVE (2026-07-25):** Package approved; R1–R6 **not** auto-promoted. Until promoted via separate EP/ADR: treat as **Proposal only**. Implementation Studio must not assume bible text already changed.
 
 ---
 
@@ -148,4 +148,5 @@ Until promoted: treat as **Proposal only**. Implementation Studio must not assum
 |------|--------|
 | Canon Validation | **PASS WITH RECOMMENDATIONS** |
 | Silent canon edits | **NONE** |
-| EP required for bible promotion | **YES** (R1–R6) |
+| Package EP Gate | **APPROVE** (2026-07-25) |
+| EP required for bible promotion | **YES** (R1–R6 still open) |

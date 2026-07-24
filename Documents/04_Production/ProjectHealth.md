@@ -2,7 +2,7 @@
 
 Status: Active  
 Version: 1.1  
-Mission: PE-014 (baseline) · PE-016 (design canon) · PE-017A (slice hardening) · PE-018 (Generator Annex) · PE-019 (Coolant Bay) · PE-020 (Research Wing — Closed Technical; Gameplay PENDING_USER) · PE-021 (Security Wing — Closed Technical; Gameplay PENDING_USER)  
+Mission: PE-014 (baseline) · PE-016 (design canon) · PE-017A (slice hardening) · PE-018 (Generator Annex) · PE-019 (Coolant Bay) · PE-020 (Research Wing — Closed Technical; Gameplay PENDING_USER) · PE-021 (Security Wing — Closed Technical; Gameplay PENDING_USER) · WORLD-001 (Medical Wing world package — **EP APPROVED** 2026-07-25; Ready to Implement N/A)  
 
 ---
 
@@ -86,6 +86,7 @@ High-level health grades for Project Echo before major system expansion. Grades:
 - Flow, systems, dependency map, event flow, standards, debt, health, README index updated.
 - BugHistory captures PE-013B/C root causes.
 - **GameplayDesignBible.md (PE-016)** is the canonical gameplay specification for PE-017+.
+- **WORLD-001** Medical Wing world package **EP APPROVED** (2026-07-25) — docs authority only; Canon R1–R6 still Recommendations; no Unreal Medical Wing map.
 
 **Recommendations:** Keep Changelog append-only; refresh ContributionGuide folder examples to match ASSET-001 paths; cite the Gameplay Design Bible (or ADR) on all new gameplay missions.
 

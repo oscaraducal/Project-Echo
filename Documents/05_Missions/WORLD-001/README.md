@@ -2,7 +2,8 @@
 
 **Mission:** Expand the World – Asterion Research Institute  
 **Expansion target:** Medical Wing — Occupational Health & Clinical Observation  
-**Status:** Awaiting EP APPROVE / RETURN  
+**Status:** Approved — awaiting Implementation Studio handoff (N/A until future PE mission builds Medical Wing)  
+**EP Gate:** APPROVE · 2026-07-25  
 **Unreal work:** None
 
 ## Documents in this folder

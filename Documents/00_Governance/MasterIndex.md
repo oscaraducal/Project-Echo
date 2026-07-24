@@ -60,7 +60,7 @@ This document provides a high-level navigation map for all Project Echo document
 - Characters
 - Organizations
 - Glossary
-- **Expansions / WORLD-001** — Medical Wing Occupational Health & Clinical Observation (docs package; awaiting EP APPROVE) — `Documents/05_Missions/WORLD-001/` · mirror `Documents/03_World/Expansions/WORLD-001/`
+- **Expansions / WORLD-001** — Medical Wing Occupational Health & Clinical Observation (docs package; **EP APPROVED** 2026-07-25; Ready to Implement N/A) — `Documents/05_Missions/WORLD-001/` · mirror `Documents/03_World/Expansions/WORLD-001/`
 
 ---
 
@@ -91,6 +91,6 @@ Each mission includes:
 - Commit Hash
 - Lessons Learned
 
-Latest world-building package: **WORLD-001** Medical Wing expansion (`Documents/05_Missions/WORLD-001/`) — docs only; awaiting EP APPROVE / RETURN; Design Plan `WORLD-001-DesignPlan.md`.
+Latest world-building package: **WORLD-001** Medical Wing expansion (`Documents/05_Missions/WORLD-001/`) — docs only; **EP APPROVED** 2026-07-25; awaiting Implementation Studio handoff (N/A until future PE mission); Design Plan `WORLD-001-DesignPlan.md`.
 
 Latest closed production slice: **PE-021 Security Wing** (`Documents/05_Missions/PE-021-SecurityWing.md`) — Closed Technical 2026-07-25; Gameplay PENDING_USER; PRB Approve with Conditions. Prior: PE-020 Research Wing (`Documents/05_Missions/PE-020-ResearchWing.md`); process retro: `Documents/04_Production/AIStudio/Retrospective-PE-020.md`.

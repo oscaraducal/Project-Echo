@@ -2,6 +2,28 @@
 
 ---
 
+## WORLD-001 — EP APPROVED (Medical Wing world package)
+**Date:** 2026-07-25
+**Mission:** WORLD-001 Expand the World – Asterion Research Institute
+**Branch:** `develop`
+
+### Changed
+
+- `Documents/05_Missions/WORLD-001-DesignPlan.md` — EP Gate APPROVE recorded
+- `Documents/05_Missions/WORLD-001/WORLD-001-ExecutiveSummary.md` — EP Gate APPROVE; handoff status
+- `Documents/05_Missions/WORLD-001/README.md` — Approved package status
+- `Documents/05_Missions/WORLD-001/WORLD-001-CanonValidationReport.md` — package APPROVED; R1–R6 remain Recommendations
+- `Documents/03_World/Expansions/WORLD-001/README.md` — EP Gate mirror
+- `ProjectHealth.md` / `Roadmap.md` / `SprintHistory.md` / `MasterIndex.md` / `Documents/README.md` — brief WORLD-001 approved status
+
+### Notes
+
+- Docs only — no Unreal, Blueprints, maps, or Medical Wing PE gameplay mission auto-start
+- Status: Approved — awaiting Implementation Studio handoff (N/A until future PE mission builds Medical Wing)
+- Canon Recommendations R1–R6 still proposals (not promoted)
+
+---
+
 ## WORLD-001 — Asterion Medical Wing world expansion package
 **Date:** 2026-07-25
 **Mission:** WORLD-001 Expand the World – Asterion Research Institute
