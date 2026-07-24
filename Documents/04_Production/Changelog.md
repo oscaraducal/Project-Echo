@@ -2,6 +2,29 @@
 
 ---
 
+## PE-017A — Experience Hardening & Environment Pass
+**Date:** 2026-07-25
+**Mission:** PE-017A
+**Branch:** `develop`
+
+### Changed
+
+- `BP_MaintenanceWingReset` — complete SliceReset (door lock, emergency lights, Witness once-flag, objectives, notes, fuse respawn via `FuseSpawnMarker`, ambient flags, inventory Fuse clear)
+- `BP_NotePickup` — skip `SetObjective` when `ObjectiveOnRead` is empty
+- `BP_WitnessSilhouetteHint` — hidden until restore; delayed exit-path presence; `ResetPresence`
+- `BP_EmergencyLight` — PointLight standby (dim red) → flicker → fluorescent restore; broken stubs residual
+- `BP_PowerAmbientFeedback` — stronger power-restore audio print chain
+- `BP_FusePuzzle` — `FUSE BAY EMPTY` interaction prompt; cleared FuelCan leftover ItemData on slice instance
+- `LV_ARI_MaintenanceWing` — Witness on exit approach; Note A symptoms-only; outdoor Directional/Sky dimmed; room dressing from existing packs; north silhouette stand-in removed
+- Docs: `PE-017-VerticalSlice01.md` (PE-017A notes), `ProjectHealth.md`
+
+### Notes
+
+- Technical PIE PASS (boot / init logs). Manual Gameplay PASS still required (Enhanced Input).
+- ThirdParty / vendor pack mass excluded from commit; map refs local Fab/sample packs already in workspace.
+
+---
+
 ## Vertical Slice 01 — Maintenance Wing
 **Date:** 2026-07-24
 **Mission:** PE-017
@@ -23,7 +46,7 @@
 
 - Manual PIE Gameplay PASS still required (Enhanced Input)
 - ThirdParty mass / unrelated dirties excluded from commit
-- Deferred: full door/light/Witness reverse on slice reset without PIE
+- Deferred: full door/light/Witness reverse on slice reset without PIE — **addressed in PE-017A**
 
 ---
 

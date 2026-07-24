@@ -14,7 +14,7 @@ High-level health grades for Project Echo before major system expansion. Grades:
 
 # Overall
 
-**Good** — Core M1 loop is implemented in `LV_TestingGround`, and PE-017 delivers the first production playable map `LV_ARI_MaintenanceWing` composing explore → fuse puzzle → power → Witness presence. Architecture remains modular (`BPC_*` / `BPI_*` / PE-015). Primary risks: PE-017 manual Gameplay PASS not yet confirmed, PE-013C real-input confirmation, PowerManager coupling, empty save stubs.
+**Good** — Core M1 loop is implemented in `LV_TestingGround`, and PE-017 / PE-017A harden the first production playable map `LV_ARI_MaintenanceWing` (explore → observe → fuse → power → exit-path Witness). Architecture remains modular (`BPC_*` / `BPI_*` / PE-015). Primary risks: PE-017A manual Gameplay PASS still human-gated (EI), PE-013C real-input confirmation, PowerManager coupling, empty save stubs.
 
 ---
 
