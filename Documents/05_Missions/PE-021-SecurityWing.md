@@ -198,7 +198,7 @@ Durable one-liner → Playbook §11 **PE-021**:
 | Mission | PE-021 Security Wing |
 | Status | **Closed — Technical** (Gameplay PENDING_USER); PRB Approve with Conditions |
 | Branch | `develop` |
-| Commit | Close `docs: close PE-021 Security Wing` (Implement `24d51e5`; Validate `ef48fe1`; Review `4e33aba`) |
+| Commit | Close `d1c626c` (`docs: close PE-021 Security Wing`); Implement `24d51e5`; Validate `ef48fe1`; Review `4e33aba` |
 | Blueprints created | `BP_AccessClearancePuzzle`, `BP_ClearanceConsoleStation`, `BP_SecurityWingReset` |
 | Blueprints modified | Research `LabExit` Soft Open wiring (map instance → SoftOpenExit) |
 | Maps created | `LV_ARI_SecurityWing` |
