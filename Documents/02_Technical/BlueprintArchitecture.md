@@ -1,8 +1,8 @@
 # Blueprint Architecture
 
-Status: Active
-
-Version: 0.1
+Status: Active  
+Version: 0.2  
+Mission: PE-014 (pointer refresh)
 
 ---
 
@@ -14,19 +14,25 @@ Every Blueprint should have a clear responsibility.
 
 Avoid large, monolithic Blueprints.
 
+For full implementation truth see:
+
+- `GameplayFlow.md`
+- `GameplaySystems.md`
+- `Architecture/BlueprintDependencyMap.md`
+- `Architecture/EventFlow.md`
+- `BlueprintStandards.md`
+
 ---
 
 # Core Architecture
 
-PlayerCharacter
-
-├── InteractionComponent
-
-├── FlashlightComponent
-
-├── InventoryComponent
-
-├── ObjectiveComponent
+```text
+BP_PlayerCharacter
+├── BPC_Interaction
+├── BPC_Flashlight
+├── BPC_Inventory
+└── BPC_Objective
+```
 
 ---
 
@@ -34,15 +40,11 @@ PlayerCharacter
 
 Preferred
 
+```text
 Blueprint Interfaces
-
-↓
-
-Event Dispatchers
-
-↓
-
-Components
+  → Event Dispatchers
+  → Components
+```
 
 Avoid direct Blueprint references whenever possible.
 
@@ -50,75 +52,37 @@ Avoid direct Blueprint references whenever possible.
 
 # Gameplay Flow
 
+```text
 Player
-
-↓
-
-Interaction Component
-
-↓
-
-Interactable Interface
-
-↓
-
-Gameplay Actor
-
-↓
-
-Gameplay Logic
+  → BPC_Interaction
+  → BPI_Interactable
+  → Gameplay Actor
+  → Gameplay Logic
+```
 
 ---
 
 # Power Architecture
 
-Generator
-
-↓
-
-Event Dispatcher
-
-↓
-
-Power Manager
-
-↓
-
-Power Interface
-
-↓
-
-Lights
-
-↓
-
-Doors
-
-↓
-
-Ventilation / PA / Distant Activity
-
-↓
-
-Future Systems
+```text
+BP_Generator
+  → OnPowerRestored (dispatcher)
+  → BP_PowerManager
+  → BPI_PowerReceiver / concrete receivers
+  → Lights / Doors / Ventilation / PA / Distant Activity
+  → Future Systems
+```
 
 ---
 
 # UI Architecture
 
+```text
 Gameplay System
-
-↓
-
-Component
-
-↓
-
-Widget
-
-↓
-
-Player HUD
+  → Component
+  → Widget (WBP_*)
+  → Player HUD
+```
 
 Widgets should never contain gameplay logic.
 

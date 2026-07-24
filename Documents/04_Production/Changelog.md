@@ -2,6 +2,33 @@
 
 ---
 
+## Gameplay Framework Consolidation & Architecture Documentation
+**Date:** 2026-07-24
+**Mission:** PE-014
+
+### Added
+
+- `Documents/02_Technical/GameplayFlow.md` — implemented end-to-end loop + Mermaid diagrams (player lifecycle, input, interaction, objectives, generator→power, notes, save/puzzle hooks)
+- `Documents/02_Technical/Architecture/BlueprintDependencyMap.md` — major BP relationship tree, coupling concerns, circular-path notes (`BPC_*` names)
+- `Documents/02_Technical/Architecture/EventFlow.md` — event chains for Movement, Interaction, Generator, Power, Objectives, Notes, Flashlight
+- `Documents/02_Technical/Architecture/TechnicalDebt.md` — Safe / Requires Review / Ignore debt triage from MCP inspection
+- `Documents/02_Technical/BlueprintStandards.md` — naming, variables, functions, categories, events, folders, interfaces, components (DOC-002 / ASSET-001 aligned)
+- `Documents/04_Production/ProjectHealth.md` — category health grades + recommendations
+
+### Changed
+
+- `Documents/02_Technical/GameplaySystems.md` — full per-system Purpose / Owners / Deps / I/O / Events / Public Functions / Status / Future (MCP-accurate)
+- `Documents/02_Technical/BlueprintArchitecture.md` — pointer refresh to PE-014 architecture set; `BPC_*` component tree
+- `Documents/README.md` — indexed 00–04 docs with short descriptions
+
+### Notes
+
+- Documentation-only mission; no gameplay feature work
+- PE-013C input Blueprint dirties intentionally excluded from this commit
+- Validation sandbox remains `LV_TestingGround`
+
+---
+
 ## Development Sandbox Environment Refinement
 **Date:** 2026-07-24
 **Mission:** PE-013D

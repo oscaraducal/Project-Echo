@@ -1,264 +1,552 @@
 ﻿# Gameplay Systems
 
-Status: Active
-
-Version: 0.1
+Status: Active  
+Version: 1.0  
+Mission: PE-014  
 
 ---
 
 # Purpose
 
-This document provides an overview of every gameplay system in Project Echo.
+Authoritative inventory of **implemented** Project Echo gameplay systems after DOC-002 / ASSET-001 naming and PE-011–PE-013 sandbox work.
 
-Each system is designed to be modular, reusable, and independently testable.
-
----
-
-# Current Systems
-
-## Movement
-
-Status
-
-Complete
-
-Responsibilities
-
-- Player movement
-- Looking
-- Sprinting (Future)
-- Crouching (Future)
-
-Dependencies
-
-- Enhanced Input
+Each system lists Purpose, Owner Blueprint(s), Dependencies, Inputs, Outputs, Events, Public Functions, Current Status, and Future Expansion as inspected via Unreal MCP (PE-014). Do not invent APIs.
 
 ---
 
-## Interaction
+# Naming (Post DOC-002 / ASSET-001)
 
-Status
-
-Complete
-
-Responsibilities
-
-- Detect interactable actors
-- Display interaction prompts
-- Execute Blueprint Interface calls
-
-Dependencies
-
-- BPI_Interactable
-
-Used By
-
-- Doors
-- Notes
-- Flashlight Pickup
-- Fuel Can
-- Generator
+| Kind | Format | Examples |
+|------|--------|----------|
+| Components | `BPC_*` | `BPC_Interaction`, `BPC_Inventory`, `BPC_Objective`, `BPC_Flashlight` |
+| Interfaces | `BPI_*` | `BPI_Interactable`, `BPI_PowerReceiver` |
+| Structs | `ST_*` | `ST_InventoryItem` |
+| Widgets | `WBP_*` | `WBP_NoteReader`, `WBP_Objective` |
+| Content root | | `/Game/ProjectEcho/Gameplay/`, `UI/`, `Data/`, `Input/`, `Maps/` |
 
 ---
 
-## Flashlight
+# Player Movement
 
-Status
+## Purpose
 
-Complete
+First-person locomotion and look for the player pawn.
 
-Responsibilities
+## Owner Blueprint(s)
 
-- Equip flashlight
-- Toggle light
-- Future battery management
+- `/Game/ProjectEcho/Gameplay/Characters/BP_PlayerCharacter`
+- `/Game/ProjectEcho/Gameplay/Characters/BP_PlayerController` (IMC registration only)
 
-Dependencies
+## Dependencies
 
-- Interaction System
+- Enhanced Input (`IMC_Player`, `IA_Move`, `IA_Look`, `IA_Jump`, `IA_Sprint`)
+- Character Movement Component (engine)
 
----
+## Inputs
 
-## Inventory
+| Action | Handler |
+|--------|---------|
+| `IA_Move` Triggered | `HandleMoveInput(ActionValue)` |
+| `IA_Look` Triggered | `HandleLookInput(ActionValue)` |
+| `IA_Jump` Started / Completed | `Jump` / `StopJumping` |
+| `IA_Sprint` Started / Completed | `StartSprint` / `StopSprint` |
 
-Status
+## Outputs
 
-Complete
+- Character movement / control rotation
+- Sprint speed via `ApplySprintSpeed` / `ApplyWalkSpeed`
 
-Responsibilities
+## Events
 
-- Store gameplay items
-- Query required items
-- Consume items
+- Enhanced Input events on Character EventGraph
+- `ReceiveBeginPlay` implemented; most Character lifecycle events unused
 
-Current Items
+## Public Functions
 
-- Facility Key
-- Fuel Can
+| Function | Role |
+|----------|------|
+| `HandleMoveInput` | Apply movement from action value |
+| `HandleLookInput` | Apply look / yaw-pitch |
+| `CanStartSprint` | Returns `CanSprint` (`bCanSprint`) |
+| `StartSprint` | Gate on `CanSprint`, set `IsSprinting`, apply sprint speed |
+| `StopSprint` | Clear sprint, apply walk speed |
+| `ApplyWalkSpeed` / `ApplySprintSpeed` | Write max walk speed |
+| `OnMovementStateChanged` | Expansion hook |
+| `GenerateMovementNoise` | Expansion hook (future AI) |
 
-Future
+## Variables
 
-- Batteries
-- Access Cards
-- Fuses
+`WalkSpeed`, `SprintSpeed`, `IsSprinting`, `CanSprint`, `HorizontalSensitivity`, `VerticalSensitivity`
 
----
+## Current Status
 
-## Objectives
+**Complete** for walk / look / jump / sprint API.  
+**Gameplay Validation:** Move/Look/Sprint remain `PENDING_USER` after PE-013C IMC fix (BUG-008). Technical: Jump EI observed after IMC AddMappingContext PASS. Crouch not implemented.
 
-Status
+## Future Expansion
 
-Complete
-
-Responsibilities
-
-- Set objectives
-- Complete objectives
-- Update objective UI
-
-Future
-
-- Optional objectives
-- Chapter objectives
-
----
-
-## Generator
-
-Status
-
-Complete
-
-Responsibilities
-
-- Track generator state
-- Consume fuel
-- Broadcast power restoration
-
-Dependencies
-
-- Inventory
-- Objectives
+- Crouch (`IA_Crouch` asset exists, unmapped)
+- Footstep / noise → AI
+- Stamina / sprint limits
 
 ---
 
-## Power System
+# Enhanced Input
 
-Status
+## Purpose
 
-Complete (PE-011 / PE-012)
+Route hardware input to Character handlers via IMC.
 
-Responsibilities
+## Owner Blueprint(s)
 
-- React to restored power
-- Activate world systems
-- Notify powered actors
+- `/Game/ProjectEcho/Input/IMC_Player`
+- Actions under `/Game/ProjectEcho/Input/IA_*`
+- Registration: `BP_PlayerController` (`IMC_Player` variable; OnPossess + delayed BeginPlay)
 
-Dependencies
+## Dependencies
 
-- Generator
+- Enhanced Input plugin / Local Player Subsystem
+- `DefaultInput.ini` Enhanced Player Input defaults
 
-Receivers
+## Inputs
 
-- Emergency Lights
-- Powered Door
-- Power Ambient Feedback
-- Ventilation Unit
-- PA Speaker
-- Distant Activity Hint
+Keyboard/mouse/gamepad → Enhanced Input.
 
----
+## Outputs
 
-## World Response
+Triggered / Started / Completed events on `BP_PlayerCharacter`.
 
-Status
+## Events
 
-Complete (PE-012)
+Controller: `OnPossess`, `BeginPlay` → `AddMappingContext(IMC_Player)`.
 
-Responsibilities
+## Public Functions
 
-- Play a once-only environmental response after power restoration
-- Imply facility reactivation without revealing threat or story spoilers
-- Encourage exploration through unlocked access and distant activity hints
+None custom on Controller beyond EventGraph registration.
 
-Dependencies
+## Current Status
 
-- Power Manager
-- BPI_PowerReceiver
+**Complete** for six mapped actions. PE-013B restored Interact/Flashlight mappings. PE-013C fixed GetEIS registration path (may still be uncommitted dirty on develop). Dual registration (OnPossess + BeginPlay+1f) is intentional redundancy.
+
+## Future Expansion
+
+Map `IA_Crouch`, `IA_Inventory`, `IA_Journal`, `IA_Pause`; remove temporary Jump PrintString after user PASS.
 
 ---
 
-## Asterion Development Testing Facility
+# Interaction
 
-Status
+## Purpose
 
-Complete (PE-013 / PE-013A / PE-013B)
+Detect interactable actors and call `BPI_Interactable`.
 
-Map
+## Owner Blueprint(s)
 
-`/Game/ProjectEcho/Maps/Development/LV_TestingGround`
+- `/Game/ProjectEcho/Gameplay/Interaction/BPC_Interaction` (on Player)
+- `/Game/ProjectEcho/Gameplay/Interaction/BPI_Interactable`
+- `/Game/ProjectEcho/Gameplay/Interaction/BP_InteractableBase`
+- World: `BP_Door`, `BP_LockedDoor`, `BP_NotePickup`, pickups, `BP_Generator`
 
-Purpose
+## Dependencies
 
-Permanent development sandbox (not campaign content) for validating and demonstrating gameplay systems in a believable Asterion Research Institute industrial/research layout.
+- `BPI_Interactable`
+- Physics / Visibility trace
+- Owner Character (eyes viewpoint)
 
-Zones
+## Inputs
 
-1. Developer Spawn — safe start (`PlayerStart_DeveloperSpawn`), hub paths to all zones
-2. Interaction Lab — doors, locked door, flashlight pickup, lab props
-3. Generator Room — PE-011/012 power chain (`Generator`, `FuelCan`, `PowerManager`, `PoweredDoor`, emergency lights, `VentilationUnit`, `PASpeaker`, `DistantActivityHint`, ambient feedback)
-4. Inventory & Objectives — notes, key item pickup, objective progression hooks
-5. Puzzle Sandbox — reserved empty labeled area
-6. Horror Corridor — dim lighting / ambience test (pipes + sparse red lights)
-7. Future AI Arena — open space, no AI placed
-8. Developer Control Room — debug board + `DevSandboxValidator`
+- `TryInteract` from Character (`IA_Interact`)
+- Variables: `TraceRadius`, `TraceDistance`, `bRequireCanInteract`, `CurrentTarget`
 
-### Test Stations (PE-013B)
+## Outputs
 
-Labeled `Station_*` TextRenderActors under `Labels/Stations`:
+- `Interact` / `CanInteract` / `GetInteractionText` on target
 
-- Movement, Interaction, Inventory, Generator, Power, Objectives, Notes, Future Puzzle, Future AI, Developer Control
+## Events
 
-In-level `DebugBoard_Systems` lists current systems, known limitations, and reserved future areas.
+None on component (function-driven). World actors implement `EventInteract`.
 
-### PE-013B Root Cause Analysis
+## Public Functions
 
-| Check | Finding |
-| --- | --- |
-| World Settings GameMode | TestingGround already overrode `DefaultGameMode` → `BP_GameMode` (OK) |
-| GameMode defaults | `BP_PlayerCharacter` / `BP_PlayerController` / `BP_HUD` correctly set (OK) |
-| PlayerStart | `PlayerStart_DeveloperSpawn` present at hub (OK) |
-| PE012 comparison | PE012 had `DefaultGameMode=None` (fell back to template global); TestingGround was already better configured |
-| Enhanced Input IMC on PC | **Broken** — `BP_PlayerController` EventGraph lost BUG-001 `EventOnPossess` → `AddMappingContext` path (empty BeginPlay/Tick only; `IMC_Player` variable missing) |
-| Character input handlers | Event nodes remained wired to Move/Look/Jump/Sprint/Interact/Flashlight calls, but DSL read looked empty; sprint helpers `CanStartSprint`/`StartSprint`/`StopSprint` were incomplete |
-| IMC mappings | **Broken** — `IA_Interact` / `IA_Flashlight` missing from `IMC_Player` (Move/Look/Jump/Sprint present) |
-| GameInstance / Global defaults | **Misconfigured** — `DefaultEngine.ini` still used FirstPerson `GlobalDefaultGameMode`, template startup/default maps, and `Engine.GameInstance` |
-| Actor refs in map | Generator/Fuel/PowerManager/receivers/doors/pickups/notes present with descriptive labels (OK) |
-| Subsystems | No custom gameplay subsystem required beyond Enhanced Input Local Player Subsystem |
+| Function | Role |
+|----------|------|
+| `TryInteract` | Sphere trace → set target → optional CanInteract → Interact |
 
-### PE-013B Fixes Applied
+Interface (`BPI_Interactable`): `CanInteract`, `Interact`, `GetInteractionText`
 
-- Restored `BP_PlayerController` `IMC_Player` variable + `EventOnPossess` AddMappingContext (BUG-001 path)
-- Completed sprint helpers (`CanStartSprint` / `StartSprint` / `StopSprint`)
-- Added `IA_Interact` (E / gamepad) and `IA_Flashlight` (F / gamepad) to `IMC_Player`
-- Pointed project maps/GameMode/GameInstance defaults at Project Echo assets in `DefaultEngine.ini`
-- Added station labels, debug board, and `BP_DevSandboxValidator` for PIE API validation when Slate key focus is unreliable
+Base (`BP_InteractableBase`): default `CanInteract`, `GetInteractionText`
 
-### PE-013B Validation Results (PIE)
+## Current Status
 
-All implemented checklist items **PASS** via `DevSandboxValidator` + runtime state inspection:
+**Complete.** Technical Interact PASS via DevSandboxValidator. Real E-key Gameplay Validation `PENDING_USER` (BUG-007). Linker Display noise on some child BPI overrides (BUG-006) — non-blocking.
 
-- Player spawn / movement API / look API / sprint API
-- Interaction (doors + pickups via `BPI_Interactable`)
-- Inventory (flashlight acquired, fuel consumed into generator, Facility Key held)
-- Generator fuel → activate → Power restored
-- PowerManager + receivers (vent / PA / distant activity / objective update)
-- Objectives display/update/complete path
-- Notes open NoteReader (`[PE008] Note displayed`)
+## Future Expansion
 
-Notes
+- Interaction prompt UI (text from `GetInteractionText`)
+- Hold-to-interact / focus highlight
+- Channel / collision profile hardening for Visibility traces
 
-- Actor labels are descriptive (DOC-002); no `PE013_*` mission prefixes
-- Environment meshes referenced from ThirdParty packs (AbandonedPowerPlant, Laboratory, IndustryPropsPack6, IndustrialPipesM); vendor assets are not modified
-- Prototype maps `LV_Prototype_PE011` / `LV_Prototype_PE012` remain for regression
-- Known limitations: crouch / inventory UI / journal not implemented; puzzle + AI arenas reserved empty; `BP_GameInstance` EventGraph still empty
+---
+
+# Inventory
+
+## Purpose
+
+Store and query gameplay items (`ST_InventoryItem`).
+
+## Owner Blueprint(s)
+
+- `/Game/ProjectEcho/Gameplay/Inventory/BPC_Inventory`
+- `/Game/ProjectEcho/Data/ST_InventoryItem`
+- Producers: `BP_FuelCan`, `BP_KeyItemPickup`
+
+## Dependencies
+
+- `ST_InventoryItem`
+- Attached to `BP_PlayerCharacter`
+
+## Inputs
+
+- `AddItem(ItemData)` from pickups
+- `RemoveItem` / `HasItem` from Generator / locked doors / puzzles
+
+## Outputs
+
+- `Items` array state
+- Query results from `HasItem` / `GetItem` / `GetAllItems`
+
+## Events
+
+No event dispatchers on `BPC_Inventory`.
+
+## Public Functions
+
+| Function | Role |
+|----------|------|
+| `AddItem` | Append `ST_InventoryItem` |
+| `RemoveItem` | Remove by id/data (Generator uses `"FuelCan"`) |
+| `HasItem` | Query |
+| `GetItem` | Fetch |
+| `GetAllItems` | Full list |
+
+## Current Status
+
+**Complete** for Facility Key + Fuel Can. No inventory UI.
+
+## Future Expansion
+
+- Batteries, access cards, fuses
+- `WBP` inventory / `IA_Inventory`
+- Quantity stacking rules
+
+---
+
+# Flashlight
+
+## Purpose
+
+Grant and toggle a player spotlight.
+
+## Owner Blueprint(s)
+
+- `/Game/ProjectEcho/Gameplay/Systems/BPC_Flashlight`
+- World grant: `/Game/ProjectEcho/Gameplay/Inventory/BP_FlashlightPickup`
+
+## Dependencies
+
+- Interaction (pickup)
+- `IA_Flashlight` → `ToggleFlashlight`
+- Spot light component created at runtime (`EnsureLightComponent`)
+
+## Inputs
+
+- `GiveFlashlight` (pickup Interact)
+- `ToggleFlashlight` / `Toggle` (input)
+
+## Outputs
+
+- Light on/off (`ApplyLightState`)
+- State: `bHasFlashlight`, `bIsOn`, `LightIntensity`, `FlashlightLight`
+
+## Events
+
+None.
+
+## Public Functions
+
+| Function | Role |
+|----------|------|
+| `GiveFlashlight` | Set owned |
+| `ToggleFlashlight` | Flip `bIsOn` if owned, apply |
+| `Toggle` | Alternate toggle entry |
+| `ApplyLightState` | Sync component |
+| `EnsureLightComponent` | Create/find light |
+
+## Current Status
+
+**Complete** for equip + toggle. No battery drain.
+
+## Future Expansion
+
+- Battery / inventory batteries
+- Flicker / horror feedback
+- Deduplicate `Toggle` vs `ToggleFlashlight`
+
+---
+
+# Generator
+
+## Purpose
+
+Consume fuel, run startup, broadcast power restored.
+
+## Owner Blueprint(s)
+
+- `/Game/ProjectEcho/Gameplay/Power/BP_Generator`
+- Enum: `/Game/ProjectEcho/Data/Enums/E_GeneratorState`
+
+## Dependencies
+
+- `BPI_Interactable` / `BP_InteractableBase`
+- `BPC_Inventory` (HasItem / RemoveItem `"FuelCan"`)
+- `BPC_Objective` (Find Fuel / CompleteObjective)
+- Dispatcher `OnPowerRestored`
+
+## Inputs
+
+- Player Interact
+- Inventory fuel presence
+
+## Outputs
+
+- `PowerRestored` bool
+- `GeneratorState` (0 Off → 1 Fueled → 2 Running)
+- `Call OnPowerRestored`
+- Objective complete on finish
+
+## Events
+
+| Event | Behavior |
+|-------|----------|
+| `EventInteract` | Fuel insert or start timer |
+| `FinishGeneratorStart` (timer) | Running + dispatcher + CompleteObjective |
+| `OnPowerRestored` dispatcher | Bound by PowerManager |
+| Empty | BeginOverlap, Tick, unused custom dispatcher event node |
+
+## Public Functions
+
+| Function | Role |
+|----------|------|
+| `FinishGeneratorStart` | Finalize start after 2s |
+| `CanInteract` / `GetInteractionText` | Interface (implementation flags vary) |
+
+## Variables
+
+`RequiresFuel`, `HasFuel`, `PowerRestored`, `OnPowerRestored`, `GeneratorState`, `CachedInteractor`
+
+## Current Status
+
+**Complete** (PE-011). Validated in PE-013B technical checklist.
+
+## Future Expansion
+
+- Multi-generator / zone power
+- Failure / overload states
+- Audio / Niagara polish without changing contract
+
+---
+
+# Power System
+
+## Purpose
+
+Once-only world response when generator restores power.
+
+## Owner Blueprint(s)
+
+- `/Game/ProjectEcho/Gameplay/Power/BP_PowerManager`
+- `/Game/ProjectEcho/Gameplay/Power/BPI_PowerReceiver`
+- Receivers: `BP_EmergencyLight`, `BP_PoweredDoor`, `BP_PowerAmbientFeedback`, `BP_VentilationUnit`, `BP_PASpeaker`, `BP_DistantActivityHint`
+
+## Dependencies
+
+- `BP_Generator.OnPowerRestored` (+ Tick poll of `PowerRestored`)
+- Hard refs to each receiver Blueprint class (not interface-only discovery)
+- `BPC_Objective` on player pawn
+
+## Inputs
+
+- Generator dispatcher / `PowerRestored` flag
+
+## Outputs
+
+- `OnPowerRestored` calls on each receiver instance
+- Objective: complete prior + set “Proceed through the powered security door.”
+- Guard: `HasHandledPower`
+
+## Events
+
+- `HandlePowerRestored` custom event (multiple legacy empty `OnPowerRestored_Event_*` nodes present — debt)
+- BeginPlay binds first found Generator
+
+## Public Functions
+
+None beyond EventGraph customs (`HandlePowerRestored`). Interface: `OnPowerRestored` (+ duplicate `OnPowerRestored_0` on BPI).
+
+## Current Status
+
+**Complete** (PE-011 / PE-012). World Response behavior is this system’s once-only environmental reactivation.
+
+## Future Expansion
+
+- Discover receivers via `BPI_PowerReceiver` only
+- Multi-zone power graphs
+- Clean orphaned custom events / duplicate vars (`HasHandledPower_0`, `BoundGenerator` vs `BoundGeneratorActor`)
+
+---
+
+# Objectives
+
+## Purpose
+
+Set, display, and complete short player objectives.
+
+## Owner Blueprint(s)
+
+- `/Game/ProjectEcho/Gameplay/Objectives/BPC_Objective`
+- `/Game/ProjectEcho/UI/WBP_Objective`
+
+## Dependencies
+
+- UMG (`WBP_Objective`)
+- Callers: pickups, notes, generator, power manager
+
+## Inputs
+
+- Text objectives via `SetObjective`
+- `CompleteObjective` / `ClearObjective`
+
+## Outputs
+
+- Viewport widget via `ShowObjectiveUI` → `WBP_Objective.Setup`
+- `CurrentObjective`, `ActiveObjectiveWidget`, `DisplayDuration`
+
+## Events
+
+None (function API).
+
+## Public Functions
+
+`SetObjective`, `CompleteObjective`, `ClearObjective`, `ShowObjectiveUI`, `HideObjectiveUI`, `GetCurrentObjective`
+
+## Current Status
+
+**Complete** for single active objective + toast UI.
+
+## Future Expansion
+
+- Optional / chapter objectives
+- Objective data struct (`ST_ObjectiveData` named in ContributionGuide; not required yet)
+- Journal integration
+
+---
+
+# Notes
+
+## Purpose
+
+Display readable maintenance / story notes without inventory storage.
+
+## Owner Blueprint(s)
+
+- `/Game/ProjectEcho/Gameplay/Interaction/BP_NotePickup`
+- `/Game/ProjectEcho/UI/WBP_NoteReader` (`SetupNote`)
+
+## Dependencies
+
+- `BPI_Interactable` / `BP_InteractableBase`
+- `BPC_Objective` (first read sets “Locate the Facility Key”)
+- UMG
+
+## Inputs
+
+- Interact; variables `NoteTitle`, `NoteBody`, `bCollected`
+
+## Outputs
+
+- `WBP_NoteReader` on viewport
+- Optional objective update
+
+## Events
+
+`EventInteract` on NotePickup.
+
+## Public Functions
+
+Widget: `SetupNote(Title, Body)`. Note actor: Interact + `GetInteractionText` (CanInteract may inherit / linker-flagged).
+
+## Current Status
+
+**Complete** for single-note reader. No journal list.
+
+## Future Expansion
+
+- Journal (`IA_Journal`) collecting read notes
+- Close/dismiss UX polish
+- Multiple note IDs / data assets
+
+---
+
+# Supporting Framework (Brief)
+
+| System | Path | Status |
+|--------|------|--------|
+| GameMode | `Gameplay/Systems/BP_GameMode` | Active defaults for PE pawns |
+| GameInstance | `Gameplay/Systems/BP_GameInstance` | Stub (empty EventGraph) |
+| SaveGame | `Gameplay/Save/BP_SaveGame` | Stub (no variables) |
+| HUD | `UI/BP_HUD` | Present |
+| DevSandboxValidator | `Gameplay/Systems/BP_DevSandboxValidator` | Technical PIE checks |
+| Locked Door | `Interaction/BP_LockedDoor` | `RequiredItemID` + inventory gate |
+| Door | `Interaction/BP_Door` | `IsOpen` toggle interact |
+
+---
+
+# Asterion Development Testing Facility
+
+Status: Complete (PE-013 / PE-013A / PE-013B / PE-013D environment); input hardening PE-013C (BUG-008) — confirm Gameplay Validation separately.
+
+**Map:** `/Game/ProjectEcho/Maps/Development/LV_TestingGround`
+
+Permanent development sandbox (not campaign). Zones: Developer Spawn, Interaction Lab, Generator Room, Inventory & Objectives, Puzzle Sandbox (empty), Horror Corridor, Future AI Arena, Developer Control Room.
+
+### Input Flow (PE-013C)
+
+```text
+Keyboard/Mouse
+  → EnhancedPlayerInput
+  → Enhanced Input Local Player Subsystem
+  → IMC_Player (OnPossess + BeginPlay+1f)
+  → IA_* → BP_PlayerCharacter handlers
+```
+
+### Honest Known Issues
+
+| ID | Issue | Validation |
+|----|-------|------------|
+| BUG-008 | IMC GetEIS registration | Technical PASS logs; Gameplay Move **PENDING_USER** |
+| BUG-007 | Slate cannot inject EI keys | Technical ≠ Gameplay |
+| BUG-006 | Linker Parent Display on interactables | Non-blocking |
+| — | PE-013C BP dirty may be uncommitted | Do not mix into PE-014 docs commit |
+| — | `BP_GameInstance` / `BP_SaveGame` empty | Expected |
+| — | PowerManager orphan custom events | Debt; see TechnicalDebt.md |
+
+---
+
+# Related Documents
+
+- `GameplayFlow.md`
+- `Architecture/BlueprintDependencyMap.md`
+- `Architecture/EventFlow.md`
+- `Architecture/TechnicalDebt.md`
+- `BugHistory.md`
+- `BlueprintStandards.md`
