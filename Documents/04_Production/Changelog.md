@@ -2,6 +2,33 @@
 
 ---
 
+## PE-018 — Generator Annex (Maintenance Wing Expansion)
+**Date:** 2026-07-25
+**Mission:** PE-018
+**Branch:** `develop`
+
+### Added
+
+- `/Game/ProjectEcho/Maps/Production/LV_ARI_GeneratorAnnex` — second production map (Service Entry → Fuel Cage → Generator Room → exit-path Witness → Powered Exit)
+- `BP_GeneratorAnnexReset` — full SliceReset twin (door / lights / Witness / PowerManager / ambient flags / notes / objectives / Generator state / FuelCan respawn)
+- `Documents/05_Missions/PE-018-GeneratorAnnex.md` — mission completion notes
+- Design plan approved: `PE-018-DesignPlan.md`
+
+### Changed
+
+- `BP_PowerManager` — generator World Response now includes `BP_WitnessSilhouetteHint`; exit objective text `Access the next area`
+- `BP_FuelCan` — sets objective `Fuel and start the generator` on pickup
+- Docs: `ProjectHealth.md`, `Roadmap.md`, `SprintHistory.md`, `GameplayFlow.md`
+
+### Notes
+
+- Technical Simulate PASS (boot / generator bind / Witness hidden). Manual Gameplay PASS still required (Enhanced Input).
+- Pipe Gallery / Coolant puzzle / Security deferred per approved plan.
+- Soft Open Level travel from Maintenance exit not wired this mission (narrative bridge only).
+- Audio still PrintString stand-ins — tagged debt.
+
+---
+
 ## PE-017A — Experience Hardening & Environment Pass
 **Date:** 2026-07-25
 **Mission:** PE-017A

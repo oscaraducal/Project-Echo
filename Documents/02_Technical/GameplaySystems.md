@@ -574,6 +574,8 @@ Modular puzzle lifecycle + hooks for objectives and power world response. Future
 **Complete** for framework + Fuse example on `LV_TestingGround` Puzzle Station (PE-015).  
 **PE-017:** same Fuse pattern on `LV_ARI_MaintenanceWing` (`AuxPower_MaintenanceWing`) + `BP_WitnessSilhouetteHint` / `BP_MaintenanceWingReset`. See `Documents/05_Missions/PE-017-VerticalSlice01.md`.
 
+**PE-018:** Generator World Response path on `LV_ARI_GeneratorAnnex` — `BP_FuelCan` + `BP_Generator` + `BP_PowerManager` (`HasHandledPower`, includes Witness sweep) + `BP_GeneratorAnnexReset`. Independent of puzzle `NotifyPuzzlePowerResponse`. See `Documents/05_Missions/PE-018-GeneratorAnnex.md`.
+
 ---
 
 # Related Documents

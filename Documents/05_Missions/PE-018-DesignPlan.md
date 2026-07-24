@@ -1,20 +1,20 @@
 # PE-018 — Design Plan: Generator Annex (Maintenance Wing Expansion)
 
-**Status:** Design Plan — **WAIT FOR APPROVAL — DO NOT IMPLEMENT**  
+**Status:** Design Plan — **APPROVED & IMPLEMENTED** (see `PE-018-GeneratorAnnex.md`)  
 **Branch:** `develop`  
-**Priority:** High (next campaign beat after PE-017 / PE-017A)  
-**Suggested map:** `/Game/ProjectEcho/Maps/Production/LV_ARI_GeneratorAnnex`  
+**Priority:** High (campaign beat after PE-017 / PE-017A)  
+**Map:** `/Game/ProjectEcho/Maps/Production/LV_ARI_GeneratorAnnex`  
 **Design authority:** `Documents/01_Game_Design/GameplayDesignBible.md` (PE-016)  
 **Puzzle framework:** PE-015 (`BP_PuzzleBase` / families) — **compose existing systems; no framework fork**  
-**Predecessor:** `LV_ARI_MaintenanceWing` (PE-017 / PE-017A — Production Foundation; VS not closed until human PIE)
+**Predecessor:** `LV_ARI_MaintenanceWing` (PE-017 / PE-017A — Production Foundation; VS not closed until human PIE)  
+**Implementation notes:** `Documents/05_Missions/PE-018-GeneratorAnnex.md`
 
 ---
 
 > ### Gate
 >
-> **WAIT FOR APPROVAL — DO NOT IMPLEMENT**  
-> No Blueprints, no map placement, no Unreal asset work until this plan is explicitly approved.  
-> PE-017A manual Gameplay PASS remains a human gate; PE-018 implementation should not start until PE-017A is playable-confirmed **or** EP explicitly waives sequencing.
+> **APPROVED** — implementation shipped on `develop`.  
+> Manual Gameplay PASS still human-gated (Enhanced Input / PIE). Technical Simulate PASS recorded in mission completion notes.
 
 ---
 
@@ -399,13 +399,13 @@ Where this plan was **simplified** under role pressure:
 
 | Field | Value |
 |-------|-------|
-| Ready for Approval | **YES** |
-| Ready to Implement | **NO** — wait for written approval |
-| Suggested map | `LV_ARI_GeneratorAnnex` |
+| Ready for Approval | **YES** (approved) |
+| Ready to Implement | **DONE** — see `PE-018-GeneratorAnnex.md` |
+| Map | `LV_ARI_GeneratorAnnex` |
 | Primary family | Resource Integration (Generator + Fuel) |
-| Deferred | Coolant valve puzzle, Security checkpoint, Witness AI, Save |
+| Deferred | Coolant valve puzzle, Security checkpoint, Witness AI, Save, Pipe Gallery |
 
-**WAIT FOR APPROVAL — DO NOT IMPLEMENT**
+**APPROVED & IMPLEMENTED**
 
 ---
 

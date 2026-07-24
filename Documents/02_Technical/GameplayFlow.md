@@ -223,7 +223,7 @@ Lifecycle: Idle → Available → Activated → InProgress → Solved → World 
 
 ## AI / Horror
 
-`BP_WitnessSilhouetteHint` (PE-017) — first presence beat via `BPI_PowerReceiver` after fuse solve on `LV_ARI_MaintenanceWing`. Tension / silhouette / print feedback only — not chase AI.
+`BP_WitnessSilhouetteHint` (PE-017 / PE-018) — presence beat via `BPI_PowerReceiver`. On `LV_ARI_MaintenanceWing` after fuse puzzle World Response; on `LV_ARI_GeneratorAnnex` after generator `HasHandledPower` World Response. Tension / silhouette / print feedback only — not chase AI.
 
 Future AI Arena reserved on sandbox. Movement helpers `OnMovementStateChanged` / `GenerateMovementNoise` exist on Character as expansion stubs for future AI hearing.
 
@@ -239,7 +239,8 @@ Stations (labels): Movement, Interaction, Inventory, Generator, Power, Objective
 
 **Prototype regression maps:** `LV_Prototype_PE011`, `LV_Prototype_PE012`
 
-**Production vertical slice (PE-017):** `/Game/ProjectEcho/Maps/Production/LV_ARI_MaintenanceWing` — see `Documents/05_Missions/PE-017-VerticalSlice01.md`.
+**Production vertical slice (PE-017):** `/Game/ProjectEcho/Maps/Production/LV_ARI_MaintenanceWing` — see `Documents/05_Missions/PE-017-VerticalSlice01.md`.  
+**Generator Annex (PE-018):** `/Game/ProjectEcho/Maps/Production/LV_ARI_GeneratorAnnex` — see `Documents/05_Missions/PE-018-GeneratorAnnex.md`.
 
 ---
 
@@ -247,6 +248,7 @@ Stations (labels): Movement, Interaction, Inventory, Generator, Power, Objective
 
 - `01_Game_Design/GameplayDesignBible.md` — **canonical** gameplay design (PE-016); required for PE-017+
 - `05_Missions/PE-017-VerticalSlice01.md` — Maintenance Wing slice
+- `05_Missions/PE-018-GeneratorAnnex.md` — Generator Annex
 - `GameplaySystems.md` — per-system API status
 - `PuzzleFramework.md` — PE-015 puzzle architecture
 - `Architecture/BlueprintDependencyMap.md` — ownership tree

@@ -58,6 +58,7 @@ Status
 ### In Progress
 
 - Vertical Slice 01 Maintenance Wing playable validation (PE-017 manual Gameplay PASS)
+- Generator Annex playable validation (PE-018 manual Gameplay PASS)
 
 ### Completed (recent)
 
@@ -67,10 +68,12 @@ Status
 - Modular Puzzle Framework (PE-015)
 - Gameplay Design Bible (PE-016)
 - Maintenance Wing production map + Witness presence beat (PE-017 implementation)
+- Generator Annex production map — fuel → generator World Response + Witness (PE-018 implementation)
 
 ### Remaining
 
-- Confirm PE-017 full manual PIE Gameplay PASS
+- Confirm PE-017 / PE-018 full manual PIE Gameplay PASS
+- Soft travel Maintenance exit → Generator Annex (Open Level)
 - Save system / Witness AI expansion (later milestones)
 
 ---
