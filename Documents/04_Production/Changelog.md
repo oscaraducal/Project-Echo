@@ -2,6 +2,27 @@
 
 ---
 
+## PE-021 — Visual Design Package (Security Wing)
+**Date:** 2026-07-25
+**Mission:** PE-021 Security Wing
+**Branch:** `develop`
+
+### Added
+
+- `Documents/05_Missions/PE-021-VisualDesignPackage.md` — full VDP (8 sections + EP checklist + Approval Block)
+
+### Changed
+
+- `PE-021-DesignPlan.md` — proceeded to Previs; VDP linked; Ready to Implement remains **NO** until EP VDP APPROVE
+
+### Notes
+
+- Docs-only Previs — no Unreal maps / Blueprints / MCP asset creation
+- Gate: STOP — waiting for EP VDP APPROVE / RETURN TO DESIGN
+- Next: `Implement Mission PE-021` only after APPROVE (MCP Auto-accept applies at Implement)
+
+---
+
 ## AI Studio Phase 5 — QA Studio
 **Date:** 2026-07-25
 **Mission:** AI Studio Phase 4 — QA Studio (brief) / Phase 5 · v1.5

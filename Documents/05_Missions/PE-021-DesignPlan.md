@@ -1,6 +1,6 @@
 # PE-021 — Design Plan: Security Wing (Post-Research Access)
 
-**Status:** Design Plan — **READY FOR APPROVAL** (not implemented)  
+**Status:** Design Plan — **PROCEEDED TO PREVIS** (not implemented)  
 **Branch:** `develop`  
 **Priority:** High (campaign beat after PE-020 Research Wing)  
 **Map:** `/Game/ProjectEcho/Maps/Production/LV_ARI_SecurityWing`  
@@ -12,15 +12,15 @@
 **Predecessor:** `LV_ARI_ResearchWing` (PE-020 — Closed Technical; LabExit Soft Open stub)  
 **Soft Open Level:** Research Wing LabExit → Open Level → Security Wing  
 **Mission notes:** TBD on Implement (`PE-021-SecurityWing.md`)  
-**VDP:** **Not started** — produce via `Generate Visual Package PE-021` after Design Plan proceed; EP VDP APPROVE required before Ready to Implement (Playbook §12c)
+**VDP:** [`PE-021-VisualDesignPackage.md`](PE-021-VisualDesignPackage.md) — complete; awaiting EP mental-play APPROVE before Ready to Implement (Playbook §12c)
 
 ---
 
 > ### Gate
 >
-> **STOP — waiting for EP Design Plan decision**  
-> Ready for Approval: **YES** · Ready to Implement: **NO**  
-> Design Plan proceed ≠ Ready to Implement. Spatial production slice requires Visual Design Package + EP mental-play APPROVE before any Unreal work.  
+> **STOP — waiting for EP: VDP APPROVE / RETURN TO DESIGN**  
+> Design Plan proceed: **YES** (EP generated Visual Package) · Ready to Implement: **NO**  
+> Design Plan proceed ≠ Ready to Implement. Spatial production slice requires VDP EP mental-play APPROVE before any Unreal work.  
 > MCP Auto-accept does **not** apply until `Implement Mission PE-021`.
 
 ---
@@ -281,16 +281,16 @@ Interaction (`BPC_Interaction`, `BPI_Interactable`), Inventory (`BPC_Inventory`,
 - Fuse path remains PE-017A-owned.  
 - Security solve uses puzzle World Response (+ inventory) only.
 
-## Visual Design Package (later)
+## Visual Design Package
 
-This Design Plan does **not** authorize Unreal work. After EP proceeds:
+This Design Plan does **not** authorize Unreal work. Previs deliverable:
 
-1. Creative supports as needed (`environment-designer`, etc.).  
-2. **`Generate Visual Package PE-021`** — Experience → Blockout → Storyboard → Concept → Lighting Visualizer → Asset Placement.  
+1. Creative supports as needed (`environment-designer` thin layout intent in VDP).  
+2. **`Generate Visual Package PE-021`** — Experience → Blockout → Storyboard → Concept → Lighting Visualizer → Asset Placement — **complete**.  
 3. EP VDP mental-play APPROVE → Ready to Implement YES.  
 4. Only then `Implement Mission PE-021` (MCP Auto-accept applies at Implement only).
 
-Deliverable path (planned): `Documents/05_Missions/PE-021-VisualDesignPackage.md`.
+Deliverable: [`PE-021-VisualDesignPackage.md`](PE-021-VisualDesignPackage.md).
 
 ---
 
@@ -421,16 +421,16 @@ Design Plan before implement (this doc); PE-018 recipe; VDP before Ready to Impl
 
 | Field | Value |
 |-------|-------|
-| Ready for Approval | **YES** |
-| Ready to Implement | **NO** — awaiting Design Plan proceed → Generate Visual Package → EP VDP APPROVE |
+| Ready for Approval | **YES** (Design Plan proceeded into Previs) |
+| Ready to Implement | **NO** — awaiting EP VDP APPROVE |
 | Map | `LV_ARI_SecurityWing` |
 | Wing | Security Wing (Security & Access / checkpoint clearance) |
 | Primary family | Security & Access (`BP_KeyItemPickup` + thin `BP_AccessClearancePuzzle`) |
 | Soft Open Level | Research LabExit → Security Wing (planned) |
 | Deferred | Signal & Communication, Armory, Restricted, fuse, generator, coolant/research redo, Witness AI, Save, multi-tier biometrics |
-| VDP | Later via `Generate Visual Package PE-021` → `PE-021-VisualDesignPackage.md` |
+| VDP | [`PE-021-VisualDesignPackage.md`](PE-021-VisualDesignPackage.md) — complete; EP gate open |
 
-**STOP** — waiting for EP: **APPROVE Design Plan** / request changes.  
+**STOP** — waiting for EP: **VDP APPROVE** / RETURN TO DESIGN.  
 Do **not** implement Unreal assets. Do **not** set Ready to Implement until VDP APPROVE.
 
 ---
