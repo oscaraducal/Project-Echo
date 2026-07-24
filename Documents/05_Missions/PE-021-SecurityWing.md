@@ -169,7 +169,7 @@ Clue: Note B Incomplete Clearance Board. Credential: Staff Keycard (Lobby gate +
 | Mission | PE-021 Security Wing |
 | Status | **Complete — Technical** (Gameplay PENDING_USER) |
 | Branch | `develop` |
-| Commit | `e7a7e63` (`feat: implement PE-021 Security Wing`) |
+| Commit | `24d51e5` (`feat: implement PE-021 Security Wing`) |
 | Blueprints created | `BP_AccessClearancePuzzle`, `BP_ClearanceConsoleStation`, `BP_SecurityWingReset` |
 | Blueprints modified | Research `LabExit` Soft Open wiring (map instance → SoftOpenExit) |
 | Maps created | `LV_ARI_SecurityWing` |
@@ -178,7 +178,7 @@ Clue: Note B Incomplete Clearance Board. Credential: Staff Keycard (Lobby gate +
 | Compile | **PASS** |
 | Runtime Test | **PASS** (Technical Simulate) |
 | Regression Test | **PASS** (Technical — Soft Open wiring only on Research; no fuse/generator ownership change) |
-| Git Commit | **PASS** (`e7a7e63`) |
+| Git Commit | **PASS** (`24d51e5`) |
 | Git Push | **PASS** |
 | Ready For Review | **NO** |
 | Notes | Gameplay PENDING_USER; SliceReset / Soft Open / Access Clearance Technical PASS |
