@@ -85,3 +85,11 @@ Interrupted mid-scale rebuild (~95×54 m): clinical spine geo + partial Dressing
 - Readable MED-## signage textures / decals.
 - Lumen exposure warning (`r.EyeAdaptation.CachedLightingPreExposure`) may need project-wide tweak.
 - Human PIE Gameplay + Replay still PENDING_USER.
+
+---
+
+## AAA Environmental Art Pass — see primary report
+
+Full AAA pass documentation moved to [`PE-022-EnvironmentalArtReport.md`](PE-022-EnvironmentalArtReport.md) (architecture overlays, dressing density, materials, lighting, screenshots, honest debt).
+
+World Polish status above remains the mid-day baseline; AAA pass is the subsequent density/lighting/architecture leap on the same map with **Gameplay still PENDING_USER**.

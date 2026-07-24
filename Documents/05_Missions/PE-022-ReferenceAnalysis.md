@@ -61,3 +61,24 @@ Tarp / abandoned cart / quarantine closet staging = institutional panic, not com
 ## Resulting Creative brief (implemented)
 
 Rooms dressed as unique workplace cells: Transfer/Security Med Check, Nurse Station, Triage, Exam, OH Console, Records, Pharmacy, Quarantine Closet, Process Corridor, Isolation, Observation, Vent Access — each object justified as clinical or containment residue.
+
+---
+
+## AAA Environmental Art Pass — technique study append (2026-07-25)
+
+**Constraint unchanged:** principles only — never copy layouts, brands, trademarks, or ripped assets.
+
+| Reference | Technique extracted | Applied on PE-022 AAA pass | Rejected |
+|-----------|---------------------|----------------------------|----------|
+| **Resident Evil 7** (Baker house / lab adjacency craft) | Layered ceiling clutter (beams, ducts, pipes) over simple volumes; prop density that sells “lived-in failure” | APP ceiling frames + Laboratory vents + pipe runs over retained broad halls | Layout cloning; gore set pieces as identity |
+| **Alien: Isolation** | Long clinical corridors broken by pinch + practical pools; diegetic maintenance detail (panels, sockets, cables) | Isolation pinch reinforced with pillars/corners/door frame; maint panels / wires along triage | Chase loops; xenomorph identity |
+| **The Callisto Protocol** (hospital/prison clinic beats) | Cool institutional palette with localized warm failure lights; barricades as panic archaeology | Cool path + Isolation amber + Observation bedside warm; tarp/plywood/abandoned stretcher | Combat fantasy; body-horror hero props |
+| **Dead Space Remake** (medical / hydroponics craft) | Silhouette lighting toward egress; equipment density without cluttering walkable spine | Egress silhouette spot; carts/IV along corridor **sides**; centerline kept playable | Necromorph set dressing; UI-as-world overuse |
+
+### Composition principles locked for this pass
+
+1. **Ceiling systems first** — frames/ducts/pipes break flat cube ceilings before adding more floor clutter.
+2. **Density on the edges** — hospital equipment reads from sightlines without blocking Soft Open process path.
+3. **Color literacy retained** — teal stripe + cool whites; amber Isolation only; no map-wide red wash.
+4. **Psychological containment > gore** — quarantine marks, PPE staging, interrupted care, leaks/stains.
+5. **Honest asset ceiling** — free packs maximize technique; true RE7 mesh fidelity still requires a clinical modular kit acquisition.

@@ -1,6 +1,6 @@
 # PE-022 — Medical Wing (Occupational Health & Clinical Observation)
 
-**Status:** Implemented — Technical + World Polish (Gameplay **PENDING_USER**)  
+**Status:** Implemented — Technical + World Polish + **AAA Environmental Art Pass** (Gameplay **PENDING_USER**)  
 **Branch:** `develop`  
 **Priority:** High  
 **Map:** `/Game/ProjectEcho/Maps/Production/LV_ARI_MedicalWing`  
@@ -8,7 +8,7 @@
 **Design plan:** [`PE-022-DesignPlan.md`](PE-022-DesignPlan.md)  
 **Visual Design Package:** [`PE-022-VisualDesignPackage.md`](PE-022-VisualDesignPackage.md)  
 **Playtest checklist:** [`PE-022-PlaytestChecklist.md`](PE-022-PlaytestChecklist.md)  
-**World Polish:** [`PE-022-WorldPolishReport.md`](PE-022-WorldPolishReport.md) · [`PE-022-ReferenceAnalysis.md`](PE-022-ReferenceAnalysis.md) · [`PE-022-EnvironmentalStorytellingReport.md`](PE-022-EnvironmentalStorytellingReport.md) · [`PE-022-LightingImprovementReport.md`](PE-022-LightingImprovementReport.md) · [`PE-022-AssetAcquisitionReport.md`](PE-022-AssetAcquisitionReport.md)  
+**World Polish / AAA Art:** [`PE-022-EnvironmentalArtReport.md`](PE-022-EnvironmentalArtReport.md) · [`PE-022-WorldPolishReport.md`](PE-022-WorldPolishReport.md) · [`PE-022-ReferenceAnalysis.md`](PE-022-ReferenceAnalysis.md) · [`PE-022-EnvironmentalStorytellingReport.md`](PE-022-EnvironmentalStorytellingReport.md) · [`PE-022-LightingImprovementReport.md`](PE-022-LightingImprovementReport.md) · [`PE-022-MaterialImprovementReport.md`](PE-022-MaterialImprovementReport.md) · [`PE-022-AssetAcquisitionReport.md`](PE-022-AssetAcquisitionReport.md)  
 **Predecessor:** `LV_ARI_SecurityWing` SoftOpenExit_Stub → Medical Wing  
 **Ready For Review:** **NO** (Gameplay PENDING_USER)
 
@@ -97,14 +97,15 @@
 
 - Fuse-family PrintString debt may still say fuse language until overridden in graphs.
 - IsolationAnteroomDoor is spatial pinch / landmark; Soft Open egress is the WR-unlocked exit.
-- World Polish 2026-07-25: industrial leftover props removed; side rooms (Nurse / Pharmacy / Quarantine / Security Med Check / Vent) enclosed; clinical materials + cool/amber lighting; notes F–I placed — **no gameplay graph edits**.
+- World Polish 2026-07-25: industrial leftover props removed; side rooms enclosed; clinical materials + cool/amber lighting; notes F–I placed — **no gameplay graph edits**.
+- AAA Environmental Art Pass 2026-07-25: ceiling systems, ducts/pipes, door frames, windows, hospital prop density, material overrides, AAA practical lighting, leak/stain decals — **no gameplay graph edits**. See `PE-022-EnvironmentalArtReport.md`.
 - Editor may still warn on Lumen `CachedLightingPreExposure` (project-level debt).
 
 ---
 
 ## Debt
 
-- True Fab/Quixel clinical modular kit (beyond plastered cubes + stripe MI)  
+- True Fab/Quixel clinical modular kit (beyond plastered cubes + stripe MI + free-pack overlays)  
 - Readable MED-## signage texture decals  
 - Fuse PrintString / objective string parent debt on OHConsoleFiling  
 - Human Gameplay + Replay  

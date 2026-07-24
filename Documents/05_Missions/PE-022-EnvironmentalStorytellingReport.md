@@ -70,3 +70,29 @@ True typography decals remain debt if mesh boards lack readable text at distance
 - Readable institutional font decals (MED-## room codes) not authored as textures this pass.
 - Audio log scripts specified in WORLD-001 Content Package remain unvoiced (PrintString / no Wwise this mission).
 - Morgue omitted — not a strong WORLD-001 / Story Bible fit for Occupational Health; quarantine closet covers containment residue.
+
+---
+
+## AAA Environmental Art Pass append (2026-07-25)
+
+### Room-by-room function reinforce (props / decals only — notes A–I unchanged)
+
+| Room | New storytelling density |
+|------|--------------------------|
+| Transfer / Waiting | Extra chairs, sofa, magazines proxy, trash — interrupted intake queue |
+| Triage Corridor | Sightline crash carts, IV poles, abandoned stretcher + curtain, tarp barricade, quarantine warning signs, leak decals |
+| Exam Clinic | Extra IV, crash cart, locker/PPE hanger, chart board/paper, second curtain — care abandoned |
+| OH Console Bay | Extra file cab, second monitor, visitor chair, protocol board, paper trail |
+| Records | Extended cabinet run, archive boxes, loose papers on desk |
+| Nurse / Pharmacy | Crash cart / IV / lockers; controlled stock racks + disinfectant + seal sign |
+| Quarantine Closet | Extra lockers, PPE hanger, suitcase, biohazard proxy, floor tarp, wall mark |
+| Process Corridor | Abandoned cart, IV, tarp, supply box |
+| Isolation Anteroom | Crash cart, IV, dual quarantine signs, barrier fence, plywood barricade, decon canister, leak/wall stain decals |
+| Observation Ward | Five-bed density, IV + curtains per bed, crash cart, bedside lamp/table/chart, locker, debris/rag |
+| Vent / Sec Med Check | Tool box, canister; wait chair, forms, med sign |
+
+### Canon filter
+
+- Psychological containment failure / abandoned procedure — **not** gore-porn
+- No Story Canon bible edits; no new note prose that teaches walkthroughs
+- Gameplay actors (Protocol Card, OH Console, Soft Open, Witness, notes A–I objectives) **untouched**

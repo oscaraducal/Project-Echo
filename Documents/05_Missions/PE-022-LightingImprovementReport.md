@@ -63,3 +63,32 @@ Viewport may show: *Cached lighting in Lumen and real-time sky capture lighting 
 | No map-wide red wash | **PASS** |
 | Gameplay light receivers / WR lights | Untouched (ExitApproachAccent retained) |
 | Human mood PIE | **PENDING_USER** |
+
+---
+
+## AAA Environmental Art Pass append (2026-07-25)
+
+### Added (`Lighting/AAA` — 30 actors)
+
+| Type | Labels (pattern) | Intent |
+|------|------------------|--------|
+| Point practicals | `AAA_Light_TriagePrac_*`, `ProcBright/Dim`, room desk pools | Break uniform corridor wash |
+| Spot wall-washes / shafts | `AAA_Spot_TriageN/S_*`, `AAA_Spot_ExamShaft` | Silhouette + guidance |
+| Teal accents | `AAA_Light_TealGuide_A/B` | Soft path literacy (not map wash) |
+| Isolation amber | `AAA_Light_IsoAmberPool`, `IsoFlicker2` | Landmark reinforce |
+| Observation bedside warm | `AAA_Light_ObsBed_*` + cold overhead | Selective warm vs clinical cold |
+| Egress silhouette spot | `AAA_Spot_EgressSilhouette` | Soft Open approach pressure |
+
+### Fog retune (post-AAA)
+
+After an over-dense milky pass, fog set approximately:
+
+- Density **0.012** · HeightFalloff **0.35** · MaxOpacity **0.35** · StartDistance **400**
+
+Bright AAA intensities pulled down so far-corridor bloom does not white-out architecture.
+
+### Still true
+
+- No map-wide red wash
+- Gameplay WR / ExitApproachAccent untouched
+- Human mood PIE **PENDING_USER**

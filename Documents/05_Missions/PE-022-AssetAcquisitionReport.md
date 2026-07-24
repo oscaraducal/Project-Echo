@@ -37,3 +37,32 @@
 ## Recommendation
 
 If EP wants next fidelity jump: acquire **one** Fab clinical modular interior kit (walls/ceilings/doors matching teal stripe) under project license, document author + invoice in a follow-up Asset Acquisition append — do not mix five competing hospital kits.
+
+---
+
+## AAA Environmental Art Pass append (2026-07-25)
+
+**Still no new marketplace downloads this pass.** Placement expanded to additional **already-in-repo** ThirdParty packs.
+
+| Source | Content path | Usage this pass | License / provenance | NEW import? |
+|--------|--------------|-----------------|----------------------|-------------|
+| Abandoned Power Plant | `/Game/ThirdParty/AbandonedPowerPlant/Assets/Ceiling/*` | Ceiling frames + tiles | Pre-existing ThirdParty (Fab/marketplace prior) | **No** |
+| Abandoned Power Plant | `.../Walls/SM_Pillar*`, `SM_Corner*`, window walls | Isolation structure / observation windows | Pre-existing | **No** |
+| Abandoned Power Plant | `.../Doors/SM_Door_Single_01` | Isolation door visual framing | Pre-existing | **No** |
+| Abandoned Power Plant | `.../Decals/MI_Leak_*`, `MI_Moss_*` | Floor/wall leak & humidity decals | Pre-existing | **No** |
+| Abandoned Power Plant | `.../Floor/MI_FactoryFloor`, wall MIs | Isolation/Vent floor & accent mats | Pre-existing | **No** |
+| Laboratory | `/Game/ThirdParty/Laboratory/StaticMeshes/*` | Carts, IV, beds, vents, wires, frames, signs, lockers | Pre-existing | **No** |
+| Office Pack Vol 1 | `/Game/ThirdParty/Office_Pack_Vol_1/Models/*`, `Materials/*` | Cabinets, chairs, benches, `SM_Wall_Full_1`, plaster/tile/dirt | Pre-existing | **No** |
+| Industrial Pipes M | `/Game/ThirdParty/IndustrialPipesM/models/pipe_m_l300_00` | Expanded ceiling pipe runs | Pre-existing | **No** |
+| Industry Props Pack 6 | `/Game/IndustryPropsPack6/Meshes/SM_Tarp*`, boxes | Barricades / debris | Pre-existing | **No** |
+| Construction VOL2 | `/Game/ThirdParty/Construction_VOL2/Meshes/SM_Plywood*`, `SM_Canister` | Barricade boards / decon canisters | Pre-existing | **No** |
+
+### Explicitly not used
+
+- No ripped RE7 / Alien Isolation / Callisto / Dead Space / Outlast meshes
+- APP **industrial wall cladding** on Triage briefly placed then **removed** (wrong department fantasy)
+- Laboratory `SM_wall` hazard overlays briefly placed then **removed**
+
+### Recommendation (unchanged, higher urgency)
+
+Acquire **one** Fab free/licensed **clinical modular interior** kit for walls/ceilings/doors — document creator, store listing, license, invoice in next Asset Acquisition append.

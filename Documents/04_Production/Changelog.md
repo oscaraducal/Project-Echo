@@ -2,6 +2,33 @@
 
 ---
 
+## PE-022 — AAA Environmental Art Pass (Medical Wing)
+**Date:** 2026-07-25
+**Mission:** PE-022 Medical Wing (Occupational Health & Clinical Observation)
+**Branch:** `develop`
+
+### Added
+
+- Architecture overlays: ceiling frames/tiles, ducts, pipes, cables, door frames, observation windows, maint panels, Isolation structure (`Architecture/*`)
+- Hospital dressing density (`Dressing/AAA`) — carts, IV, beds, lockers, barricades, PPE, warning signs, room clusters + triage sightline props
+- Leak/stain decals (`Dressing/Decals`) from APP MI_Leak / MI_Moss
+- AAA lighting practicals/spots (`Lighting/AAA`) — cool path, Isolation amber, Observation bedside warm, egress silhouette
+- Reports: `PE-022-EnvironmentalArtReport.md`, `PE-022-MaterialImprovementReport.md`; appends to Lighting / Asset Acquisition / Reference Analysis / Storytelling / World Polish
+- Screenshots: `Before_AAA_TriageCorridor.png`, `After_AAA_TriageCorridor.png`, `After_AAA_IsolationAnteroom.png`, `After_AAA_ObservationWard.png`
+
+### Changed
+
+- `LV_ARI_MedicalWing` — geo material overrides (tiles/plaster/dirt/APP service mats); fog retuned after milky overshoot; Exam bed placement fixed
+- Removed APP industrial wall cladding / Lab hazard wall overlays that fought Medical fantasy
+
+### Notes
+
+- No gameplay Blueprint graph / puzzle / Soft Open / Witness / SliceReset / objective logic edits
+- No new marketplace imports — reused existing ThirdParty packs only (documented in Asset Acquisition Report)
+- Honest debt: true AAA mesh fidelity still needs a dedicated clinical modular kit; Gameplay remains **PENDING_USER**
+
+---
+
 ## PE-022 — Medical Wing World Polish & Environmental Storytelling
 **Date:** 2026-07-25
 **Mission:** PE-022 Medical Wing (Occupational Health & Clinical Observation)
