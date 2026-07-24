@@ -1,6 +1,6 @@
 # PE-021 — Design Plan: Security Wing (Post-Research Access)
 
-**Status:** Design Plan — **APPROVED & IMPLEMENTED**  
+**Status:** Archived with Close — **APPROVED & IMPLEMENTED** (mission Closed — Technical; Gameplay PENDING_USER)  
 **Branch:** `develop`  
 **Priority:** High (campaign beat after PE-020 Research Wing)  
 **Map:** `/Game/ProjectEcho/Maps/Production/LV_ARI_SecurityWing`  
@@ -11,17 +11,17 @@
 **Fuse path:** Owned by **PE-017A** — do not duplicate  
 **Predecessor:** `LV_ARI_ResearchWing` (PE-020 — Soft Open LabExit → Security Wing wired)  
 **Soft Open Level:** Research Wing LabExit → Open Level → Security Wing  
-**Mission notes:** [`PE-021-SecurityWing.md`](PE-021-SecurityWing.md)  
-**VDP:** [`PE-021-VisualDesignPackage.md`](PE-021-VisualDesignPackage.md) — EP `Implement Mission PE-021` after VDP = Ready to Implement **YES**
+**Mission notes:** [`PE-021-SecurityWing.md`](PE-021-SecurityWing.md) (Closed — Technical)  
+**VDP:** [`PE-021-VisualDesignPackage.md`](PE-021-VisualDesignPackage.md) — archived with Close (VDP-before-Implement held)  
+**Close date:** 2026-07-25
 
 ---
 
 > ### Gate
 >
-> **Review complete — Technical PASS · Gameplay PENDING_USER**  
+> **APPROVED & IMPLEMENTED** — mission **Closed — Technical** (Gameplay PENDING_USER)  
 > PRB: **Approve with Conditions** ([`PE-021-ProductionReview.md`](PE-021-ProductionReview.md)) · Ready For Review: **NO**  
-> Design Plan proceed: **YES** · Ready to Implement: **YES** (already implemented)  
-> Next: Human PIE ([`PE-021-PlaytestChecklist.md`](PE-021-PlaytestChecklist.md)) → `Close Mission PE-021` (or return to Validate/Fix).
+> Human PIE still open via [`PE-021-PlaytestChecklist.md`](PE-021-PlaytestChecklist.md) — reopen `Validate Mission PE-021` when ready.
 
 ---
 
@@ -431,7 +431,7 @@ Design Plan before implement (this doc); PE-018 recipe; VDP before Ready to Impl
 | Deferred | Signal & Communication, Armory, Restricted, fuse, generator, coolant/research redo, Witness AI, Save, multi-tier biometrics |
 | VDP | [`PE-021-VisualDesignPackage.md`](PE-021-VisualDesignPackage.md) — implemented against package |
 
-**Gate:** Validate Mission PE-021 / human PIE — do not claim Gameplay PASS from Technical alone.
+**APPROVED & IMPLEMENTED** — mission **Closed — Technical** (Gameplay PENDING_USER). See `PE-021-SecurityWing.md`.
 
 ---
 
@@ -440,6 +440,7 @@ Design Plan before implement (this doc); PE-018 recipe; VDP before Ready to Impl
 | | |
 |--|--|
 | Created | 2026-07-25 |
+| Closed | 2026-07-25 (with mission) |
 | Mission | PE-021 Design Plan |
 | Owners | Design (EP / LD / GD / Horror / Tech) |
 | Related | `PE-020-DesignPlan.md`, `PE-020-ResearchWing.md`, `GameplayDesignBible.md`, `FacilityBible.md`, `ProductionPlaybook.md`, `Roadmap.md` |

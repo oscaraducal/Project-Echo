@@ -1,10 +1,11 @@
 # Manual PIE Checklist — PE-021 Security Wing
 
-**Status:** Active — Gameplay **PENDING_USER** (Validate 2026-07-25)  
+**Status:** Archived with Close — Gameplay **PENDING_USER** (checklist remains the reopen Validate path)  
 **Map:** `/Game/ProjectEcho/Maps/Production/LV_ARI_SecurityWing`  
 **Estimated time:** 15–20 minutes (first pass) + 3–5 minutes replay  
 **Gameplay PASS owner:** Executive Producer (Oscar)  
-**Mission notes:** [`PE-021-SecurityWing.md`](PE-021-SecurityWing.md)  
+**Mission notes:** [`PE-021-SecurityWing.md`](PE-021-SecurityWing.md) (Closed — Technical)  
+**Production Review:** [`PE-021-ProductionReview.md`](PE-021-ProductionReview.md) — Board **Approve with Conditions**  
 **Automation note:** Enhanced Input cannot be fully driven by Slate/MCP — human required. Technical ≠ Gameplay.
 
 ---
@@ -49,47 +50,47 @@
 
 ### Observe
 
-4. Read **Note A** (`Note_A_Entry`) — symptoms only (lockdown clearance unfinished). Fail if walkthrough directions.
-5. Explore Checkpoint Lobby — lockdown residue readable without combat/chase.
-6. Read **Note B** (`Note_B_ClearanceBoard`) → objective becomes **Restore access clearance** (or equivalent).
-7. Optionally read Notes C / D / E — symptoms only; no Restricted / Signal dump.
+1. Read **Note A** (`Note_A_Entry`) — symptoms only (lockdown clearance unfinished). Fail if walkthrough directions.
+2. Explore Checkpoint Lobby — lockdown residue readable without combat/chase.
+3. Read **Note B** (`Note_B_ClearanceBoard`) → objective becomes **Restore access clearance** (or equivalent).
+4. Optionally read Notes C / D / E — symptoms only; no Restricted / Signal dump.
 
 ### Credential + Clearance (Security & Access)
 
-8. Recover **Staff Keycard** in Credential / Locker Bay (`StaffKeycardPickup`).
-9. Use keycard on **LobbyClearanceGate** (if present) to reach Access Control.
-10. Set console stations:
-    - **CS-BADGE** — start HOLD → set **ENGAGE**
-    - **CS-ZONE** — start HOLD → set **ENGAGE**
-    - **CS-EXIT** — start ENGAGE → set **HOLD**
-11. Confirm incomplete set does **not** unlock SoftOpenExit_Stub (try interact while incomplete if unsure).
-12. Complete correct triad (+ credential path) → World Response (lights / ambient / PA / vent prints OK as debt) + Soft Open unlock + objective toward next area.
+1. Recover **Staff Keycard** in Credential / Locker Bay (`StaffKeycardPickup`).
+2. Use keycard on **LobbyClearanceGate** (if present) to reach Access Control.
+3. Set console stations:
+   - **CS-BADGE** — start HOLD → set **ENGAGE**
+   - **CS-ZONE** — start HOLD → set **ENGAGE**
+   - **CS-EXIT** — start ENGAGE → set **HOLD**
+4. Confirm incomplete set does **not** unlock SoftOpenExit_Stub (try interact while incomplete if unsure).
+5. Complete correct triad (+ credential path) → World Response (lights / ambient / PA / vent prints OK as debt) + Soft Open unlock + objective toward next area.
 
 ### World Response → Witness → Exit
 
-13. Walk Exit Approach — **Witness delayed silhouette only after solve** (not during keycard / console work).
-14. Confirm Witness is tension-only (does not brick clearance / lock player permanently).
-15. Interact **SoftOpenExit_Stub** → opens (stub next zone; no Signal map required).
+1. Walk Exit Approach — **Witness delayed silhouette only after solve** (not during keycard / console work).
+2. Confirm Witness is tension-only (does not brick clearance / lock player permanently).
+3. Interact **SoftOpenExit_Stub** → opens (stub next zone; no Signal map required).
 
 ### SliceReset / Replay
 
-16. Press **SliceResetButton** without quitting UE.
-17. Confirm reverse: Soft Open locked again, consoles to start states, Witness hidden again, keycard/inventory as designed, notes/objectives reset, WR receivers off.
-18. Replay clearance path once without editor restart.
-19. Optional regression: Research Soft Open still lands here; Coolant / Annex / Maintenance paths still independent (no generator `HasHandledPower` / fuse ownership bleed).
+1. Press **SliceResetButton** without quitting UE.
+2. Confirm reverse: Soft Open locked again, consoles to start states, Witness hidden again, keycard/inventory as designed, notes/objectives reset, WR receivers off.
+3. Replay clearance path once without editor restart.
+4. Optional regression: Research Soft Open still lands here; Coolant / Annex / Maintenance paths still independent (no generator `HasHandledPower` / fuse ownership bleed).
 
 ---
 
 ## Pass criteria
 
-- [ ] Full loop playable with Enhanced Input in ~15–20 minutes
-- [ ] Soft Open Research→Security (or direct spawn) feels continuous
-- [ ] Staff Keycard + console triad readable without tutorial UI / walkthrough notes
-- [ ] Incomplete clearance keeps Soft Open locked (readable fail)
-- [ ] Witness only on exit path after solve
-- [ ] SliceReset full reverse + second run without UE restart
-- [ ] No combat / chase / Signal second puzzle / Armory / Restricted dump
-- [ ] Indoor lighting baseline holds (no outdoor sun dominance)
+- Full loop playable with Enhanced Input in ~15–20 minutes
+- Soft Open Research→Security (or direct spawn) feels continuous
+- Staff Keycard + console triad readable without tutorial UI / walkthrough notes
+- Incomplete clearance keeps Soft Open locked (readable fail)
+- Witness only on exit path after solve
+- SliceReset full reverse + second run without UE restart
+- No combat / chase / Signal second puzzle / Armory / Restricted dump
+- Indoor lighting baseline holds (no outdoor sun dominance)
 
 ## Fail / defer
 
@@ -106,10 +107,10 @@
 
 ## EP decision block
 
-After walking this checklist, record:
+**At Close (2026-07-25):** Human Gameplay was **not** declared PASS — mission Closed — Technical with open debt after PRB **Approve with Conditions**. After walking this checklist later, record:
 
 - **Human Gameplay:** PASS / FAIL / WAIVER  
 - **Replay (manual):** PASS / FAIL / N/A  
 - Notes  
 
-Then run: `Review Mission PE-021` (preferred after PASS) or `Close Mission PE-021` (Mission Director). Reopen `Validate Mission PE-021` if FAIL needs a re-check.
+Then run: `Validate Mission PE-021` (reopen) or `Review Mission PE-021` (Mission Director).

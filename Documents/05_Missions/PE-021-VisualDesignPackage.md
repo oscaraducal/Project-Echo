@@ -1,21 +1,22 @@
 # PE-021 — Visual Design Package: Security Wing
 
-**Status:** Implemented — EP `Implement Mission PE-021` after VDP generation  
+**Status:** Archived with Close — VDP complete; VDP-before-Implement held  
 **Mission:** PE-021 Security Wing (Post-Research Access)  
 **Map:** `/Game/ProjectEcho/Maps/Production/LV_ARI_SecurityWing`  
 **Branch:** `develop`  
 **Date:** 2026-07-25  
-**Design Plan:** [`PE-021-DesignPlan.md`](PE-021-DesignPlan.md) (APPROVED & IMPLEMENTED)  
-**Mission notes:** [`PE-021-SecurityWing.md`](PE-021-SecurityWing.md)  
+**Design Plan:** [`PE-021-DesignPlan.md`](PE-021-DesignPlan.md) (APPROVED & IMPLEMENTED — archived)  
+**Mission notes:** [`PE-021-SecurityWing.md`](PE-021-SecurityWing.md) (Closed — Technical; Gameplay PENDING_USER)  
 **Authority:** Gameplay Design Bible (PE-016) §5.3 Security & Access · Production Playbook §12c · Visual Design Package standard  
+**Close date:** 2026-07-25  
 
 ---
 
 > ### Gate
 >
-> **VDP used for Implement** — EP commanded `Implement Mission PE-021` after VDP generation = Ready to Implement **YES**.  
-> Build landed Technical PASS; Gameplay remains **PENDING_USER**.  
-> Next: `Validate Mission PE-021` / human PIE.
+> **VDP used for Implement** — Ready to Implement was **YES** before build (gate held).  
+> Mission **Closed — Technical**; Gameplay remains **PENDING_USER**.  
+> Human PIE: [`PE-021-PlaytestChecklist.md`](PE-021-PlaytestChecklist.md) — reopen `Validate Mission PE-021` when ready.
 
 ---
 
@@ -433,10 +434,10 @@ EP answers **Yes / No** to each:
 | Field | Value |
 |-------|--------|
 | VDP complete | **YES** |
-| Mentally playable | *(EP)* |
-| EP decision | APPROVE / RETURN TO DESIGN |
-| Ready to Implement | **NO** — YES only if APPROVE |
-| Notes | |
+| Mentally playable | **YES** (EP Implement after VDP) |
+| EP decision | **APPROVE** (Implement Mission PE-021 after VDP) |
+| Ready to Implement | **YES** (was YES before Implement) |
+| Notes | Implementation at `LV_ARI_SecurityWing`. Mission Closed — Technical; Manual Gameplay PASS still PENDING_USER. |
 
 ---
 
@@ -445,7 +446,8 @@ EP answers **Yes / No** to each:
 | | |
 |--|--|
 | Created | 2026-07-25 |
+| Closed | 2026-07-25 (with mission) |
 | Mission | PE-021 Visual Design Package |
 | Skills applied | environment-designer (thin layout intent) · experience-designer · blockout-visualizer · storyboard-designer · concept-artist · lighting-visualizer · asset-placement-designer |
 | Related | `PE-021-DesignPlan.md`, `PE-020-VisualDesignPackage.md`, `GameplayDesignBible.md`, `FacilityBible.md`, `VisualDesignPackage.md`, `ProductionPlaybook.md` |
-| Unreal changes | **None** (docs-only) |
+| Unreal changes | **None** at Close (docs-only Close) |

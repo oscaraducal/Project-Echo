@@ -2,6 +2,26 @@
 
 ---
 
+## PE-021 — Close Mission (Security Wing)
+**Date:** 2026-07-25
+**Mission:** PE-021 Security Wing
+**Branch:** `develop`
+
+### Changed
+
+- `PE-021-SecurityWing.md` — Status **Closed — Technical** (Gameplay **PENDING_USER**); Completion Report; lessons pointer
+- Design Plan / VDP / Playtest / QA Review Package / Production Review — archived with Close; status fields consistent
+- `ProductionPlaybook.md` §11 — PE-021 durable lessons (Security Access family Technical; VDP-before-Implement held)
+- `ProjectHealth.md` / `Roadmap.md` / `SprintHistory.md` / `MasterIndex.md` / `Documents/README.md` — PE-021 Closed with open Gameplay debt
+
+### Notes
+
+- PRB **Approve with Conditions** honored; Close does **not** claim Gameplay PASS
+- Human PIE remains open via `PE-021-PlaytestChecklist.md` — reopen `Validate Mission PE-021` when ready
+- Docs-only Close — no Blueprint/map changes
+
+---
+
 ## PE-021 — Production Review Board
 **Date:** 2026-07-25
 **Mission:** PE-021 Security Wing

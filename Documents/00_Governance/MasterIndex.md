@@ -89,4 +89,4 @@ Each mission includes:
 - Commit Hash
 - Lessons Learned
 
-Latest closed production slice: **PE-020 Research Wing** (`Documents/05_Missions/PE-020-ResearchWing.md`) — Closed Technical 2026-07-25; Gameplay PENDING_USER. Process retro: `Documents/04_Production/AIStudio/Retrospective-PE-020.md`.
+Latest closed production slice: **PE-021 Security Wing** (`Documents/05_Missions/PE-021-SecurityWing.md`) — Closed Technical 2026-07-25; Gameplay PENDING_USER; PRB Approve with Conditions. Prior: PE-020 Research Wing (`Documents/05_Missions/PE-020-ResearchWing.md`); process retro: `Documents/04_Production/AIStudio/Retrospective-PE-020.md`.

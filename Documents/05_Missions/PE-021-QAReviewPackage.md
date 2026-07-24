@@ -1,11 +1,14 @@
 # QA Review Package — PE-021 Security Wing
 
+**Status:** Archived with Close — Conditions stand; Gameplay **PENDING_USER**  
 **Date:** 2026-07-25  
+**Close date:** 2026-07-25  
 **Branch:** `develop`  
 **Map:** `/Game/ProjectEcho/Maps/Production/LV_ARI_SecurityWing`  
-**Basis:** Design Plan · VDP · mission notes · Validate Technical PASS (`ef48fe1`) · Playtest checklist · MCP Review inspect (map loaded; loop actors present)  
-**Human Gameplay PASS:** **PENDING_USER** — not closed  
-**Ship readiness (QA opinion only):** **Conditions** — Technical foundation sound; do not claim Ready For Review YES or Complete without human EI PIE (or EP written waiver)
+**Basis:** Design Plan · VDP · mission notes · Validate Technical PASS (`ef48fe1`) · Playtest checklist · MCP Review inspect (map loaded; loop actors present) · PRB Approve with Conditions  
+**Human Gameplay PASS:** **PENDING_USER** — not closed at Close  
+**Ship readiness (QA opinion only):** **Conditions** — Technical foundation sound; Ready For Review remains **NO** until human EI PIE (or EP written waiver)  
+**Reopen Validate path:** [`PE-021-PlaytestChecklist.md`](PE-021-PlaytestChecklist.md)
 
 ---
 
@@ -242,4 +245,4 @@ No Critical performance blockers identified from docs/MCP folder inspection.
 | Docs | PASS for Review package (this file + Production Review) |
 | Ready For Review | **NO** (honest) |
 
-**QA does not approve merge as Complete.** QA recommends: **Approve with Conditions** for documentation / Technical merge honesty; **block Ready For Review YES** until Gameplay closed.
+**QA does not approve merge as Complete.** QA recommended **Approve with Conditions** (honored at Close — Technical). **Ready For Review stays NO** until Gameplay closed via checklist / waiver.

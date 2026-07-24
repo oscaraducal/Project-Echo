@@ -353,6 +353,12 @@ Mission notes: `Documents/05_Missions/PE-017-VerticalSlice01.md`
 - Close may archive Technical PASS with Gameplay **PENDING_USER** honestly; reopen Validate after human PIE.  
 - Full process retro: [Retrospective-PE-020.md](AIStudio/Retrospective-PE-020.md).
 
+### PE-021
+
+- **Security & Access family shipped Technical** — first bible §5.3 credential + clearance beat (`BP_AccessClearancePuzzle` / Staff Keycard) on the PE-018 map recipe.  
+- **VDP-before-Implement held** this time (contrast PE-020 post-hoc VDP debt).  
+- Close may still archive with Gameplay **PENDING_USER** after PRB Approve with Conditions; reopen Validate via playtest checklist.
+
 ---
 
 # 12. Cursor AI Studio Map

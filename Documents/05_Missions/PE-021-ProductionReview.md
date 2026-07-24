@@ -1,16 +1,20 @@
 # Production Review Board Report — PE-021 Security Wing
 
+**Status:** Archived with Close — Board **Approve with Conditions** (mission Closed — Technical; Gameplay PENDING_USER)  
 **Date:** 2026-07-25  
+**Close date:** 2026-07-25  
 **Mission / Artifact:** PE-021 Security Wing (implementation + Validate Technical)  
 **Branch:** `develop`  
-**Commits:** Implement `24d51e5` · Validate `ef48fe1`  
+**Commits:** Implement `24d51e5` · Validate `ef48fe1` · Review `4e33aba` · Close (this pass)  
 **QA input:** [`PE-021-QAReviewPackage.md`](PE-021-QAReviewPackage.md)  
+**Playtest / reopen Validate:** [`PE-021-PlaytestChecklist.md`](PE-021-PlaytestChecklist.md)  
 **Map:** `/Game/ProjectEcho/Maps/Production/LV_ARI_SecurityWing` (MCP Review inspect: loaded; AccessClearance ×1, ClearanceConsole ×3, SoftOpenExit, KeyItem, LockedDoor, Witness, SecurityWingReset, Notes present)  
 **Board mode:** Light PRB (EP, Creative Director, Lead Developer, QA Lead) + expanded Horror / Narrative / Gameplay / Level / Tech Art / Audio as needed  
 
-**Board verdict:** **Approve with Conditions**
+**Board verdict:** **Approve with Conditions**  
+**Close posture:** Closed — Technical; Gameplay still **PENDING_USER** (conditions not waived)
 
-**EP decision needed:** **Yes** — merge / Close posture; Human Gameplay still open
+**EP decision needed:** Human PIE still open — reopen `Validate Mission PE-021` after checklist walk (or written waiver)
 
 ---
 
@@ -193,12 +197,12 @@ Assumed next: Soft Open destination beyond Security (Roadmap: Signal / deeper se
 |------|--------|
 | Compile | **PASS** |
 | Technical | **PASS** |
-| Gameplay | **PENDING_USER** — not closed |
+| Gameplay | **PENDING_USER** — not closed at Close |
 | Replay | Technical **PASS** / manual **PENDING_USER** |
 | Ready For Review | **NO** |
-| Mission Complete / Closed | **NO** until Close Mission + Gameplay resolution |
+| Mission Closed | **YES** — Closed — Technical (2026-07-25); Gameplay debt remains |
 
-**This Review does not convert PENDING_USER into PASS.**
+**Close Mission PE-021 does not convert PENDING_USER into PASS.** Reopen Validate via [`PE-021-PlaytestChecklist.md`](PE-021-PlaytestChecklist.md).
 
 ---
 

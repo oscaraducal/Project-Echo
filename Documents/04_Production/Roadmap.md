@@ -61,6 +61,7 @@ Status
 - Generator Annex playable validation (PE-018 manual Gameplay PASS)
 - Coolant Bay playable validation (PE-019 manual Gameplay PASS)
 - Research Wing playable validation (PE-020 manual Gameplay PASS — mission Closed Technical)
+- Security Wing playable validation (PE-021 manual Gameplay PASS — mission Closed Technical)
 
 ### Completed (recent)
 
@@ -73,7 +74,7 @@ Status
 - Generator Annex production map — fuel → generator World Response + Witness (PE-018 implementation)
 - Coolant Bay production map — Mechanical valves → pressure hatch + Witness (PE-019 implementation)
 - Research Wing production map — containment calibration + Witness + Soft Open from Coolant (PE-020 implementation; Closed — Technical 2026-07-25)
-- Security Wing production map — Staff Keycard + Access Clearance + Witness + Soft Open from Research (PE-021 implementation; Technical 2026-07-25)
+- Security Wing production map — Staff Keycard + Access Clearance + Witness + Soft Open from Research (PE-021 implementation; Closed — Technical 2026-07-25)
 - Soft Open Level chain: Maintenance → Annex → Coolant Bay → Research Wing → Security Wing
 
 ### Remaining
