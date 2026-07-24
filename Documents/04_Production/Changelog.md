@@ -190,3 +190,29 @@ No Blueprint logic changes. Sandbox is not campaign content. ThirdParty vendor p
 ### Notes
 
 No gameplay Blueprint graph or system changes. PE-011/PE-012 prototype maps untouched. Atmosphere relies on existing power-response ambient actors plus visual vent/industrial dressing. ThirdParty vendor packs referenced only and not modified.
+
+---
+
+## Development Sandbox Validation & Gameplay Integration
+**Date:** 2026-07-24
+**Mission:** PE-013B
+
+### Fixed
+
+- Restored `BP_PlayerController` Enhanced Input registration on `EventOnPossess` (BUG-001 path) after empty EventGraph regression
+- Completed `BP_PlayerCharacter` sprint helpers (`CanStartSprint` / `StartSprint` / `StopSprint`)
+- Added missing `IA_Interact` / `IA_Flashlight` mappings to `IMC_Player`
+- Corrected `DefaultEngine.ini` GameMode / GameInstance / default+startup maps to Project Echo assets (was FirstPerson template)
+
+### Added
+
+- `Station_*` labeled test stations and in-level `DebugBoard_Systems` on `LV_TestingGround`
+- `BP_DevSandboxValidator` + placed `DevSandboxValidator` for PIE API validation when Slate keys are unreliable
+
+### Changed
+
+- Updated `GameplaySystems.md` with PE-013B root-cause analysis, fixes, and validation results
+
+### Notes
+
+All implemented validation checklist items PASS in PIE. ThirdParty packs untouched. Prototype maps not modified for this mission.
