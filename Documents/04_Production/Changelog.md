@@ -2,6 +2,85 @@
 
 ---
 
+## PE-020 — Research Wing (Post-Coolant Laboratory)
+**Date:** 2026-07-25
+**Mission:** PE-020 Research Wing
+**Branch:** `develop`
+
+### Added
+
+- Production map `/Game/ProjectEcho/Maps/Production/LV_ARI_ResearchWing`
+- Twin assets: `BP_ContainmentCalibrationPuzzle`, `BP_CalibrationStation`, `BP_ResearchWingReset` (Research Equipment family prep)
+- Design Plan + mission notes: `PE-020-DesignPlan.md`, `PE-020-ResearchWing.md`
+- Soft Open: Coolant Bay `SoftOpenExit_Research` → `LV_ARI_ResearchWing`
+
+### Changed
+
+- Coolant Bay exit Soft Open destination wired to Research Wing (supersedes Security stub for campaign travel)
+- Research map narrative/notes/station IDs (ST-TEMP / ST-SEAL / ST-LINK) on reused CoolantLoop/Valve instances
+
+### Notes
+
+- Technical Simulate PASS; Gameplay PASS **PENDING_USER** (Enhanced Input)
+- No combat / chase / Security / fuse fork / inventory redesign
+- Replay via SliceReset (CoolantBayReset instance); ResearchWingReset twin cutover debt tagged in mission notes
+
+---
+
+## AI Studio Phase 4 — Mission Director Integration
+**Date:** 2026-07-25
+**Mission:** AI Studio Mission Director Integration
+**Branch:** `develop`
+
+### Added
+
+- `Documents/04_Production/AIStudio/MissionDirector/` — README, CommandReference, Integration-CompletionReport
+- `.cursor/skills/mission-director/SKILL.md` — permanent production orchestration entry
+- `.cursor/rules/mission-director.mdc` — always-on Director default
+- `.cursor/agents/mission-director.md` — Task-tool orchestration brief
+
+### Changed
+
+- AI Studio → **v1.4**; README EP commands + orchestration skill map
+- Production Playbook → **v1.4**: lifecycle EP→Director; §12d Mission Director
+- MigrationPlan / foundation / EP agent — command vocabulary; no manual skill orchestration
+- Documents README / MasterIndex / legacy AIStudio.md pointers
+
+### Notes
+
+- Docs + Cursor OS only — no Unreal, gameplay, Story Canon, or Hooks changes
+- EP issues high-level commands; Director selects skills and stops at gates
+
+---
+
+## AI Studio Phase 3 — Previsualization Studio
+**Date:** 2026-07-25
+**Mission:** AI Studio Phase 3 (Previsualization Studio)
+**Branch:** `develop`
+
+### Added
+
+- `Documents/04_Production/AIStudio/PrevisualizationStudio/` — README, VisualDesignPackage, SkillRelationships, Phase3-CompletionReport
+- Previs Cursor skills (flat): experience-designer, blockout-visualizer, storyboard-designer, concept-artist, lighting-visualizer, asset-placement-designer
+- `.cursor/rules/previs-studio.mdc` — VDP gate pointer for mission docs
+
+### Changed
+
+- AI Studio → **v1.3**; README skills map + pipeline
+- Production Playbook → **v1.3**: lifecycle 2c/2d + §12c Previs; permanent VDP before implement
+- MigrationPlan / Hooks — Phase 3 delivered; hooks remain disabled
+- `executive-producer` agent — VDP mental-play checklist
+- Documents README / MasterIndex / legacy AIStudio.md pointers
+- `mission-planner` / `mission-implementer` — VDP gate awareness
+
+### Notes
+
+- Docs + Cursor workflow only — no maps, Blueprints, gameplay, Story Canon, assets, or image generation
+- EP approves player experience (mental play), not text alone
+- Applies to future production missions; PE-019 landed before this standard
+
+---
+
 ## PE-019 — Coolant Bay (Post-Power Mechanical)
 **Date:** 2026-07-25
 **Mission:** PE-019
