@@ -1,17 +1,16 @@
-# ProjectEcho Python startup — one-shot PE-012 runner when flag present
+# ProjectEcho Python startup — one-shot deferred runners when flag present
 import unreal
 import os
 
-_FLAG = r"C:\Users\oscar\Documents\Unreal Projects\ProjectEcho\Saved\PE012_run.flag"
-_SCRIPT = r"C:\Users\oscar\Documents\Unreal Projects\ProjectEcho\Saved\PE012_complete_safe.py"
-_STATUS = r"C:\Users\oscar\Documents\Unreal Projects\ProjectEcho\Saved\PE012_status.txt"
+_SAVED = r"C:\Users\oscar\Documents\Unreal Projects\ProjectEcho\Saved"
 _TICK_HANDLE = None
 _FRAMES = 0
+_PENDING = None  # (script_path, status_path, tag)
 
 
-def _append(msg: str) -> None:
+def _append(status_path: str, msg: str) -> None:
     try:
-        with open(_STATUS, "a", encoding="utf-8") as f:
+        with open(status_path, "a", encoding="utf-8") as f:
             f.write(msg + "\n")
     except Exception:
         pass
@@ -19,11 +18,12 @@ def _append(msg: str) -> None:
 
 
 def _on_tick(_delta: float) -> None:
-    global _TICK_HANDLE, _FRAMES
+    global _TICK_HANDLE, _FRAMES, _PENDING
     _FRAMES += 1
     # Wait for editor subsystems / asset registry to settle
-    if _FRAMES < 120:
+    if _FRAMES < 30:
         return
+    script_path, status_path, tag = _PENDING
     if _TICK_HANDLE is not None:
         try:
             unreal.unregister_slate_post_tick_callback(_TICK_HANDLE)
@@ -31,34 +31,42 @@ def _on_tick(_delta: float) -> None:
             pass
         _TICK_HANDLE = None
     try:
-        _append("[PE012] startup hook executing complete script")
-        with open(_SCRIPT, "r", encoding="utf-8") as f:
+        _append(status_path, f"[{tag}] startup hook executing script")
+        with open(script_path, "r", encoding="utf-8") as f:
             code = f.read()
-        # Execute in a fresh globals dict with unreal available
-        g = {"unreal": unreal, "__name__": "__pe012_main__"}
-        exec(compile(code, _SCRIPT, "exec"), g, g)
-        _append("[PE012] startup hook finished")
+        g = {"unreal": unreal, "__name__": f"__{tag}_main__"}
+        exec(compile(code, script_path, "exec"), g, g)
+        _append(status_path, f"[{tag}] startup hook finished")
     except Exception as e:
-        _append(f"[PE012] startup hook FAILED: {e}")
-        unreal.log_error(f"[PE012] startup hook FAILED: {e}")
+        _append(status_path, f"[{tag}] startup hook FAILED: {e}")
+        unreal.log_error(f"[{tag}] startup hook FAILED: {e}")
+    _PENDING = None
 
 
-def _maybe_schedule_pe012() -> None:
-    global _TICK_HANDLE
-    if not os.path.exists(_FLAG):
-        return
+def _schedule(flag_name: str, script_name: str, status_name: str, tag: str) -> bool:
+    global _TICK_HANDLE, _FRAMES, _PENDING
+    flag = os.path.join(_SAVED, flag_name)
+    if not os.path.exists(flag):
+        return False
     try:
-        os.remove(_FLAG)
+        os.remove(flag)
     except Exception as e:
-        unreal.log_warning(f"[PE012] could not remove flag: {e}")
-        return
+        unreal.log_warning(f"[{tag}] could not remove flag: {e}")
+        return False
+    script_path = os.path.join(_SAVED, script_name)
+    status_path = os.path.join(_SAVED, status_name)
     try:
-        with open(_STATUS, "w", encoding="utf-8") as f:
-            f.write("[PE012] flag detected — scheduling deferred run\n")
+        with open(status_path, "w", encoding="utf-8") as f:
+            f.write(f"[{tag}] flag detected — scheduling deferred run\n")
     except Exception:
         pass
+    _PENDING = (script_path, status_path, tag)
+    _FRAMES = 0
     _TICK_HANDLE = unreal.register_slate_post_tick_callback(_on_tick)
-    unreal.log("[PE012] scheduled deferred PE-012 completion")
+    unreal.log(f"[{tag}] scheduled deferred run")
+    return True
 
 
-_maybe_schedule_pe012()
+# Prefer ASSET-001 if present; otherwise PE-012 legacy flag
+if not _schedule("ASSET001_run.flag", "ASSET001_migrate.py", "ASSET001_status.txt", "ASSET-001"):
+    _schedule("PE012_run.flag", "PE012_complete_safe.py", "PE012_status.txt", "PE012")

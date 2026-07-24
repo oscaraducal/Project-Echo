@@ -460,3 +460,84 @@ Prototype maps are development maps.
 They are not production levels.
 
 Production maps should be created separately and must not depend on prototype maps.
+
+---
+
+# Official Content Folder Structure
+
+Status: Active (ASSET-001)
+
+Project content is organized under two primary roots:
+
+| Root | Role |
+|------|------|
+| `Content/ProjectEcho/` | All Project Echo original content |
+| `Content/ThirdParty/` | Imported vendor / marketplace packs (policy home) |
+
+## `Content/ProjectEcho/` Hierarchy
+
+```
+Gameplay/
+  AI/
+  Audio/
+  Characters/
+  Interaction/
+  Inventory/
+  Objectives/
+  Power/
+  Puzzle/
+  Save/
+  Systems/
+Environment/
+  Architecture/
+  Props/
+  Lighting/
+  Materials/
+  Decals/
+  Effects/
+  Audio/
+  Foliage/
+Maps/
+  Development/
+  Prototype/
+  Production/
+  Cinematics/
+UI/
+Data/
+Input/
+Sequences/
+Documentation/
+Developers/
+```
+
+---
+
+# ThirdParty Policy
+
+- Vendor packs live under `Content/ThirdParty/<PackName>/`.
+- Do **not** reorganize, rename, split, or move assets inside vendor packs.
+- Do **not** extract individual pack assets into `Content/ProjectEcho/` solely for tidy folder cosmetics.
+- Reference pack assets from Project Echo Blueprints / levels as needed.
+- Catalog packs in `Documents/02_Technical/AssetCatalog.md` when importing new packs.
+- Engine / template leftovers outside `ThirdParty` (e.g. `FirstPerson`, `LevelPrototyping`) are not Project Echo originals — do not treat them as the official hierarchy.
+
+---
+
+# ProjectEcho Policy
+
+- All original Project Echo gameplay, UI, data, input, maps, and sequences belong under `Content/ProjectEcho/`.
+- Prefer feature folders under `Gameplay/` (Interaction, Inventory, Objectives, Power, etc.) over a generic `Blueprints/` dump.
+- Maps use `Maps/Prototype`, `Maps/Development`, `Maps/Production`, `Maps/Cinematics` — not `Levels/`.
+- After moving assets: Fix Up Redirectors, recompile affected Blueprints, verify prototype maps load.
+- Do **not** change Blueprint event graphs / gameplay logic during organization passes.
+- Preserve DOC-002 asset names (`BP_*`, `BPC_*`, `BPI_*`, `WBP_*`, `ST_*`, `E_*`, `LV_Prototype_PE###`).
+
+---
+
+# Folder Naming Standards
+
+- Use PascalCase folder names matching the official hierarchy above.
+- Do not invent parallel roots under `Content/ProjectEcho/` without updating this guide.
+- Empty scaffold folders (AI, Puzzle, Environment/*, etc.) are intentional — place new assets into the matching category.
+- Prototype map asset names remain `LV_Prototype_PE###` (mission IDs in map names only).
+- World Outliner actor labels stay descriptive (no `PE###_` prefixes on reusable labels).

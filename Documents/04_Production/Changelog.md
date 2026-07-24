@@ -127,3 +127,26 @@ First post-power living-facility sequence. Grounded uncertainty only — no comb
 ### Notes
 
 Reusable assets describe function, not mission number. Mission IDs remain valid only for prototype maps, docs, changelog, commits, and reports.
+
+---
+
+## Project Content Organization Standardization
+**Date:** 2026-07-24
+**Mission:** ASSET-001
+
+### Added
+
+- Official `Content/ProjectEcho/` hierarchy scaffold (`Gameplay/*`, `Environment/*`, `Maps/*`, `UI/`, `Data/`, `Input/`, `Sequences/`, `Documentation/`, `Developers/`)
+- `Content/ThirdParty/` confirmed as policy home for vendor packs
+- `Documents/02_Technical/AssetCatalog.md` — catalog of all imported ThirdParty packs
+- ContributionGuide sections: Official Content Folder Structure, ThirdParty Policy, ProjectEcho Policy, Folder Naming Standards
+
+### Changed
+
+- Migrated Project Echo originals from `Blueprints/`, `Levels/` into the official hierarchy (asset names preserved)
+- Prototype maps moved to `Maps/Prototype/` (`LV_Prototype`, `LV_Prototype_PE011`, `LV_Prototype_PE012`)
+- Cleaned redirectors / orphaned old Blueprint path packages after migration
+
+### Notes
+
+Organizational only — no Blueprint graph / gameplay logic changes. ThirdParty vendor packs were not moved or modified.
