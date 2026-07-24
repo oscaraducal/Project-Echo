@@ -172,3 +172,21 @@ Organizational only — no Blueprint graph / gameplay logic changes. ThirdParty 
 ### Notes
 
 No Blueprint logic changes. Sandbox is not campaign content. ThirdParty vendor packs were referenced only and not edited.
+
+---
+
+## Asterion Development Testing Facility Environment Polish
+**Date:** 2026-07-24
+**Mission:** PE-013A
+
+### Changed
+
+- `LV_TestingGround` environmental polish pass (architecture, lighting, dressing, floor marks, room identity, subtle storytelling, corridor navigation cues)
+- Sealed interior ceilings across all zones and hub corridors; added beams, pillars, ceiling frames, and elevated access platforms
+- Replaced temporary zone PointLights with industrial RectLight fluorescents + lamp meshes (Generator darker; Horror Corridor controlled dim; sun/skylight softened)
+- Wall dressing: pipes, vents/ducts, panels, warning signs, cabinets/lockers, cable runs, extinguisher levers (ThirdParty reference only)
+- Floor polish: sparse leak decals and circulation markers; human-activity storytelling props (mugs, paper, notices, chairs, monitors) — no horror storytelling
+
+### Notes
+
+No gameplay Blueprint graph or system changes. PE-011/PE-012 prototype maps untouched. Atmosphere relies on existing power-response ambient actors plus visual vent/industrial dressing. ThirdParty vendor packs referenced only and not modified.
