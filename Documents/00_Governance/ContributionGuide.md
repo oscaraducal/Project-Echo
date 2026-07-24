@@ -51,29 +51,29 @@ Notes/
 
 # Naming Convention
 
-Blueprints:
+Status: Project Echo Asset Naming Standard v1.0
 
-BP_
+| Type | Format |
+|------|--------|
+| Blueprints | BP_[Name] |
+| Components | BPC_[Name] |
+| Interfaces | BPI_[Name] |
+| Widgets | WBP_[Name] |
+| Enums | E_[Name] |
+| Structs | ST_[Name] |
+| Data Assets | DA_[Name] |
+| Function Libraries | BFL_[Name] |
+| Static Meshes | SM_[Name] |
+| Skeletal Meshes | SK_[Name] |
+| Materials | M_[Name] |
+| Material Instances | MI_[Name] |
+| Textures | T_[Name] |
+| Sound Waves / Cues | SW_[Name] / SC_[Name] |
+| Niagara Systems | NS_[Name] |
+| Anim Blueprints | ABP_[Name] |
+| Animations / Montages | A_[Name] / AM_[Name] |
 
-Widgets:
-
-WBP_
-
-Interfaces:
-
-BPI_
-
-Enums:
-
-E_
-
-Structs:
-
-ST_
-
-Components:
-
-BP_[System]Component
+Reusable assets describe function, not mission number. Mission IDs belong only in documentation, changelog, commits, mission reports, and prototype map names.
 
 ---
 
@@ -146,18 +146,20 @@ Rules:
 
 # Unreal Engine Naming Standards
 
+Version: 1.0 (DOC-002)
+
 ## General Principles
 
 - Asset names should clearly describe their purpose.
 - Avoid ambiguous or temporary names.
 - Blueprint assets remain generic and reusable.
-- Mission identifiers belong only to prototype maps, placed actor labels, documentation, and mission reports.
+- Mission identifiers belong only to prototype map names (`LV_Prototype_PE###`), documentation, changelog, commits, and mission reports — not reusable assets or World Outliner labels.
 
 ---
 
 ## Blueprint Assets
 
-Blueprint names must remain reusable.
+Format: `BP_[Name]`
 
 Examples
 
@@ -169,27 +171,98 @@ Examples
 
 ✓ BP_PoweredDoor
 
+✓ BP_VentilationUnit
+
+✓ BP_PASpeaker
+
+✓ BP_DistantActivityHint
+
 ✗ BP_PE011_Generator
 
 ---
 
-## Prototype Maps
+## Blueprint Components
 
-Every gameplay mission receives its own prototype level.
+Format: `BPC_[Name]`
 
-Naming
-
-LV_Prototype_PE###
+Do not use `BP_*Component`.
 
 Examples
 
-LV_Prototype_PE008
+✓ BPC_Interaction
 
-LV_Prototype_PE009
+✓ BPC_Objective
 
-LV_Prototype_PE010
+✓ BPC_Inventory
 
-LV_Prototype_PE011
+✓ BPC_Flashlight
+
+✓ BPC_PowerReceiver
+
+✗ BP_InteractionComponent
+
+---
+
+## Blueprint Interfaces
+
+Format: `BPI_[Name]`
+
+Examples
+
+✓ BPI_Interactable
+
+✓ BPI_PowerReceiver
+
+---
+
+## Widgets
+
+Format: `WBP_[Name]`
+
+Examples
+
+✓ WBP_Objective
+
+✓ WBP_NoteReader
+
+---
+
+## Enums
+
+Format: `E_[Name]`
+
+Examples
+
+✓ E_GeneratorState
+
+✓ E_DoorState
+
+---
+
+## Structs
+
+Format: `ST_[Name]`
+
+Examples
+
+✓ ST_InventoryItem
+
+✓ ST_ObjectiveData
+
+---
+
+## Maps
+
+Prototype maps (mission IDs allowed):
+
+`LV_Prototype_PE###`
+
+Examples: `LV_Prototype_PE011`, `LV_Prototype_PE012`
+
+Other map conventions (docs / future use):
+
+- `LV_TestingGround` — general sandbox / systems testing
+- `LV_ARI_*` — art / environment iteration maps
 
 Rules
 
@@ -201,23 +274,35 @@ Rules
 
 ## Placed Actor Labels
 
-Format
-
-PE###_[ActorType]_[Number]
+Use descriptive World Outliner labels. Do not prefix actors with `PE###_`.
 
 Examples
 
-PE011_Generator
+✓ Generator
 
-PE011_FuelCan
+✓ FuelCan
 
-PE011_PowerManager
+✓ PowerManager
 
-PE011_EmergencyLight_01
+✓ EmergencyLight_01
 
-PE011_EmergencyLight_02
+✓ EmergencyLight_02
 
-PE011_PoweredDoor
+✓ BrokenEmergencyLight
+
+✓ AmbientFeedback
+
+✓ PoweredDoor
+
+✓ VentilationUnit
+
+✓ PASpeaker
+
+✓ DistantActivityHint
+
+✗ PE012_Generator
+
+✗ PE011_Light_A
 
 ---
 
@@ -243,37 +328,25 @@ Sphere
 
 Use descriptive labels instead.
 
-Examples
-
-EmergencyLight
-
-BrokenEmergencyLight
-
-AmbientFeedback
-
-PowerManager
-
-Generator
-
 ---
 
 ## Numbering
 
-Multiple actors should use two-digit numbering.
+Multiple actors of the same type should use two-digit numbering.
 
 Example
 
-PE011_EmergencyLight_01
+EmergencyLight_01
 
-PE011_EmergencyLight_02
+EmergencyLight_02
 
-PE011_EmergencyLight_03
+EmergencyLight_03
 
 ---
 
 ## Folder Organization
 
-Gameplay assets should remain organized by gameplay system.
+Gameplay assets should remain organized by gameplay system under `Content/ProjectEcho`.
 
 Example
 
@@ -301,12 +374,13 @@ Future gameplay systems should follow the same structure.
 
 Before completing every gameplay mission verify:
 
-- Blueprint names follow standards.
-- Prototype map follows LV_Prototype_PE###.
-- Actor labels are descriptive.
+- Blueprint / component / widget / struct names follow Asset Naming Standard v1.0.
+- Prototype map follows `LV_Prototype_PE###`.
+- Actor labels are descriptive (no `PE###_` prefix).
 - Generic labels removed.
 - Assets remain reusable.
 - Folder organization remains consistent.
+- Redirectors fixed up after any rename.
 
 ---
 

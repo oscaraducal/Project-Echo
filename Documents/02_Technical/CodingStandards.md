@@ -16,9 +16,15 @@ Consistency is more important than personal preference.
 
 # Naming Conventions
 
+Aligned with Project Echo Asset Naming Standard v1.0 (see ContributionGuide).
+
 Blueprint
 
 BP_
+
+Component
+
+BPC_
 
 Widget
 
@@ -35,10 +41,6 @@ E_
 Struct
 
 ST_
-
-Component
-
-BP_[Name]Component
 
 Data Asset
 

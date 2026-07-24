@@ -102,3 +102,28 @@ This milestone establishes the project's documentation foundation. Future gamepl
 ### Notes
 
 First post-power living-facility sequence. Grounded uncertainty only — no combat, chase, jump scares, or Witness reveal. Sequence remains once-only via PowerManager `HasHandledPower`.
+
+---
+
+## Asset Naming Standard
+**Date:** 2026-07-24
+**Mission:** DOC-002
+
+### Added
+
+- Project Echo Asset Naming Standard v1.0 finalized in ContributionGuide
+- Component prefix `BPC_[Name]` (replacing `BP_*Component`)
+- Map conventions documented: `LV_Prototype_PE###`, `LV_TestingGround`, `LV_ARI_*`
+- Descriptive World Outliner labels without `PE###_` prefixes
+
+### Changed
+
+- Renamed components: `BP_InteractionComponent` → `BPC_Interaction`, `BP_ObjectiveComponent` → `BPC_Objective`, `BP_InventoryComponent` → `BPC_Inventory`, `BP_FlashlightComponent` → `BPC_Flashlight`
+- Renamed `WBP_Note` → `WBP_NoteReader`
+- Renamed `ST_ItemData` → `ST_InventoryItem`
+- Updated actor labels on `LV_Prototype_PE011` and `LV_Prototype_PE012` to descriptive names
+- Synced CodingStandards component naming with v1.0
+
+### Notes
+
+Reusable assets describe function, not mission number. Mission IDs remain valid only for prototype maps, docs, changelog, commits, and reports.
