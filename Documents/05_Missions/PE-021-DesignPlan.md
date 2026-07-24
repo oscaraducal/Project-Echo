@@ -1,6 +1,6 @@
 # PE-021 — Design Plan: Security Wing (Post-Research Access)
 
-**Status:** Design Plan — **PROCEEDED TO PREVIS** (not implemented)  
+**Status:** Design Plan — **APPROVED & IMPLEMENTED**  
 **Branch:** `develop`  
 **Priority:** High (campaign beat after PE-020 Research Wing)  
 **Map:** `/Game/ProjectEcho/Maps/Production/LV_ARI_SecurityWing`  
@@ -9,19 +9,18 @@
 **Puzzle framework:** PE-015 (`BP_PuzzleBase` / families) — **compose existing systems; no framework fork**  
 **Map recipe:** **PE-018** (`LV_ARI_GeneratorAnnex` pattern) — Playbook §10  
 **Fuse path:** Owned by **PE-017A** — do not duplicate  
-**Predecessor:** `LV_ARI_ResearchWing` (PE-020 — Closed Technical; LabExit Soft Open stub)  
+**Predecessor:** `LV_ARI_ResearchWing` (PE-020 — Soft Open LabExit → Security Wing wired)  
 **Soft Open Level:** Research Wing LabExit → Open Level → Security Wing  
-**Mission notes:** TBD on Implement (`PE-021-SecurityWing.md`)  
-**VDP:** [`PE-021-VisualDesignPackage.md`](PE-021-VisualDesignPackage.md) — complete; awaiting EP mental-play APPROVE before Ready to Implement (Playbook §12c)
+**Mission notes:** [`PE-021-SecurityWing.md`](PE-021-SecurityWing.md)  
+**VDP:** [`PE-021-VisualDesignPackage.md`](PE-021-VisualDesignPackage.md) — EP `Implement Mission PE-021` after VDP = Ready to Implement **YES**
 
 ---
 
 > ### Gate
 >
-> **STOP — waiting for EP: VDP APPROVE / RETURN TO DESIGN**  
-> Design Plan proceed: **YES** (EP generated Visual Package) · Ready to Implement: **NO**  
-> Design Plan proceed ≠ Ready to Implement. Spatial production slice requires VDP EP mental-play APPROVE before any Unreal work.  
-> MCP Auto-accept does **not** apply until `Implement Mission PE-021`.
+> **Implement complete — Technical PASS · Gameplay PENDING_USER**  
+> Design Plan proceed: **YES** · Ready to Implement: **YES** (EP Implement after VDP)  
+> Next: `Validate Mission PE-021` / human PIE ([`PE-021-PlaytestChecklist.md`](PE-021-PlaytestChecklist.md)).
 
 ---
 
@@ -421,17 +420,17 @@ Design Plan before implement (this doc); PE-018 recipe; VDP before Ready to Impl
 
 | Field | Value |
 |-------|-------|
-| Ready for Approval | **YES** (Design Plan proceeded into Previs) |
-| Ready to Implement | **NO** — awaiting EP VDP APPROVE |
+| Ready for Approval | **YES** |
+| Ready to Implement | **YES** — EP `Implement Mission PE-021` after VDP |
+| Implemented | **YES** — Technical PASS; Gameplay PENDING_USER |
 | Map | `LV_ARI_SecurityWing` |
 | Wing | Security Wing (Security & Access / checkpoint clearance) |
 | Primary family | Security & Access (`BP_KeyItemPickup` + thin `BP_AccessClearancePuzzle`) |
-| Soft Open Level | Research LabExit → Security Wing (planned) |
+| Soft Open Level | Research LabExit → Security Wing (**wired**) |
 | Deferred | Signal & Communication, Armory, Restricted, fuse, generator, coolant/research redo, Witness AI, Save, multi-tier biometrics |
-| VDP | [`PE-021-VisualDesignPackage.md`](PE-021-VisualDesignPackage.md) — complete; EP gate open |
+| VDP | [`PE-021-VisualDesignPackage.md`](PE-021-VisualDesignPackage.md) — implemented against package |
 
-**STOP** — waiting for EP: **VDP APPROVE** / RETURN TO DESIGN.  
-Do **not** implement Unreal assets. Do **not** set Ready to Implement until VDP APPROVE.
+**Gate:** Validate Mission PE-021 / human PIE — do not claim Gameplay PASS from Technical alone.
 
 ---
 

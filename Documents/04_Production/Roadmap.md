@@ -73,12 +73,13 @@ Status
 - Generator Annex production map — fuel → generator World Response + Witness (PE-018 implementation)
 - Coolant Bay production map — Mechanical valves → pressure hatch + Witness (PE-019 implementation)
 - Research Wing production map — containment calibration + Witness + Soft Open from Coolant (PE-020 implementation; Closed — Technical 2026-07-25)
-- Soft Open Level chain: Maintenance → Annex → Coolant Bay → Research Wing
+- Security Wing production map — Staff Keycard + Access Clearance + Witness + Soft Open from Research (PE-021 implementation; Technical 2026-07-25)
+- Soft Open Level chain: Maintenance → Annex → Coolant Bay → Research Wing → Security Wing
 
 ### Remaining
 
-- Confirm PE-017 / PE-018 / PE-019 / PE-020 full manual PIE Gameplay PASS
-- Research LabExit Soft Open to future Security (not built)
+- Confirm PE-017 / PE-018 / PE-019 / PE-020 / PE-021 full manual PIE Gameplay PASS
+- Security Soft Open stub → future Signal / deeper sector (not built)
 - Save system / Witness AI expansion (later milestones)
 
 ---

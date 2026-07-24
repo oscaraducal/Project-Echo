@@ -1,22 +1,21 @@
 # PE-021 — Visual Design Package: Security Wing
 
-**Status:** Previsualization complete — awaiting EP mental-play APPROVE  
+**Status:** Implemented — EP `Implement Mission PE-021` after VDP generation  
 **Mission:** PE-021 Security Wing (Post-Research Access)  
 **Map:** `/Game/ProjectEcho/Maps/Production/LV_ARI_SecurityWing`  
 **Branch:** `develop`  
 **Date:** 2026-07-25  
-**Design Plan:** [`PE-021-DesignPlan.md`](PE-021-DesignPlan.md)  
-**Mission notes:** TBD on Implement (`PE-021-SecurityWing.md`)  
+**Design Plan:** [`PE-021-DesignPlan.md`](PE-021-DesignPlan.md) (APPROVED & IMPLEMENTED)  
+**Mission notes:** [`PE-021-SecurityWing.md`](PE-021-SecurityWing.md)  
 **Authority:** Gameplay Design Bible (PE-016) §5.3 Security & Access · Production Playbook §12c · Visual Design Package standard  
 
 ---
 
 > ### Gate
 >
-> **STOP — waiting for EP: VDP APPROVE / RETURN TO DESIGN**  
-> Ready to Implement = **NO** until EP decision = APPROVE.  
-> Docs only — no Unreal maps / Blueprints / MCP asset creation in this phase.  
-> MCP Auto-accept does **not** apply until `Implement Mission PE-021`.
+> **VDP used for Implement** — EP commanded `Implement Mission PE-021` after VDP generation = Ready to Implement **YES**.  
+> Build landed Technical PASS; Gameplay remains **PENDING_USER**.  
+> Next: `Validate Mission PE-021` / human PIE.
 
 ---
 

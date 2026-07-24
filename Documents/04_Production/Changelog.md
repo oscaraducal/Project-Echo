@@ -2,6 +2,40 @@
 
 ---
 
+## PE-021 — Implement Security Wing
+**Date:** 2026-07-25
+**Mission:** PE-021 Security Wing
+**Branch:** `develop`
+
+### Added
+
+- Map `/Game/ProjectEcho/Maps/Production/LV_ARI_SecurityWing` (PE-018 recipe from Research Wing)
+- `BP_AccessClearancePuzzle` (thin CoolantLoop child) — Security & Access teaching beat
+- `BP_ClearanceConsoleStation` (thin CoolantValve child) — CS-BADGE / CS-ZONE / CS-EXIT
+- `BP_SecurityWingReset` (CoolantBayReset child) — SliceReset
+- Staff Keycard pickup + Lobby `BP_LockedDoor` gate
+- SoftOpenExit stub on Security exit approach
+- `Documents/05_Missions/PE-021-SecurityWing.md`, `PE-021-PlaytestChecklist.md`
+
+### Changed
+
+- Research Wing `LabExit` → `BP_SoftOpenExit` (`SoftOpenLevelName=LV_ARI_SecurityWing`, `bTravelOnOpen=true`)
+- Design Plan → APPROVED & IMPLEMENTED; VDP note implemented; Roadmap Soft Open chain extended
+- Indoor DirectionalLight intensity reduced / hidden on Security map
+
+### Validation
+
+- Compile PASS; MapCheck 0/0; Technical Simulate PASS (PuzzleBase ready, consoles ×3, SoftOpen locked, Witness hidden-until-power)
+- Gameplay **PENDING_USER** — human EI checklist required
+- Replay Technical PASS (SliceReset present); manual reverse PENDING_USER
+
+### Notes
+
+- Cuts honored: no Signal/PA second puzzle, Armory, Restricted, fuse/generator/coolant/research redo, combat/chase
+- Next gate: `Validate Mission PE-021` / human PIE
+
+---
+
 ## PE-021 — Visual Design Package (Security Wing)
 **Date:** 2026-07-25
 **Mission:** PE-021 Security Wing
