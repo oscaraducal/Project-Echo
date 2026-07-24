@@ -174,8 +174,37 @@ IA_Flashlight Started
 
 ---
 
+# Puzzle (PE-015)
+
+```text
+BP_PuzzleBase BeginPlay
+  → Idle→Available; optional ObjectiveOnAvailable; optional Activate→InProgress
+
+BP_FusePickup EventInteract
+  → BPC_Inventory.AddItem(Fuse) → SetObjective → Destroy
+
+BP_FusePuzzle EventInteract
+  → HasItem(RequiredItemID) ?
+      Yes: RemoveItem → MarkSolved
+           → OnPuzzleSolved
+           → NotifyObjectives (CompleteObjective / SetObjective)
+           → TriggerWorldResponse
+                → BPI_PowerReceiver on WorldResponseTargets
+                → BP_PowerManager.NotifyPuzzlePowerResponse
+                     → EmergencyLight tagged PuzzlePowerResponse.OnPowerRestored
+           → Completed
+      No: SetObjective("Find the fuse")
+
+BP_PuzzleResetButton EventInteract
+  → TargetPuzzle.ResetPuzzle
+  → optional SpawnActor BP_FusePickup at FuseSpawnPoint
+```
+
+---
+
 # Related
 
 - `GameplayFlow.md` — Mermaid overview  
+- `PuzzleFramework.md` — puzzle architecture  
 - `BlueprintDependencyMap.md` — static deps  
 - `BugHistory.md` — PE-013C input failures  

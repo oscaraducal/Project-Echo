@@ -36,6 +36,7 @@ This document provides a high-level navigation map for all Project Echo document
 - Technical Design
 - Gameplay Flow (PE-014)
 - Gameplay Systems
+- Puzzle Framework (PE-015)
 - Blueprint Standards (PE-014)
 - Blueprint Architecture
 - Coding Standards

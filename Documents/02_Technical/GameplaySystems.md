@@ -517,7 +517,7 @@ Status: Complete (PE-013 / PE-013A / PE-013B / PE-013D environment); input harde
 
 **Map:** `/Game/ProjectEcho/Maps/Development/LV_TestingGround`
 
-Permanent development sandbox (not campaign). Zones: Developer Spawn, Interaction Lab, Generator Room, Inventory & Objectives, Puzzle Sandbox (empty), Horror Corridor, Future AI Arena, Developer Control Room.
+Permanent development sandbox (not campaign). Zones: Developer Spawn, Interaction Lab, Generator Room, Inventory & Objectives, Puzzle Sandbox (PE-015 Fuse station), Horror Corridor, Future AI Arena, Developer Control Room.
 
 ### Input Flow (PE-013C)
 
@@ -542,9 +542,41 @@ Keyboard/Mouse
 
 ---
 
+# Puzzle Framework
+
+## Purpose
+
+Modular puzzle lifecycle + hooks for objectives and power world response. Future puzzles via BP config / children.
+
+## Owner Blueprint(s)
+
+- `/Game/ProjectEcho/Gameplay/Puzzle/BPI_Puzzle`
+- `/Game/ProjectEcho/Gameplay/Puzzle/BP_PuzzleBase`
+- `/Game/ProjectEcho/Gameplay/Puzzle/BP_FusePuzzle`
+- `/Game/ProjectEcho/Gameplay/Puzzle/BP_FusePickup`
+- `/Game/ProjectEcho/Gameplay/Puzzle/BP_PuzzleResetButton`
+- `/Game/ProjectEcho/Gameplay/Puzzle/BP_PuzzleManager` (optional)
+- Enum: `/Game/ProjectEcho/Data/Enums/E_PuzzleState`
+
+## Dependencies
+
+- `BPC_Inventory` / `BPC_Objective` via `GetComponentByClass`
+- `BPI_PowerReceiver` + `BP_PowerManager.NotifyPuzzlePowerResponse` (separate from generator once-only path)
+
+## Events
+
+`OnPuzzleStarted`, `OnPuzzleSolved`, `OnPuzzleFailed` (stub), `OnPuzzleReset`, `OnPuzzleStateChanged`
+
+## Current Status
+
+**Complete** for framework + Fuse example on `LV_TestingGround` Puzzle Station (PE-015). See `PuzzleFramework.md`.
+
+---
+
 # Related Documents
 
 - `GameplayFlow.md`
+- `PuzzleFramework.md`
 - `Architecture/BlueprintDependencyMap.md`
 - `Architecture/EventFlow.md`
 - `Architecture/TechnicalDebt.md`

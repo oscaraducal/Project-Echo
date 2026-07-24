@@ -43,6 +43,7 @@ Blueprint architecture, gameplay systems, coding standards, and implementation t
 | [TechnicalDesign.md](02_Technical/TechnicalDesign.md) | Technical approach overview |
 | [GameplayFlow.md](02_Technical/GameplayFlow.md) | **Implemented** end-to-end flow + Mermaid diagrams (PE-014) |
 | [GameplaySystems.md](02_Technical/GameplaySystems.md) | Per-system owners, APIs, status (PE-014) |
+| [PuzzleFramework.md](02_Technical/PuzzleFramework.md) | Modular puzzle architecture, lifecycle, Fuse example (PE-015) |
 | [BlueprintStandards.md](02_Technical/BlueprintStandards.md) | Authoring standards aligned with DOC-002 (PE-014) |
 | [BlueprintArchitecture.md](02_Technical/BlueprintArchitecture.md) | Short architecture philosophy |
 | [CodingStandards.md](02_Technical/CodingStandards.md) | Blueprint coding principles |

@@ -2,6 +2,29 @@
 
 ---
 
+## Modular Puzzle Framework
+**Date:** 2026-07-24
+**Mission:** PE-015
+
+### Added
+
+- `BPI_Puzzle`, `E_PuzzleState`, `BP_PuzzleBase` — modular puzzle lifecycle + dispatchers
+- `BP_FusePuzzle`, `BP_FusePickup`, `BP_PuzzleResetButton`, `BP_PuzzleManager` — Fuse example + reset
+- `BP_PowerManager.NotifyPuzzlePowerResponse` — puzzle power path (tagged `PuzzlePowerResponse`, independent of generator `HasHandledPower`)
+- Puzzle Station on `LV_TestingGround` (hub-adjacent): fuse → panel → objective/power → reset/repeat
+- `Documents/02_Technical/PuzzleFramework.md`
+
+### Changed
+
+- Docs: `GameplayFlow.md`, `GameplaySystems.md`, `BlueprintDependencyMap.md`, `EventFlow.md`, `ProjectHealth.md`, `MasterIndex.md`, `README.md`
+
+### Notes
+
+- Save fields exposed only (no save implementation)
+- ThirdParty / PE-013C dirties excluded from this commit
+
+---
+
 ## Gameplay Framework Consolidation & Architecture Documentation
 **Date:** 2026-07-24
 **Mission:** PE-014

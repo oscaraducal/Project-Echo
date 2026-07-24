@@ -83,7 +83,8 @@ Changing these can alter feel, order, or save/puzzle contracts.
 |-------|--------|
 | ASSET-001 redirector cleanup | Previously performed (Changelog); no new rename in PE-014 |
 | Unused FirstPerson template | Still present; Project defaults point at ProjectEcho (PE-013B). Treat as engine template residual — **Ignore** unless shipping size pass |
-| Empty `Gameplay/Puzzle`, `AI`, `Audio`, `Save` content | Reserved folders — **Ignore** |
+| Empty `Gameplay/AI`, `Audio`, `Save` content | Reserved folders — **Ignore** |
+| `Gameplay/Puzzle` | **Filled** (PE-015) — no longer empty |
 | Safe unused-asset purge | **Not run** (destructive); recommend editor Reference Viewer pass in a cleanup mission |
 
 ---
@@ -105,7 +106,8 @@ Changing these can alter feel, order, or save/puzzle contracts.
 2. Clean PowerManager orphan events + duplicate vars.  
 3. Switch receiver discovery to `BPI_PowerReceiver`.  
 4. Remove debug prints; Fix Up Redirectors if any remain.  
-5. Optional: delete empty `Blueprints/` tree.
+5. Optional: delete empty `Blueprints/` tree.  
+6. **PE-015 deferred:** Expand `E_PuzzleState` display names to full 6-state set (asset currently duplicated from generator enum with 3 entries; runtime uses byte 0–5). Confirm Class Settings → Implemented Interfaces includes `BPI_Puzzle` on `BP_PuzzleBase`. Avoid `CallFunction|Activate` name collision with `Components|Activation|Activate` (inline or interface message). Leftover `ItemData` on `BP_FusePuzzle` from FuelCan duplicate.  
 
 ---
 
@@ -113,4 +115,5 @@ Changing these can alter feel, order, or save/puzzle contracts.
 
 - `BugHistory.md`  
 - `GameplaySystems.md`  
+- `PuzzleFramework.md`  
 - `04_Production/ProjectHealth.md`  

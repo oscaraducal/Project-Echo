@@ -96,8 +96,25 @@ IMC_Player
 # Data
 
 ```text
-ST_InventoryItem ← BPC_Inventory / FuelCan / KeyItemPickup
+ST_InventoryItem ← BPC_Inventory / FuelCan / KeyItemPickup / FusePickup
 E_GeneratorState ← BP_Generator.GeneratorState
+E_PuzzleState ← BP_PuzzleBase.CurrentState (byte-aligned lifecycle)
+```
+
+---
+
+# Puzzle (PE-015)
+
+```text
+BPI_Puzzle
+BP_PuzzleBase
+├── dispatchers OnPuzzle*
+├── NotifyObjectives → BPC_Objective
+└── TriggerWorldResponse → BPI_PowerReceiver + BP_PowerManager.NotifyPuzzlePowerResponse
+    ├── BP_FusePuzzle → BPC_Inventory (Fuse)
+    ├── BP_FusePickup → BPC_Inventory / BPC_Objective
+    ├── BP_PuzzleResetButton → ResetPuzzle + spawn FusePickup
+    └── BP_PuzzleManager (optional hub)
 ```
 
 ---
@@ -107,11 +124,9 @@ E_GeneratorState ← BP_Generator.GeneratorState
 ```text
 LV_TestingGround
 ├── places Generator, FuelCan, PowerManager, receivers, doors, pickups, notes
+├── PE-015 Puzzle Station (FusePickup, FusePuzzle, Reset, tagged EmergencyLight)
 ├── PlayerStart_DeveloperSpawn
 └── BP_DevSandboxValidator
-
-LV_Prototype_PE011 / LV_Prototype_PE012
-└── historical power-chain regression
 ```
 
 ---
@@ -121,9 +136,11 @@ LV_Prototype_PE011 / LV_Prototype_PE012
 | From | To | Coupling |
 |------|----|----------|
 | BPC_Interaction | BPI_Interactable | **Preferred** (interface check) |
-| Generator / pickups | BPC_Inventory / BPC_Objective | **Hard** `GetComponentByClass` |
+| Generator / pickups / puzzles | BPC_Inventory / BPC_Objective | **Hard** `GetComponentByClass` |
 | PowerManager | Receiver BP classes | **Hard** `GetAllActorsOfClass` |
 | PowerManager | BPI_PowerReceiver | Interface exists; **not** used for discovery |
+| PuzzleBase | BPI_PowerReceiver | **Preferred** interface message on configured targets |
+| PuzzleBase | PowerManager | Soft `GetAllActorsOfClass` + `NotifyPuzzlePowerResponse` |
 | Character | Components | **Composition** (correct) |
 | Controller | Character EI | Indirect via IMC |
 

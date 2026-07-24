@@ -203,13 +203,23 @@ Likely owner: `BP_GameInstance` (currently empty EventGraph).
 
 ## Puzzle Integration
 
-Reserved sandbox zone on `LV_TestingGround` (Puzzle station). No puzzle Blueprints under `/Game/ProjectEcho/Gameplay/Puzzle/` yet.
+Implemented (PE-015). See `PuzzleFramework.md`.
 
-Suggested future hooks:
+```text
+BP_FusePickup Interact
+  → BPC_Inventory.AddItem(Fuse)
+  → BPC_Objective.SetObjective("Insert the fuse…")
 
-- Consume/query `BPC_Inventory` (`HasItem` / `RemoveItem`)
-- Gate progress via `BPC_Objective.SetObjective`
-- Optional power gating via `BPI_PowerReceiver` or Generator state
+BP_FusePuzzle Interact
+  → HasItem("Fuse") → RemoveItem → MarkSolved
+  → OnPuzzleSolved / NotifyObjectives / TriggerWorldResponse
+  → BPI_PowerReceiver (+ PowerManager.NotifyPuzzlePowerResponse)
+
+BP_PuzzleResetButton Interact
+  → BP_PuzzleBase.ResetPuzzle + optional Fuse respawn
+```
+
+Lifecycle: Idle → Available → Activated → InProgress → Solved → World Response → Completed.
 
 ## AI / Horror
 
@@ -221,7 +231,7 @@ Future AI Arena reserved on sandbox. No Witness AI Blueprints in ProjectEcho Gam
 
 **Map:** `/Game/ProjectEcho/Maps/Development/LV_TestingGround`
 
-Stations (labels): Movement, Interaction, Inventory, Generator, Power, Objectives, Notes, Future Puzzle, Future AI, Developer Control.
+Stations (labels): Movement, Interaction, Inventory, Generator, Power, Objectives, Notes, Puzzle (hub-adjacent Fuse station), Future AI, Developer Control.
 
 **Technical validator:** `BP_DevSandboxValidator` — API/state checks when Slate key injection cannot drive Enhanced Input (BUG-007).
 

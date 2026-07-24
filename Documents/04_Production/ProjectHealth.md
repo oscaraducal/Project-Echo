@@ -30,7 +30,7 @@ High-level health grades for Project Echo before major system expansion. Grades:
 
 **Needs Attention:** PowerManager concrete class fan-out; Generator↔PowerManager dual complete/objective writers.
 
-**Recommendations:** Next systems (Save, Puzzle, AI) subscribe to existing interfaces/dispatchers; refactor PowerManager discovery to `BPI_PowerReceiver` in a dedicated mission.
+**Recommendations:** Next systems (Save, AI) subscribe to existing interfaces/dispatchers; refactor PowerManager discovery to `BPI_PowerReceiver` in a dedicated mission. Puzzle framework (PE-015) already uses `BPI_PowerReceiver` + `NotifyPuzzlePowerResponse`.
 
 ---
 
@@ -50,7 +50,7 @@ High-level health grades for Project Echo before major system expansion. Grades:
 | Objectives | Good |
 | Notes | Good |
 | Save | Needs Attention (stub) |
-| Puzzle / AI | Needs Attention (reserved empty) |
+| Puzzle / AI | Puzzle: Good (PE-015 framework + Fuse station); AI: Needs Attention (reserved) |
 
 ---
 
