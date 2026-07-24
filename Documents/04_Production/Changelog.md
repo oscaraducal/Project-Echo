@@ -2,6 +2,31 @@
 
 ---
 
+## PE-022 — Medical Wing World Polish & Environmental Storytelling
+**Date:** 2026-07-25
+**Mission:** PE-022 Medical Wing (Occupational Health & Clinical Observation)
+**Branch:** `develop`
+
+### Added
+
+- Side rooms: Nurse Station, Pharmacy, Quarantine Closet, Security Med Check, Vent Access (geo + clinical dressing)
+- Notes F–I (`BP_NotePickup` instance copy only): Quarantine Notice, Pharmacy Seal, FFD HOLD, Nurse Roster
+- Reports: `PE-022-ReferenceAnalysis.md`, `PE-022-EnvironmentalStorytellingReport.md`, `PE-022-WorldPolishReport.md`, `PE-022-AssetAcquisitionReport.md`, `PE-022-LightingImprovementReport.md`
+- Screenshots under `Documents/05_Missions/PE-022-Screenshots/`
+
+### Changed
+
+- `LV_ARI_MedicalWing` — removed industrial leftover Story props; widened process corridor; clinical materials (tiles/plaster/dirt/teal stripe); cool + amber lighting polish; fog tuned
+- Mission notes updated for World Polish; Gameplay remains **PENDING_USER**
+
+### Notes
+
+- No gameplay Blueprint graph / puzzle / Soft Open / Witness / SliceReset / objective logic edits
+- No new marketplace imports — reused Laboratory, Office Pack, pipes, Industry tarp/hose already in Content
+- Canon posture: clinical containment catastrophe / quarantine residue — not gore identity
+
+---
+
 ## PE-022 — Medical Wing implementation (unique clinic spine)
 **Date:** 2026-07-25
 **Mission:** PE-022 Medical Wing (Occupational Health & Clinical Observation)

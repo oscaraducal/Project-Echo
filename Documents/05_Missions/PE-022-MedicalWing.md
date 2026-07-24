@@ -1,6 +1,6 @@
 # PE-022 — Medical Wing (Occupational Health & Clinical Observation)
 
-**Status:** Implemented — Technical (Gameplay **PENDING_USER**)  
+**Status:** Implemented — Technical + World Polish (Gameplay **PENDING_USER**)  
 **Branch:** `develop`  
 **Priority:** High  
 **Map:** `/Game/ProjectEcho/Maps/Production/LV_ARI_MedicalWing`  
@@ -8,6 +8,7 @@
 **Design plan:** [`PE-022-DesignPlan.md`](PE-022-DesignPlan.md)  
 **Visual Design Package:** [`PE-022-VisualDesignPackage.md`](PE-022-VisualDesignPackage.md)  
 **Playtest checklist:** [`PE-022-PlaytestChecklist.md`](PE-022-PlaytestChecklist.md)  
+**World Polish:** [`PE-022-WorldPolishReport.md`](PE-022-WorldPolishReport.md) · [`PE-022-ReferenceAnalysis.md`](PE-022-ReferenceAnalysis.md) · [`PE-022-EnvironmentalStorytellingReport.md`](PE-022-EnvironmentalStorytellingReport.md) · [`PE-022-LightingImprovementReport.md`](PE-022-LightingImprovementReport.md) · [`PE-022-AssetAcquisitionReport.md`](PE-022-AssetAcquisitionReport.md)  
 **Predecessor:** `LV_ARI_SecurityWing` SoftOpenExit_Stub → Medical Wing  
 **Ready For Review:** **NO** (Gameplay PENDING_USER)
 
@@ -32,17 +33,23 @@
 
 ---
 
-## Layout (+Y = North, +X = East)
+## Layout (+Y = North, +X = East) — World Polish scale (~95×54 m)
 
 | Space | Approx | Role |
 |-------|--------|------|
 | Clinical Transfer Vestibule | x≈0 | Soft Open arrival; PlayerStart; Note A |
-| Triage Corridor | x≈0–2800 spine | Primary process hall |
-| Exam Cubicle | x≈900, y≈900 | Interrupted care; Note C |
-| OH Console Bay | x≈1400, y≈−900 | Filing puzzle solve |
-| Records Niche | x≈2200, y≈700 | Protocol Card + Note B |
-| Isolation Anteroom | x≈2800 | Pinch + amber cue landmark |
-| Observation Bay + Soft Open egress | x≈3600–4000 | Note E; Witness; SoftOpenExit_ClinicalEgress |
+| Security Med Check | x≈−200, y≈1100 | Clearance medicals residue; Note H |
+| Nurse Station | x≈900, y≈1400 | Roster / care coordination; Note I |
+| Pharmacy | x≈900, y≈−1400 | Controlled stock; Note G |
+| Triage Corridor | x≈2400 spine | Primary process hall (widened) |
+| Exam Clinic | x≈1800, y≈2000 | Interrupted care; Note C |
+| OH Console Bay | x≈2400, y≈−2000 | Filing puzzle solve; Note D |
+| Records Office | x≈3800, y≈1800 | Protocol Card + Note B |
+| Process Corridor | x≈4800 | Widened clinical hall |
+| Quarantine Closet | x≈4800, y≈1400 | PPE staging; Note F |
+| Vent Access | x≈4800, y≈−1400 | Engineering bleed into Medical |
+| Isolation Anteroom | x≈6200 | Pinch + amber cue landmark |
+| Observation Ward + Soft Open egress | x≈7800 | Note E; Witness; SoftOpenExit_ClinicalEgress |
 
 ---
 
@@ -90,14 +97,16 @@
 
 - Fuse-family PrintString debt may still say fuse language until overridden in graphs.
 - IsolationAnteroomDoor is spatial pinch / landmark; Soft Open egress is the WR-unlocked exit.
-- Amber PointLight spawned; color intensity set may need manual tweak in editor.
-- Modular clinical dressing density still debt vs WORLD-001 material themes.
+- World Polish 2026-07-25: industrial leftover props removed; side rooms (Nurse / Pharmacy / Quarantine / Security Med Check / Vent) enclosed; clinical materials + cool/amber lighting; notes F–I placed — **no gameplay graph edits**.
+- Editor may still warn on Lumen `CachedLightingPreExposure` (project-level debt).
 
 ---
 
 ## Debt
 
-- Real clinical modular geo / teal stripe materials beyond blockout cubes  
+- True Fab/Quixel clinical modular kit (beyond plastered cubes + stripe MI)  
+- Readable MED-## signage texture decals  
 - Fuse PrintString / objective string parent debt on OHConsoleFiling  
 - Human Gameplay + Replay  
 - SoftOpenExit clinical egress destination TBD (Signal / deeper)  
+- Lumen exposure CVar / PostProcess project pass  
