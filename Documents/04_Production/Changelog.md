@@ -2,6 +2,35 @@
 
 ---
 
+## PE-022 — Medical Wing implementation (unique clinic spine)
+**Date:** 2026-07-25
+**Mission:** PE-022 Medical Wing (Occupational Health & Clinical Observation)
+**Branch:** `develop`
+
+### Added
+
+- `Documents/05_Missions/PE-022-DesignPlan.md` — playable Design Plan (WORLD-001 inspiration only; uniqueness contract vs PE-018–021)
+- `Documents/05_Missions/PE-022-VisualDesignPackage.md` — Light VDP (process spine + Isolation pinch)
+- `Documents/05_Missions/PE-022-MedicalWing.md` — mission notes (Technical; Gameplay PENDING_USER)
+- `Documents/05_Missions/PE-022-PlaytestChecklist.md` — human PIE checklist
+- Map `/Game/ProjectEcho/Maps/Production/LV_ARI_MedicalWing` — E–W Triage Corridor → Isolation Anteroom → Observation egress (not L-hub clone)
+- `BP_OHConsoleFilingPuzzle` — thin FusePuzzle child (Protocol Card filing; no station triad)
+- `BP_MedicalWingReset` — SliceReset twin
+- Protocol Card pickup (`itemId=ProtocolCard`)
+
+### Changed
+
+- Security SoftOpenExit_Stub → Soft Open Level `LV_ARI_MedicalWing` (`bTravelOnOpen=true`)
+- Roadmap / ProjectHealth Soft Open chain extended through Medical Wing
+
+### Notes
+
+- EP uniqueness correction applied: no CS/ST triad; no Staff Keycard redo; authored Medical notes
+- Compile PASS; Technical Simulate PASS; Gameplay PENDING_USER
+- WORLD-001 remains world-authority inspiration — not a layout template
+
+---
+
 ## WORLD-001 — EP APPROVED (Medical Wing world package)
 **Date:** 2026-07-25
 **Mission:** WORLD-001 Expand the World – Asterion Research Institute

@@ -93,4 +93,4 @@ Each mission includes:
 
 Latest world-building package: **WORLD-001** Medical Wing expansion (`Documents/05_Missions/WORLD-001/`) — docs only; **EP APPROVED** 2026-07-25; awaiting Implementation Studio handoff (N/A until future PE mission); Design Plan `WORLD-001-DesignPlan.md`.
 
-Latest closed production slice: **PE-021 Security Wing** (`Documents/05_Missions/PE-021-SecurityWing.md`) — Closed Technical 2026-07-25; Gameplay PENDING_USER; PRB Approve with Conditions. Prior: PE-020 Research Wing (`Documents/05_Missions/PE-020-ResearchWing.md`); process retro: `Documents/04_Production/AIStudio/Retrospective-PE-020.md`.
+Latest production slice: **PE-022 Medical Wing** (`Documents/05_Missions/PE-022-MedicalWing.md`) — Technical 2026-07-25; Gameplay PENDING_USER; unique clinic spine (not PE-018–021 clone). Prior closed: PE-021 Security Wing; PE-020 Research Wing; process retro: `Documents/04_Production/AIStudio/Retrospective-PE-020.md`.

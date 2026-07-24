@@ -108,6 +108,8 @@ Historical archive of completed development missions (when present).
 |----------|-------------|
 | [WORLD-001-DesignPlan.md](05_Missions/WORLD-001-DesignPlan.md) | World expansion Design Plan — Medical Wing (docs only) |
 | [WORLD-001/](05_Missions/WORLD-001/README.md) | Full WORLD-001 package (Creative / Content / Previs / Canon / Executive) |
+| [PE-022-DesignPlan.md](05_Missions/PE-022-DesignPlan.md) | Medical Wing playable Design Plan |
+| [PE-022-MedicalWing.md](05_Missions/PE-022-MedicalWing.md) | Medical Wing mission notes (Technical; Gameplay PENDING_USER) |
 
 ---
 
@@ -127,7 +129,9 @@ Status: In Progress
 
 ## Latest Design / Architecture Pass
 
-**WORLD-001** — Asterion Medical Wing world expansion package (docs only; **EP APPROVED** 2026-07-25; Ready to Implement N/A)
+**PE-022** — Medical Wing production slice (Technical; Gameplay PENDING_USER) — unique clinic spine; Soft Open from Security  
+
+**WORLD-001** — Asterion Medical Wing world expansion package (**EP APPROVED**; inspiration for PE-022)
 
 **AI Studio v1.6** — Content Studio · QA Studio · Mission Director · Previs VDP · Creative Studio
 

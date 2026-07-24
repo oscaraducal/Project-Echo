@@ -27,4 +27,5 @@ PE-018
 PE-019
 PE-020 (Closed — Technical; Gameplay PENDING_USER)
 PE-021 (Closed — Technical; Gameplay PENDING_USER)
-WORLD-001 (Medical Wing world package — EP APPROVED 2026-07-25; docs only; Ready to Implement N/A)
+PE-022 (Medical Wing — Technical; Gameplay PENDING_USER; unique clinic spine)
+WORLD-001 (Medical Wing world package — EP APPROVED 2026-07-25; PE-022 inspiration)
